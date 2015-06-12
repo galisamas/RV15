@@ -1,3 +1,3 @@
 # RV
 Radistai Village 2015
-Pradžia
+![alt tag](https://github.com/galisamas/RV/blob/master/res/drawable/logo.png)
