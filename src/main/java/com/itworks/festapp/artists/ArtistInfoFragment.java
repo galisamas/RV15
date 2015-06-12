@@ -198,7 +198,7 @@ public class ArtistInfoFragment extends Fragment implements View.OnClickListener
         location2.setTypeface(futura);
     }
 
-    private void paintSocialIcons() { // TODO kai grizta is psl (fb app) luzta nes artistModel == null
+    private void paintSocialIcons() {
         if(!artistModel.link_facebook.isEmpty())
             imageLoader.displayImage("drawable://" + R.drawable.social_fb, linkF);
         if(!artistModel.link_youtube.isEmpty())
