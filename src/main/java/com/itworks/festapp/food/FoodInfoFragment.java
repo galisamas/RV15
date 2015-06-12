@@ -2,6 +2,7 @@ package com.itworks.festapp.food;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -28,11 +29,15 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
 
     private final String no_link = "No link";
     private final String no_internet = "No internet connection";
+    private final String foodInfoPref = "FoodInfoPref";
+    private final String key = "id";
     private FoodModel foodModel;
     TextView title, about, location;
     RelativeLayout place;
     ImageView iw, linkF;
     private ImageLoader imageLoader;
+    private JSONHelper jsonHelper;
+    private SharedPreferences sharedpreferences;
 
     public void setFoodModel(FoodModel foodModel) {
         this.foodModel = foodModel;
@@ -44,7 +49,13 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
         place = (RelativeLayout) v.findViewById(R.id.place);
         linkF = (ImageView) v.findViewById(R.id.imageFb);
         linkF.setOnClickListener(this);
-        JSONHelper jsonHelper = new JSONHelper(getActivity());
+        jsonHelper = new JSONHelper(getActivity());
+        sharedpreferences = getActivity().getSharedPreferences(foodInfoPref, Context.MODE_PRIVATE);
+        if(null == foodModel){
+            int id = sharedpreferences.getInt(key,-1);
+            foodModel = getFoodModelById(id);
+        }
+
         List<PlaceModel> places = jsonHelper.getPlacesFromJSON();
         PlaceModel coordinate = places.get(12);
         place.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +68,7 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
                 FoodInfoFragment.this.startActivity(intent);
             }
         });
+
         imageLoader = ImageLoader.getInstance();
         title = (TextView) v.findViewById(R.id.textView3);
         about = (TextView) v.findViewById(R.id.about);
@@ -87,6 +99,24 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         openBrowser(foodModel.link_facebook);
 
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        editor.putInt(key, foodModel.id);
+        editor.apply();
+    }
+
+    private FoodModel getFoodModelById(int id){
+        List<FoodModel> list = jsonHelper.getFoodFromJSON();
+        for(FoodModel foodModel: list){
+            if(foodModel.id == id){
+                return foodModel;
+            }
+        }
+        return new FoodModel();
     }
 
     private void openBrowser(String url){

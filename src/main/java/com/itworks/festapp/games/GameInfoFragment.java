@@ -2,6 +2,7 @@ package com.itworks.festapp.games;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -31,12 +32,15 @@ public class GameInfoFragment extends Fragment implements View.OnClickListener{
 
     private final String no_link = "No link";
     private final String no_internet = "No internet connection";
+    private final String gameInfoPref = "GameInfoPref";
+    private final String key = "id";
     private GameModel gameModel;
     TextView location, title, about, description, description2;
     ImageView iw, linkF;
     RelativeLayout place, second;
     private ImageLoader imageLoader;
     private JSONHelper jsonHelper;
+    private SharedPreferences sharedpreferences;
 
     public void setGameModel(GameModel gameModel) {
         this.gameModel = gameModel;
@@ -55,6 +59,11 @@ public class GameInfoFragment extends Fragment implements View.OnClickListener{
         second = (RelativeLayout) v.findViewById(R.id.second);
         imageLoader = ImageLoader.getInstance();
         jsonHelper = new JSONHelper(getActivity());
+        sharedpreferences = getActivity().getSharedPreferences(gameInfoPref, Context.MODE_PRIVATE);
+        if(null == gameModel){
+            int id = sharedpreferences.getInt(key,-1);
+            gameModel = getGameModelById(id);
+        }
         PlaceModel placeModel = getPlaceModelById();
         if(!gameModel.link_fb.isEmpty()) {
             linkF = (ImageView) v.findViewById(R.id.imageFb);
@@ -129,6 +138,24 @@ public class GameInfoFragment extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         openBrowser(gameModel.link_fb);
 
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        editor.putInt(key, gameModel.id);
+        editor.apply();
+    }
+
+    private GameModel getGameModelById(int id){
+        List<GameModel> list = jsonHelper.getGamesFromJSON();
+        for(GameModel gameModel: list){
+            if(gameModel.id == id){
+                return gameModel;
+            }
+        }
+        return new GameModel();
     }
 
     private void openBrowser(String url){

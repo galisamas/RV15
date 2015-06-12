@@ -8,6 +8,9 @@ public class GameModel {
     public Boolean notification;
     public String link_fb;
 
+    public GameModel() {
+    }
+
     public GameModel(int id, String title, int placeId, String about,
                      Boolean notification, String link_fb) {
         this.id = id;

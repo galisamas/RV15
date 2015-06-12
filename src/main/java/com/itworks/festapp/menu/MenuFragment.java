@@ -126,7 +126,7 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
             intent = new Intent(getActivity(),StagesActivity.class);
         }
         else if (view.getId() == R.id.button3){
-            intent = new Intent(getActivity(),ComingSoonActivity.class); // TODO FoodActivity
+            intent = new Intent(getActivity(),ComingSoonActivity.class); // TODO FoodActivity, ComingSoonActivity
         }
         else if (view.getId() == R.id.button4){
             intent = new Intent(getActivity(),TerritoryActivity.class);
