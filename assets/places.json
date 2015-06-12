@@ -1,0 +1,137 @@
+{
+	"places":[
+	{
+	"id": 1,
+	"title": "Main stage",
+	"where": "Main stage",
+	"latitude": 55.159568, 
+	"longitude": 25.307581
+	},
+	{
+	"id": 2,
+	"title": "Beach stage",
+	"where": "Beach stage",
+	"latitude": 55.161592, 
+	"longitude": 25.310046
+	},
+	{
+	"id": 3,
+	"title": "Silent stage",
+	"where": "Silent stage",
+	"latitude": 55.160284, 
+	"longitude": 25.309844
+	},
+	{
+	"id": 4,
+	"title": "Chill scena",
+	"where": "Chill scenoje",
+	"latitude": 55.161333, 
+	"longitude": 25.312859
+	},
+	{
+	"id": 5,
+	"title": "Palapinių miestelis",
+	"where": "Palapinių miestelyje",
+	"latitude": 55.161634, 
+	"longitude": 25.312382
+	},
+	{
+	"id": 6,
+	"title": "Kemperių parkingas",
+	"where": "Kemperių parkinge",
+	"latitude": 55.160877, 
+	"longitude": 25.310820
+	},
+	{
+	"id": 7,
+	"title": "Parkingas",
+	"where": "Parkinge",
+	"latitude": 55.161648, 
+	"longitude": 25.300374
+	},
+	{
+	"id": 8,
+	"title": "Privatus parkingas",
+	"where": "Privačiame parkinge",
+	"latitude": 55.160780, 
+	"longitude": 25.309971
+	},
+	{
+	"id": 9,
+	"title": "Bilietai/informacija",
+	"where": "Prie bilietų/informacijos",
+	"latitude": 55.160461, 
+	"longitude": 25.305643
+	},
+	{
+	"id": 10,
+	"title": "Informacijos štabas (i)",
+	"where": "Prie informacijos štabo (i)",
+	"latitude": 55.159923, 
+	"longitude": 25.309944
+	},
+	{
+	"id": 11,
+	"title": "Bilietų tikrinimas",
+	"where": "Prie bilietų tikrinimo",
+	"latitude": 55.160338, 
+	"longitude": 25.307775
+	},
+	{
+	"id": 12,
+	"title": "Restoranas",
+	"where": "Restorane",
+	"latitude": 55.160614, 
+	"longitude": 25.310236
+	},
+	{
+	"id": 13,
+	"title": "Maisto zona",
+	"where": "Maisto zonoje",
+	"latitude": 55.159758, 
+	"longitude": 25.308761
+	},
+	{
+	"id": 14,
+	"title": "Pramogų zona",
+	"where": "Pramogų zonoje",
+	"latitude": 55.160145, 
+	"longitude": 25.308990
+	},
+	{
+	"id": 15,
+	"title": "Laipiojimo siena",
+	"where": "Prie laipiojimo sienos",
+	"latitude": 55.160312, 
+	"longitude": 25.310152
+	},
+	{
+	"id": 16,
+	"title": "Vandens pramogų zona",
+	"where": "Vandens pramogų zonoje",
+	"latitude": 55.161851, 
+	"longitude": 25.310328
+	},
+	{
+	"id": 17,
+	"title": "Lauko tenisas",
+	"where": "Prie lauko teniso",
+	"latitude": 55.159927, 
+	"longitude": 25.310496
+	},
+	{
+	"id": 18,
+	"title": "Tinklinis",
+	"where": "Prie tinklinio",
+	"latitude": 55.161514, 
+	"longitude": 25.309828
+	},
+	{
+	"id": 19,
+	"title": "Zumba vieta",
+	"where": "Zumbos vietoje",
+	"latitude": 55.160145, 
+	"longitude": 25.308990
+	}
+	]
+}

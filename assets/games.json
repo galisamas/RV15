@@ -1,0 +1,55 @@
+﻿{
+	"games":[
+  {	
+	"id": 0,
+	"title": "HUMORO KLUBAS",
+	"about": "Speciali Humoro klubo programa.
+
+Pasirodys:
+- Mantas Stonkus
+- Mantas Katleris
+- Justinas Jankevičius
+- Dominykas Klajumas
+- Paulius Ambrazevičius",
+	"places_id": 3,
+	"notification": true, 
+	"link_facebook": "https://www.facebook.com/humoroklubas"
+  },
+  {	
+	"id": 1,
+	"title": "SILENT DISCO",
+	"about": "Po didžiulio pasisekimo praėjusių metų festivalyje, Silent Disco – tylioji diskoteka grįžta į Obuolių salą ir šiemet! Šįkart diskoteka vyks ir penktadienį, ir šeštadienį.", 
+	"places_id": 3, 
+	"notification": true, 
+	"link_facebook": "https://www.facebook.com/tyliojidiskoteka"
+  },
+  {	
+	"id": 2,
+	"title": "SUP LENTOS",
+	"about": "Jūsų laukia SUPING.LT paruošta programa ant vandens!
+
+SUP varžybos (Festivalio sporto pramogų programa);
+SUP lygsvaros karalius (Festivalio sporto pramogų programa).
+
+Taip pat:
+SUP polo;
+SUP virvės traukimas;
+SUP lentų nuoma pasiplaukiojimams Grabuosto ežere.
+
+Suping.lt rekomenduoja:
+Irklentė (SUP – stand up paddeling board) – tai pats paprasčiausias būdas pavirsti tiek sportinkais, tiek aktyvistais – aktyvų laisvalaikį mėgstantiems žmonėms. Irklentę paprasta valdyti, lengva transportuoti, tai saugus ir naujas būdas mėgautis vandens sportu, bet kur, kur tik yra vandens telkinis. Mes Jums padėsime išbandyti ir susipažinti, išsirnkti tinkamą irklentę, nes atstovaujame viena garsiausių pasaulyje Amerikiečių kompaniją RIVIERA, kuri ne tik kūria, bet ir skina pergalės daugelyje lenktynių su savo gaminiais.", 
+	"places_id": 16, 
+	"notification": true, 
+	"link_facebook": "https://www.facebook.com/suping.lt"
+  },
+  {	
+	"id": 3,
+	"title": "ZUMBA",
+	"about": "Nemokama zumbos treniruotė visiems norintiems šeštadienio ryte su kvalifikuota trenere Auguste Kropaite!", 
+	"places_id": 19, 
+	"notification": true, 
+	"link_facebook": "https://www.facebook.com/SokioHarmonija"
+  }
+
+]
+}

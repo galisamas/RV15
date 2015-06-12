@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/day_background"
+              android:orientation="vertical">
+
+
+    <TextView
+            android:id="@+id/lblListHeader"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:gravity="center"
+            android:text="Legenda"
+            android:textColor="@color/actionbar_second"
+            android:textSize="20dp"/>
+
+</LinearLayout>

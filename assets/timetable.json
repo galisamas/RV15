@@ -1,0 +1,228 @@
+{
+	"timetable":[
+	{
+	"id": 0,
+	"artist_id": 0,
+	"stage_id": 1,
+	"day": 1,
+	"start_time": "21/00",
+	"end_time": "22/00"
+	},
+	{
+	"id": 1,
+	"artist_id": 1,
+	"stage_id": 1,
+	"day": 1,
+	"start_time": "22/00",
+	"end_time": "23/30"
+	},
+	{
+	"id": 2,
+	"artist_id": 2,
+	"stage_id": 1,
+	"day": 1,
+	"start_time": "23/30",
+	"end_time": "24/30"
+	},
+	{
+	"id": 3,
+	"artist_id": 3,
+	"stage_id": 1,
+	"day": 1,
+	"start_time": "24/30",
+	"end_time": "25/30"
+	},
+	{
+	"id": 4,
+	"artist_id": 4,
+	"stage_id": 1,
+	"day": 1,
+	"start_time": "25/30",
+	"end_time": "27/00"
+	},
+	{
+	"id": 5,
+	"artist_id": 5,
+	"stage_id": 2,
+	"day": 1,
+	"start_time": "17/00",
+	"end_time": "19/00"
+	},
+	{
+	"id": 6,
+	"artist_id": 6,
+	"stage_id": 2,
+	"day": 1,
+	"start_time": "19/00",
+	"end_time": "20/00"
+	},
+	{
+	"id": 7,
+	"artist_id": 7,
+	"stage_id": 2,
+	"day": 1,
+	"start_time": "20/00",
+	"end_time": "21/00"
+	},
+	{
+	"id": 8,
+	"artist_id": 9,
+	"stage_id": 3,
+	"day": 1,
+	"start_time": "24/00",
+	"end_time": "25/00"
+	},
+	{
+	"id": 9,
+	"artist_id": 10,
+	"stage_id": 3,
+	"day": 1,
+	"start_time": "25/00",
+	"end_time": "26/00"
+	},
+	{
+	"id": 10,
+	"artist_id": 11,
+	"stage_id": 3,
+	"day": 1,
+	"start_time": "26/00",
+	"end_time": "27/00"
+	},
+	{
+	"id": 11,
+	"artist_id": 12,
+	"stage_id": 3,
+	"day": 1,
+	"start_time": "27/00",
+	"end_time": "28/00"
+	},
+	{
+	"id": 12,
+	"artist_id": 13,
+	"stage_id": 1,
+	"day": 2,
+	"start_time": "15/00",
+	"end_time": "20/00"
+	},
+	{
+	"id": 13,
+	"artist_id": 14,
+	"stage_id": 1,
+	"day": 2,
+	"start_time": "20/00",
+	"end_time": "21/00"
+	},
+	{
+	"id": 14,
+	"artist_id": 15,
+	"stage_id": 1,
+	"day": 2,
+	"start_time": "21/00",
+	"end_time": "22/00"
+	},
+	{
+	"id": 15,
+	"artist_id": 16,
+	"stage_id": 1,
+	"day": 2,
+	"start_time": "22/00",
+	"end_time": "23/00"
+	},
+	{
+	"id": 16,
+	"artist_id": 17,
+	"stage_id": 1,
+	"day": 2,
+	"start_time": "23/00",
+	"end_time": "24/30"
+	},
+	{
+	"id": 17,
+	"artist_id": 18,
+	"stage_id": 1,
+	"day": 2,
+	"start_time": "24/30",
+	"end_time": "26/00"
+	},
+	{
+	"id": 18,
+	"artist_id": 19,
+	"stage_id": 1,
+	"day": 2,
+	"start_time": "26/00",
+	"end_time": "27/00"
+	},
+	{
+	"id": 19,
+	"artist_id": 20,
+	"stage_id": 2,
+	"day": 2,
+	"start_time": "11/00",
+	"end_time": "12/00"
+	},
+	{
+	"id": 20,
+	"artist_id": 21,
+	"stage_id": 2,
+	"day": 2,
+	"start_time": "12/00",
+	"end_time": "13/00"
+	},
+	{
+	"id": 21,
+	"artist_id": 22,
+	"stage_id": 2,
+	"day": 2,
+	"start_time": "13/00",
+	"end_time": "14/00"
+	},
+	{
+	"id": 22,
+	"artist_id": 23,
+	"stage_id": 2,
+	"day": 2,
+	"start_time": "14/00",
+	"end_time": "15/00"
+	},
+	{
+	"id": 23,
+	"artist_id": 24,
+	"stage_id": 2,
+	"day": 2,
+	"start_time": "15/00",
+	"end_time": "16/00"
+	},
+	{
+	"id": 24,
+	"artist_id": 25,
+	"stage_id": 2,
+	"day": 2,
+	"start_time": "16/00",
+	"end_time": "17/00"
+	},
+	{
+	"id": 25,
+	"artist_id": 26,
+	"stage_id": 2,
+	"day": 2,
+	"start_time": "17/00",
+	"end_time": "18/00"
+	},
+	{
+	"id": 26,
+	"artist_id": 27,
+	"stage_id": 2,
+	"day": 2,
+	"start_time": "18/00",
+	"end_time": "21/00"
+	},
+	{
+	"id": 27,
+	"artist_id": 25,
+	"stage_id": 3,
+	"day": 1,
+	"start_time": "12/43",
+	"end_time": "15/00"
+	}
+	]
+}

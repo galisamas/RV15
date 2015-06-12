@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/tabs_background"
+                android:id="@+id/relativeLayout">
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:background="@color/day_background"
+            android:id="@+id/daysLine"
+            android:layout_height="40dp">
+
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/button7"
+                android:layout_weight="1">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_centerInParent="true"
+                    android:text="PENKTADIENIS"
+                    android:textColor="@color/actionbar_second"
+                    android:id="@+id/textView2"/>
+        </RelativeLayout>
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/button8"
+                android:layout_weight="1">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_centerInParent="true"
+                    android:text="ŠEŠTADIENIS"
+                    android:textColor="@color/actionbar_second"
+                    android:id="@+id/textView5"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/daysLine"
+            android:id="@+id/line2"
+            android:background="@color/list_separator" />
+    <android.support.v4.view.ViewPager
+            xmlns:android="http://schemas.android.com/apk/res/android"
+           android:id="@+id/pager"
+            android:layout_below="@+id/line2"
+           android:layout_width="match_parent"
+            android:background="@color/white"
+           android:layout_height="match_parent">
+
+        <android.support.v4.view.PagerTabStrip
+                android:id="@+id/pager_title_strip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@drawable/actionbar_background"
+                android:textColor="@color/black"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp" />
+
+    </android.support.v4.view.ViewPager>
+
+</RelativeLayout>

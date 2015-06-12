@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:layout_height="match_parent">
+
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="168dp"
+            android:id="@+id/imageView3"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"/>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/imageView3"
+            android:id="@+id/line1"
+            android:background="@color/list_separator" />
+
+    <RelativeLayout
+            android:id="@+id/infobar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/left_text_margin"
+            android:layout_marginBottom="@dimen/left_text_margin"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/line1">
+
+        <ImageView
+                android:layout_width="@dimen/social_icon_size"
+                android:layout_height="@dimen/social_icon_size"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/artists_list_margin"
+                android:src="@null"
+                android:id="@+id/imageFb"/>
+
+        <RelativeLayout
+                android:id="@+id/header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/imageFb">
+
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pavadinimas"
+                    android:textColor="@color/actionbar_second"
+                    android:id="@+id/textView3"
+                    android:layout_marginLeft="@dimen/left_text_margin"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="30dp"/>
+        </RelativeLayout>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textColor="@color/actionbar_second"
+                android:id="@+id/description"
+                android:layout_marginLeft="@dimen/left_text_margin"
+                android:layout_marginTop="-7dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_below="@+id/header"/>
+
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/header"
+                android:layout_marginTop="-7dp"
+                android:id="@+id/place"
+                android:layout_marginLeft="@dimen/artists_list_margin"
+                android:layout_toLeftOf="@+id/imageFb"
+                android:layout_toRightOf="@+id/description">
+
+            <ImageView
+                    android:layout_width="@dimen/location_icon_size"
+                    android:layout_height="@dimen/location_icon_size"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/pic"
+                    android:src="@drawable/location"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:id="@+id/location"
+                    android:textColor="@color/grey"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:singleLine="true"
+                    android:lines="1"
+                    android:scrollHorizontally="true"
+                    android:ellipsize="end"
+                    android:layout_toRightOf="@+id/pic"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_below="@+id/description"
+                android:id="@+id/second">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New Text"
+                    android:textColor="@color/actionbar_second"
+                    android:id="@+id/description2"
+                    android:layout_marginLeft="@dimen/left_text_margin"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/infobar"
+            android:id="@+id/line2"
+            android:background="@color/list_separator" />
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/line2"
+            android:id="@+id/scrollView">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Aprasas"
+                    android:textColor="@color/actionbar_second"
+                    android:id="@+id/about"
+                    android:layout_marginLeft="@dimen/left_text_margin"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_centerHorizontal="true"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

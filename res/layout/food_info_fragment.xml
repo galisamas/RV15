@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:layout_height="match_parent">
+
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="168dp"
+            android:id="@+id/imageView3"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"/>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/imageView3"
+            android:id="@+id/line1"
+            android:layout_marginBottom="@dimen/left_text_margin"
+            android:background="@color/list_separator" />
+    <ImageView
+            android:layout_width="@dimen/social_icon_size"
+            android:layout_height="@dimen/social_icon_size"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/line1"
+            android:layout_above="@+id/line2"
+            android:layout_marginRight="@dimen/artists_alarm_margin"
+            android:src="@null"
+            android:id="@+id/imageFb"/>
+
+    <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line1">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pavadinimas"
+                android:id="@+id/textView3"
+                android:layout_marginLeft="@dimen/left_text_margin"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/actionbar_second"
+                android:textSize="30dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/header"
+            android:id="@+id/place"
+            android:layout_marginLeft="@dimen/left_text_margin"
+            android:layout_marginTop="-7dp"
+            android:layout_toRightOf="@+id/description">
+
+        <ImageView
+                android:layout_width="@dimen/location_icon_size"
+                android:layout_height="@dimen/location_icon_size"
+                android:layout_centerVertical="true"
+                android:id="@+id/pic"
+                android:src="@drawable/location"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FoodCourt"
+                android:id="@+id/location"
+                android:textColor="@color/grey"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_toRightOf="@+id/pic"/>
+    </RelativeLayout>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/place"
+            android:id="@+id/line2"
+            android:layout_marginTop="@dimen/left_text_margin"
+            android:background="@color/list_separator" />
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/line2"
+            android:id="@+id/scrollView">
+
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Aprasas"
+                    android:textColor="@color/actionbar_second"
+                    android:id="@+id/about"
+                    android:layout_marginLeft="@dimen/left_text_margin"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_centerHorizontal="true"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

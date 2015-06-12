@@ -1,0 +1,94 @@
+{
+	"notifications":[
+	{
+	"id": 0,
+	"title": "Atidaromi vartai į festivalį",
+	"day": 1,
+	"start_time": "17/00"
+	},
+	{
+	"id": 1,
+	"title": "Startuoja Silent Disco!",
+	"day": 1,
+	"start_time": "19/00"
+	},
+	{
+	"id": 2,
+	"title": "Curly Music pradeda Main Stage'o pasirodymus",
+	"day": 1,
+	"start_time": "21/00"
+	},
+	{
+	"id": 3,
+	"title": "SUPERSONIC? Sono iš Vokietijos - live @ main stage!",
+	"day": 1,
+	"start_time": "23/30"
+	},
+	{
+	"id": 4,
+	"title": "Norisi truputi tamsiau? Silent Disco palapinėje pradedame Techno stage programą!",
+	"day": 1,
+	"start_time": "24/00"
+	},
+	{
+	"id": 5,
+	"title": "SO FREAKIN TIGHT! Pagrindėje scenoje pasirodo Tough Love!",
+	"day": 1,
+	"start_time": "24/30"
+	},
+	{
+	"id": 6,
+	"title": "Ačiū jums už puikią pirmą dieną! dabar šiek tiek pailsim ir 11:00 val. susitinkame paplūdimyje!",
+	"day": 1,
+	"start_time": "29/00"
+	},
+	{
+	"id": 7,
+	"title": "Labas rytas! už pusvalandžio pradedame @ beach stage, o dabar eik registruotis į sporto varžybas INFO CENTRE.",
+	"day": 2,
+	"start_time": "10/30"
+	},
+	{
+	"id": 8,
+	"title": "Jau už 30 minučių Silent Disco palapinėje pasirodo Humoro Klubas, būsi?",
+	"day": 2,
+	"start_time": "14/30"
+	},
+	{
+	"id": 9,
+	"title": "Liko 30 minučių iki G&G pasirodymo @ main stage bei Silent Disco darbo pradžios. nežiopsok ir eik šokti.",
+	"day": 2,
+	"start_time": "18/30"
+	},
+	{
+	"id": 10,
+	"title": "Už pusvalandžio pagrindinėje scenoje - CHRIS LAKE, o Silent Disco palapinėje - REMBO MUSIC STAGE startas.",
+	"day": 2,
+	"start_time": "22/30"
+	},
+	{
+	"id": 11,
+	"title": "Kad ir ką dabar veiki - mesk ir eik link pagrindinės scenos! už pusvalandžio į ją lips RADISTAI.",
+	"day": 2,
+	"start_time": "25/30"
+	},
+	{
+	"id": 12,
+	"title": "Primename, jog darbą baigus paskutinei scenai, REMBO MUSIC stage veiks iki ryto!",
+	"day": 2,
+	"start_time": "28/00"
+	},
+	{
+	"id": 13,
+	"title": "Broliai ir sesės, būkit supratingi, pasirūpinkite šiukšlėmis aplink save.",
+	"day": 3,
+	"start_time": "11/00"
+	},
+	{
+	"id": 14,
+	"title": "AČIŪ JUMS! Pasimatom kitąmet?",
+	"day": 3,
+	"start_time": "17/00"
+	}
+	]
+}

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.itworks.festapp"
+          android:versionCode="1"
+          android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="15"
+              android:targetSdkVersion="21"
+            />
+
+
+    <!-- Permissions -->
+    <permission
+            android:name="info.androidhive.googlemapsv2.permission.MAPS_RECEIVE"
+            android:protectionLevel="signature" />
+
+    <uses-permission android:name="info.androidhive.googlemapsv2.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- Required to show current location -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <permission android:protectionLevel="signature"
+                android:name="com.itworks.festapp.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.itworks.festapp.permission.C2D_MESSAGE" />
+
+    <!-- Required OpenGL ES 2.0. for Maps V2 -->
+    <uses-feature
+            android:glEsVersion="0x00020000"
+            android:required="true" />
+
+
+    <application android:label="@string/app_name"
+                 android:theme="@android:style/Theme.Holo.Light"
+                 android:icon="@drawable/ic_launcher"
+                 android:allowBackup="true"
+                 android:name=".MyApplication">
+
+
+        <meta-data android:name="com.google.android.gms.version"
+                   android:value="@integer/google_play_services_version" />
+
+        <activity android:name=".MyActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".menu.MenuActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@android:style/Theme.Holo.Light.NoActionBar">
+
+        </activity>
+
+        <activity android:name=".artists.ArtistsActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".stages.StagesActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".map.TerritoryActivity"
+                  android:theme="@android:style/Theme.Holo.Light.NoActionBar"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".games.GamesActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".food.FoodActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".info.InfoActivity"
+                  android:screenOrientation="portrait"/>
+        <activity android:name=".ComingSoonActivity"
+                  android:screenOrientation="portrait"/>
+
+        <meta-data android:name="AA_DB_NAME" android:value="Pickrand.db" />
+        <meta-data android:name="AA_DB_VERSION" android:value="5" />
+        <meta-data android:name="AA_MODELS"
+                android:value="com.itworks.festapp.models.ArtistNotificationModel" />
+        <meta-data
+                android:name="com.google.android.maps.v2.API_KEY"
+                android:value="AIzaSyA7MR2r9jKsMfJnsfC6gZnJAQAoiURHB3I" />
+
+        <receiver android:name=".helpers.NotificationReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <service android:name=".helpers.NotificationIntentService"
+                 android:exported="false"/>
+
+
+
+        <service android:name="com.parse.PushService" />
+        <receiver android:name="com.parse.ParseBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.parse.ParsePushBroadcastReceiver"
+                  android:exported="false">
+            <intent-filter>
+                <action android:name="com.parse.push.intent.RECEIVE" />
+                <action android:name="com.parse.push.intent.DELETE" />
+                <action android:name="com.parse.push.intent.OPEN" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.parse.GcmBroadcastReceiver"
+                  android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.itworks.festapp" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+</manifest> 

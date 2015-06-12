@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RadistaiVillage</string>
+
+    <string name="mk_stages">Scenos</string>
+    <string name="mk_food">Maistas</string>
+    <string name="mk_info">Informacija</string>
+    <string name="mk_map">Žemėlapis</string>
+    <string name="mk_artists">Atlikėjai</string>
+    <string name="mk_games">Pramogos</string>
+
+    <string name="menu_bottom_name1">DABAR:</string>
+    <string name="menu_bottom_name2">TOLIAU:</string>
+    <string name="menu_bottom_title">ANT SCENOS LIPA</string>
+
+    <string name="toast_start">Užstatytas priminimas 10 minučių prieš atlikėjo pasirodymą</string>
+    <string name="toast_cancel">Priminimas atšauktas</string>
+    <string name="toast_warning">Prašome įsirašyti žemėlapio programėlę</string>
+    <string name="link_text">Įsigyk bilietą čia!</string>
+
+    <!-- Timetables strings -->
+    <string-array name="tabs_icons">
+        <item>@drawable/stage_main</item>
+        <item>@drawable/stage_beach</item>
+        <item>@drawable/stage_silent</item>
+    </string-array>
+
+    <string-array name="tabs_names">
+        <item >Main   \r\n stage</item>
+        <item >Beach  \r\n stage</item>
+        <item >Silent \r\n stage</item>
+    </string-array>
+
+    <string-array name="info_list_names">
+        <item >Kaip atvykti?</item>
+        <item >Taisyklės</item>
+        <item >Istorija</item>
+        <item>Daryti - Nedaryti</item>
+        <item>Ką pasiimti?</item>
+        <item>Parkavimas</item>
+        <item>Bilietai</item>
+        <item>Kas per FestApp?</item>
+        <item>Apie ItWorks</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,414 @@
+{
+	"artists":[
+  {	
+	"id": 0,
+	"title": "CURLY MUSIC",
+	"about": "It's all about the music! New music! Vytautas Morkus. Svarbiausias savaitės preparty su Vytautu Morkum penktadieniais nuo 22 iki 24 val. per ZIP FM.", 
+	"notification": true, 
+	"link_facebook": "https://www.facebook.com/Curlymusic",
+	"link_soundcloud": "https://soundcloud.com/curlymusicblog",
+	"link_youtube": "",
+	"link_spotify": "",
+	"origin": "LT"
+  },
+  {	
+	"id": 1,
+	"title": "KASTIS B2B DONATELLO",
+	"about": "",  
+	"notification": false, 
+	"link_facebook": "",
+	"link_soundcloud": "",
+	"link_youtube": "",
+	"link_spotify": "",
+	"origin": "LT"
+  },
+  {	
+	"id": 2,
+	"title": "SONO",
+	"about": "",  
+	"notification": true, 
+	"link_facebook": "",
+	"link_soundcloud": "",
+	"link_youtube": "http://youtu.be/woYH_zp8RcU",
+	"link_spotify": "",
+	"origin": "DE"
+  },
+  {	
+	"id": 3,
+	"title": "IGNAS",
+	"about": "",
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/IgnasOfficial",
+	"link_soundcloud": "https://soundcloud.com/ignas/",
+	"link_youtube": "",
+	"link_spotify": "",
+	"origin": "LT"
+  },
+  {	
+	"id": 4,
+	"title": "TOUGH LOVE",
+	"about": "London based duo ‘Tough Love’ have rapidly risen through the ranks of the house scene over the last three years. Their distinct productions together with energetic and bass-heavy DJ sets have created a cult following of hard-core fans across the UK and beyond. Their sound instantly recognisable in their production can be described as bass infused House with plenty of 90s R&B and Garage references and hard-hitting groove.",
+	"notification": true, 
+	"photo_name": "",
+	"link_facebook": "https://www.facebook.com/toughlovemusic",
+	"link_soundcloud": "https://soundcloud.com/toughlovemusic",
+	"link_youtube": "https://youtu.be/QNsPI6V4Iec",
+	"link_spotify": "https://play.spotify.com/album/4LGnEKDDNjLuz2QQLcntON",
+	"origin": "UK"
+  },
+  {	
+	"id": 5,
+	"title": "DIRTY KIDZ",
+	"about": "Ilgai brendęs ir pagaliau pribrendęs charizmatiškas DJ-ėjų projektas.",
+	"notification": false, 
+	"link_facebook": "www.facebook.com/djdirtykidz",
+	"link_soundcloud": "https://soundcloud.com/dirty-kidz",
+	"link_youtube": "",
+	"link_spotify": "",
+	"origin": "LT"
+  },
+  {	
+	"id": 6,
+	"title": "SILENT MELODY",
+	"about": "Gytis Judys & Ignas Klėjus", 
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/SilentMelodyMusic",
+	"link_soundcloud": "https://soundcloud.com/silentmelodymusic",
+	"link_youtube": "",
+	"link_spotify": "",
+	"origin": "LT"
+  },
+  {	
+	"id": 7,
+	"title": "JUSTY B2B KIDMAN",
+	"about": "Justinas Žvigas & Benas Čereškevičius", 
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/JustyOfficial",
+	"link_soundcloud": "https://soundcloud.com/kidman",
+	"link_youtube": "https://www.youtube.com/channel/UCE-y_YS_YYy_0J8wjt5bcSg",
+	"link_spotify": "",
+	"origin": "LT"
+  },
+  {	
+	"id": 8,
+	"title": "MAMANIA",
+	"about": "DJ Mamania is a hip hop DJ in the Baltic region and he is a member of Lithuanian hip hop band, called G&G Sindikatas, which received numerous music awards and went on an international concert tour in 2003, giving concerts in Latvia, Estonia and Poland.
+Tru school lithuanian hip-hop dj/turntablist. With big love to the music, DJ Mamania started Dj’ing already in 1992. The first breath of freedom for our country Lithuania brought us a big variety of music and great amount of music styles and influences to choose from. ",
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/djmamania",
+	"link_soundcloud": "https://soundcloud.com/djmamania",
+	"link_youtube": "https://www.youtube.com/channel/UCCC7cUIDGQujnSqyhEGDH2w",
+	"link_spotify": "",
+	"origin": "LT"
+  },
+  {	
+	"id": 9,
+	"title": "EVONII B2B MONOSEL",
+	"about": "Laimonas Griciūnas & Saulius Jurgelevičius",  
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/EvoniiOfficial",
+	"link_soundcloud": "https://soundcloud.com/evonii",
+	"link_youtube": "",
+	"link_spotify": "",
+	"origin": "LT"
+  },
+  {	
+	"id": 10,
+	"title": "KANDY KILLERS",
+	"about": "",  
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/kandykillers",
+	"link_soundcloud": "https://soundcloud.com/kandykillers",
+	"link_youtube": "http://youtu.be/yajL6y6xBuk",
+	"link_spotify": "",
+	"origin": "LT"
+  },
+  {	
+	"id": 11,
+	"title": "RECOCO B2B ANNA HANNA",
+	"about": "", 
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/djannahanna",
+	"link_soundcloud": "https://soundcloud.com/naktiniai-pauksciai/anna-hanna-resolute-at-naktiniai-pauksciai",
+	"link_youtube": "",
+	"link_spotify": "",
+	"origin": "LT"
+  },
+  {	
+	"id": 12,
+	"title": "FEW NOLDER",
+	"about": "Linas Strockis aka Few Nolder first emerged back in 2006 when Lithuanian label Partyzanai released his debut ‘Patterns EP’ a melting pot of black techno magic. This led to his next release ‘No Mo’ getting picked up by Mike Paradinas’ highly regarded Planet Mu and a debut self­titled album was soon to follow in 2009 to critical acclaim.
+
+Among many exciting artistic projects, Linas has been involved in the XYZ Opera performance project (since 2010) where the most talented Lithuanian opera singers together with prominent electronic music composers/artists create a unique show with visuals. Linas also started a slow balearic disco project New Found Land in 2009, played synth in an electronic indie cabaret band Adomas & the Mittens in 2011 and recently co­founded a pop electronic duo Dunes of Gold
+
+With live gigs throughout Lithuania and all across Europe, varied original productions (Boso, Connaisseur, Planet Mu, Silence etc) unexpected co­productions, genre bending remixes, and dynamic work with electronic operas and ballets – the last few years have been an adventurous ride. ‘Clouds’ should be the impetus to catapult Few Nolder onto the global stage.",  
+	"notification": false, 
+	"photo_name": "",
+	"link_facebook": "https://www.facebook.com/fewnolder",
+	"link_soundcloud": "https://soundcloud.com/fewnolder",
+	"link_youtube": "",
+	"link_spotify": "",
+	"origin": "LT"
+  },
+  {	
+	"id": 13,
+	"title": "G&G SINDIKATAS",
+	"about": "Viskas prasidėjo 1988-aisiais, byrant TSRS. Mažėjant ‘supuvusio kapitalizmo’ kontrolei, per sieną sunkėsi vis daugiau informacijos apie Vakaruose gyvuojančias kultūras ir subkultūras, bei jaunimui svarbiausią jų sudėtinę dalį – muziką. Viena tokių subkultūrų ¬– hiphopas, – o būtent su šiuo reiškiniu susijusi ‘Sindikato’ gyvastis, suleidžia šaknis ir pas mus. Tiesa, pačioje pradžioje jos pasekėjus suskaičiuoti būtų pakakę dviženklio skaičiaus per visą motinėlę Lietuvą, bet palaipsniui tas skaičius tendencingai augo. Šis didėjimas galų gale virto vadinamąja ‘pirmąja banga’, savotiška mada. Hiphopą propaguojančio jaunimėlio buvo nemažai, tačiau daugelis, keičiantis muzikos stilių dominavimui, keitė ir savo įvaizdį gatvės visuomenėje. Laikas bėgo, banga nuslopo, tačiau tikrieji, tie, kurių širdžių ritmas iš tikro plakė į bytą, liko...",  
+	"notification": true, 
+	"link_facebook": "https://www.facebook.com/sindikatosmogikai",
+	"link_soundcloud": "https://soundcloud.com/sindikatosmogikai",
+	"link_youtube": "https://www.youtube.com/channel/UCEG7DFnITpqvRjVuyqurUHQ",
+	"link_spotify": "",
+	"origin": "LT"
+  },
+  {	
+	"id": 14,
+	"title": "JUSTINAS JARUTIS",
+	"about": "Užimtas…", 
+	"notification": false, 
+	"link_facebook": "", 
+	"link_soundcloud": "", 
+	"link_youtube": "http://youtu.be/XSeCNLdDalg", 
+	"link_spotify": "", 
+	"origin": "LT"
+  },
+  {	
+	"id": 15,
+	"title": "EMBODY",
+	"about": "", 
+	"notification": false, 
+	"photo_name": "",
+	"link_facebook": "https://www.facebook.com/iamembody",
+	"link_soundcloud": "https://soundcloud.com/iamembody",
+	"link_youtube": "http://youtu.be/qYdls1keLvU",
+	"link_spotify": "",
+	"origin": "UK"
+  },
+  {	
+	"id": 16,
+	"title": "DJ ANNY",
+	"about": "",  
+	"notification": false, 
+	"photo_name": "",
+	"link_facebook": "https://www.facebook.com/djannyofficial",
+	"link_soundcloud": "https://soundcloud.com/dj_anny",
+	"link_youtube": "http://youtu.be/CBzT4Xjkwzo",
+	"link_spotify": "",
+	"origin": "UA"
+  },
+  {	
+	"id": 17,
+	"title": "CHRIS LAKE",
+	"about": "Chris Lake taps into a singular spirit evocative of dance music's golden age by infusing funked-out grooves and natural instrumentation into decidedly modern house. It's a sonic aesthetic that instantly incites movement and has established him as a trailblazer in the electronic dance music world. That perspective also set the stage for his forthcoming full-length debut available on Ultra Music in 2014.",  
+	"notification": true, 
+	"link_facebook": "https://www.facebook.com/chrislake",
+	"link_soundcloud": "https://soundcloud.com/chrislake",
+	"link_youtube": "https://youtu.be/yVDuJBBr-Oc",
+	"link_spotify": "https://play.spotify.com/artist/5Igpc9iLZ3YGtKeYfSrrOE",
+	"origin": "UK"
+  },
+  {	
+	"id": 18,
+	"title": "PHILIP GEORGE",
+	"about": "Hello. My name is Philip George, 21, and I make house music with a spoon. Don't expect any specific style of house cause I like to create everything.",  
+	"notification": true, 
+	"link_facebook": "https://www.facebook.com/philipgeorgeuk",
+	"link_soundcloud": "https://soundcloud.com/philipgeorgeuk",
+	"link_youtube": "http://youtu.be/d7ypnPjz81I",
+	"link_spotify": "https://play.spotify.com/artist/0Q9slhIaEgg190iG8udYIV",
+	"origin": "UK"
+  },
+  {	
+	"id": 19,
+	"title": "RADISTAI",
+	"about": "Beprotiškai populiarūs ir beprotiškai SAVI! Jonas Nainys ir Rolandas Mackevičius, sujungę aštroką humoro jausmą, meilę šokių muzikai, įkvėpti bičiuliško ir betarpiško bendravimo su savo klausytojais, tapo bene ryškiausiais XXI amžiaus lietuviškojo radijo eterio herojais. Maža to: užvedėjai Radistai – tai kone gyvenimo būdas, apimantis išties nekuklų veiklos spektrą.
+
+Dueto, paskui kurį ilgainiui patraukė šimtai tūkstančių gerbėjų, ‘kelrode žvaigždė’ tapo Ernestas Janušas, paskatinęs susikurti originalų įvaizdį, charakterį ir tapti išskirtinėmis radijo asmenybėmis. Radistai radijui sugrąžino personažus, ir neilgai trukus išaugo savo autorinės laidos rėmus.
+
+Garbė vesti didžiausius šalyje muzikinius apdovanojimus M.A.M.A., motyvacinės paskaitos universitetuose, ‘nuosavas’ muzikos festivalis, minios gerbėjų ir neišsenkančios vidinės baterijos stebinti, džiuginti ir džiaugtis gyvenimu patiems! ‘Užvedėjai’ Radistai nestabdo NIE-KA-DA.",  
+	"notification": true, 
+	"photo_name": "",
+	"link_facebook": "https://www.facebook.com/radistai.zipfm",
+	"link_soundcloud": "",
+	"link_youtube": "http://youtu.be/oLeg2L5PyNY",
+	"link_spotify": "",
+	"origin": "LT"
+  },
+  {	
+	"id": 20,
+	"title": "GILE",
+	"about": "",  
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/gilemusic",
+	"link_soundcloud": "https://soundcloud.com/djqutie",
+	"link_youtube": "",
+	"link_spotify": "",
+	"origin": "LT"
+  },
+  {	
+	"id": 21,
+	"title": "SAMANTA",
+	"about": "Samanta - pirmoji mergina patekusi į ‘Burn Residency’ DJ Baltijos šalių finalo penketuką. Atradusi save subtiliose tech house bei tamsiose techno variacijose, savo muzikine laisve sėkmingai dalinosi 'Karklės' bei 'Summer Music LT' festivaliuose,  Vilniaus, Kauno bei Klaipėdos naktiniuose klubuose. Ne kartą grojusi su skambiausiais Lietuvos klubinės kultūros vardais Kasčiu Torrau, Mindaugėliu, Donatello, Virus J, Jovani, Anna Hanna, užsieniečiais Eric Paquet, Samuel Tange, Jewel Kid ir kitais, Samanta nededa taško ir nesidangsto žinomais vardais – muzikai ribų nėra. Vis dažniau savo mix‘ais džiuginanti Zip FM radijo klausytojus SAMANTA pasiruošusi stebinti ir susirinkusius šokių aikštelėse! Samanta Savickytė.",  
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/SamantaOfficialPage",
+	"link_soundcloud": "https://soundcloud.com/djsamanta",
+	"link_youtube": "",
+	"link_spotify": "",
+	"origin": "LT"
+  },
+  {	
+	"id": 22,
+	"title": "SIMONA BANDITA",
+	"about": "Ji kūrybinga. Todėl kiekvieną dieną TAU dovanos savo gamintus prizus.
+Ji mėgsta gaminti. Todėl kartą į savaitę TU valgysi jos keptą pyragą.
+Ji svajoja. Todėl svajosi ir TU. 
+Ji labai smalsi. Todėl nori išbandyti viską. Net gi TAVE!",  
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/SimonaBandita",
+	"link_soundcloud": "https://soundcloud.com/curlymusicblog/morkus-simona-bandita-curly",
+	"link_youtube": "",
+	"link_spotify": "",
+	"origin": "LT"
+  },
+  {	
+	"id": 23,
+	"title": "ST STEREO",
+	"about": "It's hard not to admire his technical skills, passion for music and interaction with audience when looking at this guy playing. The reason for that is quite simple – St. Stereo definitely has the DJ’s gene in his body.
+
+His dad was a local disk jockey and owner of a small club in Lithuanian resort Druskininkai. Junior stayed near him all the time and the first time he put on his headphones was when he was only 12. Soon he found himself spending every weekend at the decks spinning for dancers who were a few decades older.
+
+After a couple of years of such residency young and talented boy was spotted by his native country club scene heroes – Vidis and Tomas Boo invited him to play in a few parties in the capital Vilnius.
+
+He has been playing for more than 10 years now, shared decks with such great artists as Groove Armada, Booka Shade, Alexander Robotnick, Lovebirds, Pete Herbert, Crazy P, performed in biggest local festivals, craziest underground raves and coziest beach parties. What's next? You never know, sky is not a limit.", 
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/Ststereolt",
+	"link_soundcloud": "https://soundcloud.com/ststereo",
+	"link_youtube": "",
+	"link_spotify": "",
+	"origin": "LT"
+  },
+  {	
+	"id": 24,
+	"title": "METRIKK AVENUE",
+	"about": "", 
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/metrikkavenue",
+	"link_soundcloud": "https://soundcloud.com/metrikkavenue",
+	"link_youtube": "",
+	"link_spotify": "",
+	"origin": "LT"
+  },
+  {	
+	"id": 25,
+	"title": "ANDYSOUL",
+	"about": "Andysoul - jaunas, visada puikios nuotaikos Dj, jau ketvirti metai šokdinantis klubinio gyvenimo pasiilgusius žmones. Kiekvienas grojimas jam, lyg maža šventė. Atsidavimas darbui - pirmoje vietoje. Tai DJ, kuris savo grojama muzika, stengiasi pašokdinti kiekvieną klubo lankytoją. Tai žmogus, kuriam darbo valandos savaitgaliais negalioja Praleidęs vasarą Mojo Lounge Palanga, Andysoul kelia savo DJ karierą laipteliu aukščiau. Bendrauti su žmonėmis mėgstantis klubino gyvenimo atstovas,  pasiruošęs atiduoti save Mojo Lounge Vilniaus publikai.", 
+	"notification": false, 
+	"photo_name": "",
+	"link_facebook": "https://www.facebook.com/Andysoul.Official",
+	"link_soundcloud": "",
+	"link_youtube": "",
+	"link_spotify": "",
+	"origin": "LT"
+  },
+  {	
+	"id": 26,
+	"title": "TITAS & JOVANI", 
+	"about": "", 
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/jovani.at.club",
+	"link_soundcloud": "https://soundcloud.com/jovani_at_club",
+	"link_youtube": "",
+	"link_spotify": "",
+	"origin": "LT"
+  },
+  {	
+	"id": 27,
+	"title": "G SPOT DJs",
+	"about": "DJ duo with refined taste in House music, and party animals 4 life. // Duetas su išskirtiniu dėmesiu House muzikai, visiški ‘vakarėlių liūtai’!", 
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/gspotdjsofficial",
+	"link_soundcloud": "https://soundcloud.com/gspotdjs",
+	"link_youtube": "",
+	"link_spotify": "",
+	"origin": "LT"
+  },
+  {	
+	"id": 28,
+	"title": "REMBO MUSIC",
+	"about": "K: Kas čia?
+		A: Tai yra muzikos blogas.
+		K: Iš kur muzika?
+		A: Iš mp3 grotuvo.
+		K: Kodėl Rembo?
+		A: Tai yra jo mp3 grotuvas.
+	", 
+	"notification": true, 
+	"link_facebook": "https://www.facebook.com/rembomusic",
+	"link_soundcloud": "https://soundcloud.com/rembomusic",
+	"link_youtube": "",
+	"link_spotify": "",
+	"origin": "LT"
+  },
+  {	
+	"id": 29,
+	"title": "MARKAS",
+	"about": "Markas is a new name of House, G- House, Deep House music genres in Lithuania. He began his musical career with his first song 'Love' in 2012. This track was selected to the Berlin group ‘Booka Shade’ music album and also was included on Beatport charts – known as one of the world’s largest online music store specializing in electronic music and culture.
+
+Currently, Markas is resident at popular Lithuanian radio show and music blog – ‘REMBO music’. but also works with ‘MTA records’, ‘Loulou records’, ‘Clouded Vision’ ‘Kumasi Music’ and others. His latest release debuted on well-known electronic music records company ‘MTA Records’ owned by duo Chase & Status. 
+
+Markas Paplauskas", 
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/MarkasMusic",
+	"link_soundcloud": "",
+	"link_youtube": "",
+	"link_spotify": "",
+	"origin": "LT"
+  },
+  {	
+	"id": 30,
+	"title": "THING",
+	"about": "Half German, half Lithuanian - Thing (born Alex Krell, 1991.06.09) is a DJ/Producer now based in Lithuania, Vilnius. 
+
+After being in a couple different music projects with different music genres in late 2011 Thing came up as a solo project. CRUX records describes him like that: ‘He is a non stop musical genius and his productions and musical choices are evidence!’. 
+
+His first EP ‘Cream’ was released on Silver Wave records which was perfect place where to start. He recently gained support from bigger names. EP also included a remix by a Belgian DJ/Producer - Ntology.", 
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/thingofficial",
+	"link_soundcloud": "https://soundcloud.com/thingofficial",
+	"link_youtube": "",
+	"link_spotify": "",
+	"origin": "LT"
+  },
+  {	
+	"id": 31,
+	"title": "AFFKT",
+	"about": "Hailing from the Spanish mainland is a sound that’s resonating globally thanks to a choice select of tastemakers that are driving through the boundaries set out by their mediums. A notable character from that sub-culture of game-changers is Marc Martinez Nadal, aka AFFKT, who has been a driving force behind a colorful & empowering sound that is refined by his drive for perfection.
+Having worked on coining the sound of this alias since 2008, it has been a plethora of sound, place, person & culture that has provided a platform for AFFKT to experiment with his output. Serving electronica crossover masterpieces that delve into the many sub-genre’s of house music via key imprints such as Suara, and his very own Sincopat label, and expressing versatility digging deep into his influences of the local by delivering heart-stopping, engaging techno on the likes of Kling Klong & Noir Music, AFFKT has committed to a life of synthesis and this is what sets himself apart from a comparatively shallow glance at dance music. 
+Once described as a ‘Son Of A Thousand Sounds’, AFFKT has evolved to a career peak where he has surpassed expectation and enjoyed praise from his peers. Cutting through the ranks, his path has retained an essence of so many that have influenced him, he now sits shoulder to shoulder in skill & presence. ", 
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/AFFKT",
+	"link_soundcloud": "https://soundcloud.com/affkt",
+	"link_youtube": "http://www.youtube.com/user/sincopatmusic",
+	"link_spotify": "",
+	"origin": "ES"
+  },
+  {	
+	"id": 32,
+	"title": "MATTEO FLORIS",
+	"about": "Barcelona-based italian Matteo Floris was born in Cagliari (Sardinia, Italy) in 1986. 
+He started clubbing when he was very young, growing his passion for music since he began playing live drums / percussions at house parties.
+
+Few years later he started selecting and mixing his favourite tracks on his own sets, ranging between house, minimal and deep techno sonority.
+
+After that he gained his interest in producing creating his personal sound skills, combining loads of drums and percussion with vocals cuts, deep atmospheres, strong basslines, minimal and ambient effects. As a dancer, he always tries to valorise the rhythm, which is the main element of his style.
+
+Now he’s running his own record label, Svogue Muziq, working as A&R and manager.", 
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/MatteoFlorisMuziq",
+	"link_soundcloud": "https://soundcloud.com/matteo-floris",
+	"link_youtube": "",
+	"link_spotify": "",
+	"origin": "ES"
+  }
+]
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="menu_image_size">100dp</dimen>
+    <dimen name="menu_button_margins">10dp</dimen>
+    <dimen name="artists_alarm_margin">16dp</dimen>
+    <dimen name="artists_list_margin">8dp</dimen>
+    <dimen name="left_text_margin">10dp</dimen>
+    <dimen name="social_icon_bottom_margin">6dp</dimen>
+    <dimen name="social_icon_size">35dp</dimen>
+    <dimen name="location_icon_size">12dp</dimen>
+
+</resources>

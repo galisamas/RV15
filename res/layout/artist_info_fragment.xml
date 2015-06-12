@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:id="@+id/background"
+                android:layout_height="match_parent">
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="168dp"
+            android:id="@+id/imageView3"
+            android:layout_alignParentTop="true"/>
+        <ImageView
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/artists_alarm_margin"
+                android:id="@+id/flag"/>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/imageView3"
+            android:id="@+id/line1"
+            android:background="@color/list_separator" />
+<RelativeLayout
+        android:id="@+id/infobar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/left_text_margin"
+        android:layout_marginBottom="@dimen/left_text_margin"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/line1">
+    <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/artists_alarm_margin"
+            android:src="@drawable/alarm_off"
+            android:id="@+id/alarm"/>
+
+    <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/alarm">
+
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:textColor="@color/actionbar_second"
+                android:id="@+id/textView3"
+                android:layout_marginLeft="@dimen/left_text_margin"
+                android:layout_alignParentLeft="true"
+                android:textSize="30dp"/>
+
+    </RelativeLayout>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textColor="@color/actionbar_second"
+            android:id="@+id/description"
+            android:layout_marginLeft="@dimen/left_text_margin"
+            android:layout_marginTop="-7dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_below="@+id/header"/>
+
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/header"
+            android:layout_marginTop="-7dp"
+            android:id="@+id/place"
+            android:layout_marginLeft="@dimen/artists_list_margin"
+            android:layout_toRightOf="@+id/description">
+
+        <ImageView
+                android:layout_width="@dimen/location_icon_size"
+                android:layout_height="@dimen/location_icon_size"
+                android:layout_centerVertical="true"
+                android:id="@+id/pic"
+                android:src="@drawable/location"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:id="@+id/location"
+                android:textColor="@color/grey"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_toRightOf="@+id/pic"/>
+    </RelativeLayout>
+
+        <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="-7dp"
+                android:layout_below="@+id/description"
+                android:id="@+id/second">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="New Text"
+                        android:textColor="@color/actionbar_second"
+                        android:id="@+id/description2"
+                        android:layout_marginLeft="@dimen/left_text_margin"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        />
+                <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/place2"
+                        android:layout_marginLeft="@dimen/artists_list_margin"
+                        android:layout_toRightOf="@+id/description2">
+
+                        <ImageView
+                                android:layout_width="@dimen/location_icon_size"
+                                android:layout_height="@dimen/location_icon_size"
+                                android:layout_centerVertical="true"
+                                android:id="@+id/pic2"
+                                android:src="@drawable/location"/>
+                        <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="location2"
+                                android:id="@+id/location2"
+                                android:textColor="@color/grey"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:layout_toRightOf="@+id/pic2"/>
+                </RelativeLayout>
+        </RelativeLayout>
+</RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/infobar"
+            android:id="@+id/line2"
+            android:background="@color/list_separator" />
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/line2"
+            android:layout_above="@+id/line3"
+            android:id="@+id/scrollView">
+
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/actionbar_second"
+                    android:id="@+id/about"
+                    android:layout_marginLeft="@dimen/left_text_margin"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_centerHorizontal="true"/>
+
+        </LinearLayout>
+    </ScrollView>
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@+id/links"
+            android:id="@+id/line3"
+            android:background="@color/list_separator" />
+    <LinearLayout
+            android:id="@+id/links"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="@dimen/social_icon_bottom_margin"
+            android:paddingTop="@dimen/social_icon_bottom_margin"
+            android:layout_height="wrap_content">
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/social_icon_size"
+                android:src="@null"
+                android:id="@+id/imageFb"/>
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/social_icon_size"
+                android:src="@null"
+                android:id="@+id/imageSoudcloud"/>
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/social_icon_size"
+                android:src="@null"
+                android:id="@+id/imageYoutube"/>
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/social_icon_size"
+                android:src="@null"
+                android:id="@+id/imageSpotify"/>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+        android:id="@+id/menu_background">
+
+        <ImageView
+                android:layout_width="80dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/radistaiLogo"/>
+        <ImageView
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:id="@+id/ziplogo"/>
+        <ImageView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_above="@+id/festLogo"
+                android:id="@+id/logo"/>
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_centerHorizontal="true"
+                android:layout_above="@+id/firstLine"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/festLogo"/>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_above="@+id/secondLine"
+                android:id="@+id/firstLine">
+                <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/button2"
+                        android:background="@drawable/stages_background"/>
+                <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/menu_button_margins"
+                        android:layout_marginRight="@dimen/menu_button_margins"
+                        android:background="@drawable/map_background"
+                        android:id="@+id/button4"/>
+                <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/sport_background"
+                        android:id="@+id/button6"/>
+
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/menu_button_margins"
+                android:layout_marginBottom="@dimen/menu_button_margins"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_above="@+id/bottomLine"
+                android:id="@+id/secondLine">
+
+                <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/artists_background"
+                        android:id="@+id/button"/>
+
+                <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/menu_button_margins"
+                        android:layout_marginRight="@dimen/menu_button_margins"
+                        android:background="@drawable/food_background"
+                        android:id="@+id/button3"/>
+                <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/info_background"
+                        android:id="@+id/button5"/>
+
+        </LinearLayout>
+        <fragment android:layout_width="320dp"
+                  android:layout_height="130dp"
+                  android:name="com.itworks.festapp.menu.MenuBottomFragment"
+                  android:layout_marginLeft="@dimen/menu_button_margins"
+                  android:layout_marginRight="@dimen/menu_button_margins"
+                  android:layout_centerHorizontal="true"
+                  android:layout_alignParentBottom="true"
+                  android:layout_marginBottom="@dimen/menu_button_margins"
+                  android:id="@+id/bottomLine"/>
+
+</RelativeLayout>
