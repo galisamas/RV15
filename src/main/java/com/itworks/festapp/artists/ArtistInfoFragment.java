@@ -32,12 +32,9 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Naglis on 2015-02-05.
- */
 public class ArtistInfoFragment extends Fragment implements View.OnClickListener {
 
-    private final String no_link = "No link";
+    private final String no_link = "No link"; // TODO refactor bendrus ir is String.xml ir lietuviskai
     private final String no_internet = "No internet connection";
     private final String artistInfoPref = "ArtistInfoPref";
     private final String key = "id";
@@ -70,7 +67,6 @@ public class ArtistInfoFragment extends Fragment implements View.OnClickListener
         place2 = (RelativeLayout) v.findViewById(R.id.place2);
         place2.setEnabled(true);
         location2 = (TextView) v.findViewById(R.id.location2);
-
         flag = (ImageView) v.findViewById(R.id.flag);
         alarm = (ImageView) v.findViewById(R.id.alarm);
         photo = (ImageView) v.findViewById(R.id.imageView3);
@@ -97,18 +93,15 @@ public class ArtistInfoFragment extends Fragment implements View.OnClickListener
         about.setText(artistModel.about);
         if(!timetables.isEmpty()) {
             description.setText(DateHelper.convertDateFWE(timetables.get(0).day + "/" + timetables.get(0).start_time));
-            place.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(getActivity(), TerritoryActivity.class);
-                    intent.putExtra("place_latitude", convertPlaceIdToLat(timetables.get(0).stageId));
-                    intent.putExtra("place_longitude", convertPlaceIdToLng(timetables.get(0).stageId));
-                    intent.putExtra("name", artistModel.title);
-                    intent.putExtra("snippet", description.getText());
-                    ArtistInfoFragment.this.startActivity(intent);
-                    place.setEnabled(false);
-                    place2.setEnabled(false);
-                }
+            place.setOnClickListener(v1 -> {
+                Intent intent = new Intent(getActivity(), TerritoryActivity.class);
+                intent.putExtra("place_latitude", convertPlaceIdToLat(timetables.get(0).stageId));
+                intent.putExtra("place_longitude", convertPlaceIdToLng(timetables.get(0).stageId));
+                intent.putExtra("name", artistModel.title);
+                intent.putExtra("snippet", description.getText());
+                ArtistInfoFragment.this.startActivity(intent);
+                place.setEnabled(false);
+                place2.setEnabled(false);
             });
             location.setText(convertPlaceIdToTitle(timetables.get(0).stageId));
             if (timetables.size() != 1) {
@@ -122,29 +115,21 @@ public class ArtistInfoFragment extends Fragment implements View.OnClickListener
                 second.requestLayout();
                 description2.setText(DateHelper.convertDateFWE(timetables.get(1).day + "/" + timetables.get(1).start_time));
                 location2.setText(convertPlaceIdToTitle(timetables.get(1).stageId));
-                place2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(getActivity(), TerritoryActivity.class);
-                        intent.putExtra("place_latitude", convertPlaceIdToLat(timetables.get(1).stageId));
-                        intent.putExtra("place_longitude", convertPlaceIdToLng(timetables.get(1).stageId));
-                        intent.putExtra("name", convertPlaceIdToTitle(timetables.get(1).stageId));
-                        intent.putExtra("snippet", description2.getText());
-                        ArtistInfoFragment.this.startActivity(intent);
-                        place.setEnabled(false);
-                        place2.setEnabled(false);
-                    }
+                place2.setOnClickListener(v1 -> {
+                    Intent intent = new Intent(getActivity(), TerritoryActivity.class); // TODO refactor iskelt nes virsuj tas pats
+                    intent.putExtra("place_latitude", convertPlaceIdToLat(timetables.get(1).stageId));
+                    intent.putExtra("place_longitude", convertPlaceIdToLng(timetables.get(1).stageId));
+                    intent.putExtra("name", artistModel.title);
+                    intent.putExtra("snippet", description2.getText());
+                    ArtistInfoFragment.this.startActivity(intent);
+                    place.setEnabled(false);
+                    place2.setEnabled(false);
                 });
             }
         }
         int photo_id = getResources().getIdentifier("b"+artistModel.id, "drawable", getActivity().getPackageName());
         imageLoader.displayImage("drawable://" + photo_id, photo);
-        background.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+        background.setOnClickListener(v1 -> {});
         title.setText(artistModel.title);
         int flag_id = getResources().getIdentifier(OriginHelper.getOriginDrawableTitle(artistModel.origin),
                 "drawable", getActivity().getPackageName());
@@ -161,33 +146,30 @@ public class ArtistInfoFragment extends Fragment implements View.OnClickListener
         if(artistNotificationModel.notification){
             imageLoader.displayImage("drawable://" + R.drawable.alarm_on, alarm);
         }
-        alarm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String toastText;
-                int imageId = R.drawable.alarm_on;
-                if(artistNotificationModel.notification){
-                    imageId = R.drawable.alarm_off;
-                    toastText = getString(R.string.toast_cancel);
-                    artistNotificationModel.notification = false;
-                    NotificationHelper.cancelAlarm(getActivity(), artistModel.id);
-                }else{
-                    artistNotificationModel.notification = true;
-                    toastText = getString(R.string.toast_start);
-                    for(TimetableModel timetable : timetables){
-                        String where = convertPlaceIdToWhere(timetable.stageId);
-                        NotificationHelper.setAlarm(getActivity(), artistModel.title, artistModel.id, true, where, timetable);
-                    }
+        alarm.setOnClickListener(v -> {
+            String toastText;
+            int imageId = R.drawable.alarm_on;
+            if(artistNotificationModel.notification){
+                imageId = R.drawable.alarm_off;
+                toastText = getString(R.string.toast_cancel);
+                artistNotificationModel.notification = false;
+                NotificationHelper.cancelAlarm(getActivity(), artistModel.id);
+            }else{
+                artistNotificationModel.notification = true;
+                toastText = getString(R.string.toast_start);
+                for(TimetableModel timetable : timetables){
+                    String where = convertPlaceIdToWhere(timetable.stageId);
+                    NotificationHelper.setAlarm(getActivity(), artistModel.title, artistModel.id, true, where, timetable);
                 }
-                Toast.makeText(getActivity().getApplicationContext(), toastText, Toast.LENGTH_LONG).show();
-
-                artistNotificationModel.save();
-                imageLoader.displayImage("drawable://" + imageId, alarm);
             }
+            Toast.makeText(getActivity().getApplicationContext(), toastText, Toast.LENGTH_LONG).show();
+
+            artistNotificationModel.save();
+            imageLoader.displayImage("drawable://" + imageId, alarm);
         });
     }
 
-    private void setTypefaces() {
+    private void setTypefaces() { // TODO refactor gaal
         Typeface futura = Typeface.createFromAsset(getActivity().getAssets(), "fonts/futura_condensed_medium.ttf");
         Typeface arial = Typeface.createFromAsset(getActivity().getAssets(), "fonts/arial_narrow.ttf");
         about.setTypeface(arial);
@@ -198,7 +180,7 @@ public class ArtistInfoFragment extends Fragment implements View.OnClickListener
         location2.setTypeface(futura);
     }
 
-    private void paintSocialIcons() {
+    private void paintSocialIcons() { // TODO refactor iskelt metoda kur bus if
         if(!artistModel.link_facebook.isEmpty())
             imageLoader.displayImage("drawable://" + R.drawable.social_fb, linkF);
         if(!artistModel.link_youtube.isEmpty())
@@ -210,7 +192,7 @@ public class ArtistInfoFragment extends Fragment implements View.OnClickListener
 
     }
 
-    private void openBrowser(String url){
+    private void openBrowser(String url){  // TODO refactor
         if(!url.isEmpty()){
             if(isNetworkAvailable()){
                 if (!url.startsWith("http://") && !url.startsWith("https://"))
@@ -225,7 +207,7 @@ public class ArtistInfoFragment extends Fragment implements View.OnClickListener
         }
     }
 
-    private boolean isNetworkAvailable() {
+    private boolean isNetworkAvailable() { // TODO refactor
         ConnectivityManager connectivityManager
                 = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
@@ -252,7 +234,7 @@ public class ArtistInfoFragment extends Fragment implements View.OnClickListener
         openBrowser(url);
     }
 
-    private String convertPlaceIdToWhere(int id){
+    private String convertPlaceIdToWhere(int id){ // TODO refactor visus 6
         for(int i =0;i< places.size();i++){
             if(places.get(i).id == id){
                 return places.get(i).where;

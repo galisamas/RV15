@@ -17,7 +17,7 @@ public class ArtistsActivity extends ActionBarActivity {
         setActionBar();
         fm = getSupportFragmentManager();
 
-        if (fm.findFragmentById(android.R.id.content) == null) {
+        if (fm.findFragmentById(android.R.id.content) == null) { // TODO refactor iskelti i teva ir perduoti fragmenta ir bundle kaskart
             ArtistsListAdapterFragment list = new ArtistsListAdapterFragment();
             Intent intent = getIntent();
             Bundle bundle = new Bundle();

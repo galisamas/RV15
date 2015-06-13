@@ -35,7 +35,7 @@ public class ArtistsListAdapterFragment extends ListFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-                mItems = new ArrayList<>();
+        mItems = new ArrayList<>();
         JSONHelper jsonHelper = new JSONHelper(getActivity());
         artists = jsonHelper.getArtistsFromJSON();
         Collections.sort(artists, new ArtistListComparator());
@@ -79,7 +79,7 @@ public class ArtistsListAdapterFragment extends ListFragment {
         openInfo(getArtistById(position));
     }
 
-    private void openInfo(ArtistModel artistModel){
+    private void openInfo(ArtistModel artistModel){ // TODO refactor iskelt
         FragmentManager fm = getActivity().getSupportFragmentManager();
         ArtistInfoFragment fragment = new ArtistInfoFragment();
         fragment.setArtistModel(artistModel);
@@ -91,7 +91,7 @@ public class ArtistsListAdapterFragment extends ListFragment {
 
     }
 
-    private ArtistModel getArtistById(int id){
+    private ArtistModel getArtistById(int id){ // TODO refactor iskelt
         ArtistModel artist = null;
         for(int i=0;i<artists.size();i++){
             if(id == artists.get(i).id){

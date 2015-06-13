@@ -76,7 +76,7 @@ public class ArtistsListAdapter extends ArrayAdapter<ArtistListItem> implements 
         ImageLoader imageLoader = ImageLoader.getInstance();
         imageLoader.displayImage("drawable://" + item.photoId ,viewHolder.ivIcon);
         viewHolder.tvTitle.setText(item.name);
-        Typeface futura = Typeface.createFromAsset(context.getAssets(), "fonts/futura_condensed_medium.ttf");
+        Typeface futura = Typeface.createFromAsset(context.getAssets(), "fonts/futura_condensed_medium.ttf"); // TODO refactor neturetu jo cia buti
         viewHolder.tvTitle.setTypeface(futura);
         return convertView;
     }
