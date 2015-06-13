@@ -36,8 +36,6 @@ public class NotificationReceiver extends BroadcastReceiver {
         int id = intent.getIntExtra("id",-1);
         /* Creates an explicit intent for an Activity in your app */
         Intent resultIntent = new Intent(context, MenuActivity.class);
-        resultIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | // TODO pas teti neveikia ant tlf. Reikia testuoti (cj reik perdaryti ant kazkokio naujesnio modelio)
-                Intent.FLAG_ACTIVITY_SINGLE_TOP);
         resultIntent.putExtra("isItArtist", intent.getBooleanExtra("isItArtist", true));
         resultIntent.putExtra("id", id);
         if(intent.getBooleanExtra("isItGeneral", false)){
