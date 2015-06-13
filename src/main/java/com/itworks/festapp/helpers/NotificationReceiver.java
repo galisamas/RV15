@@ -24,18 +24,20 @@ public class NotificationReceiver extends BroadcastReceiver {
         mBuilder.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
         mBuilder.setSmallIcon(R.drawable.ic_stat);
         mBuilder.setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_launcher));
-        mBuilder.setTicker("Paskubėk!");
         String name = intent.getStringExtra("name");
         if(!intent.getBooleanExtra("isItGeneral", false)){
             mBuilder.setContentTitle(name);
+            mBuilder.setTicker("Po 10 minučių " + intent.getStringExtra("where"));
             mBuilder.setContentText("Po 10 minučių " + intent.getStringExtra("where"));
         }else{
             mBuilder.setContentTitle("Radistai Village 2015");
+            mBuilder.setTicker(name);
             mBuilder.setContentText(name);
         }
         int id = intent.getIntExtra("id",-1);
         /* Creates an explicit intent for an Activity in your app */
         Intent resultIntent = new Intent(context, MenuActivity.class);
+        resultIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         resultIntent.putExtra("isItArtist", intent.getBooleanExtra("isItArtist", true));
         resultIntent.putExtra("id", id);
         if(intent.getBooleanExtra("isItGeneral", false)){

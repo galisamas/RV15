@@ -218,11 +218,43 @@
 	},
 	{
 	"id": 27,
-	"artist_id": 25,
+	"artist_id": 7,
 	"stage_id": 3,
-	"day": 1,
-	"start_time": "12/43",
-	"end_time": "15/00"
+	"day": 2,
+	"start_time": "23/00",
+	"end_time": "24/30"
+	},
+	{
+	"id": 28,
+	"artist_id": 32,
+	"stage_id": 3,
+	"day": 2,
+	"start_time": "24/30",
+	"end_time": "25/30"
+	},
+	{
+	"id": 29,
+	"artist_id": 28,
+	"stage_id": 3,
+	"day": 2,
+	"start_time": "25/30",
+	"end_time": "26/30"
+	},
+	{
+	"id": 30,
+	"artist_id": 31,
+	"stage_id": 3,
+	"day": 2,
+	"start_time": "26/30",
+	"end_time": "28/00"
+	},
+	{
+	"id": 31,
+	"artist_id": 30,
+	"stage_id": 3,
+	"day": 2,
+	"start_time": "28/00",
+	"end_time": "29/30"
 	}
 	]
 }

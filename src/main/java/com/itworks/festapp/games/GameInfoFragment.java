@@ -73,10 +73,9 @@ public class GameInfoFragment extends Fragment implements View.OnClickListener{
         place.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(getActivity(), TerritoryActivity.class);
                 intent.putExtra("place_latitude", placeModel.latitude);
-                intent.putExtra("place_longitude", placeModel.longitude);
+                intent.putExtra("place_longitude", placeModel.longitude); // TODO uzdeti disable kai paspaudzia karta ant mapo
                 intent.putExtra("name", gameModel.title);
                 GameInfoFragment.this.startActivity(intent);
             }
@@ -137,7 +136,6 @@ public class GameInfoFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         openBrowser(gameModel.link_fb);
-
     }
 
     @Override

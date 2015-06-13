@@ -9,7 +9,6 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.util.Log;
 import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
@@ -59,7 +58,6 @@ public class TerritoryActivity extends FragmentActivity implements android.locat
         lng = intent.getDoubleExtra("place_longitude", 0.0);
         name = intent.getStringExtra("name");
         snippet = intent.getStringExtra("snippet");
-
         if(lat != 0.0 && lng != 0.0){
             cameraStart = new LatLng(lat, lng);
         }
@@ -101,7 +99,6 @@ public class TerritoryActivity extends FragmentActivity implements android.locat
 
         int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this.getBaseContext());
         if(status!= ConnectionResult.SUCCESS){ // Google Play Services are not available
-            Log.d("", "EROR");
             int requestCode = 10;
             Dialog dialog = GooglePlayServicesUtil.getErrorDialog(status, this, requestCode);
             dialog.show();
@@ -142,7 +139,6 @@ public class TerritoryActivity extends FragmentActivity implements android.locat
             imageLoader.loadImage("drawable://" + R.drawable.test2, new SimpleImageLoadingListener() {
                 @Override
                 public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
-                    // Do whatever you want with Bitmap
                     LatLngBounds newarkBounds = new LatLngBounds(
                             new LatLng(55.157544, 25.299200),       // South west corner
                             new LatLng(55.162867, 25.315079));      // North east corner
@@ -159,7 +155,6 @@ public class TerritoryActivity extends FragmentActivity implements android.locat
         if (googleMap == null) {
             googleMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
 
-            // check if map is created successfully or not
             if (googleMap == null) {
                 Toast.makeText(this.getApplicationContext(),
                         "Sorry! unable to create maps", Toast.LENGTH_SHORT)
@@ -170,11 +165,11 @@ public class TerritoryActivity extends FragmentActivity implements android.locat
 
     private void createMarker(LatLng place, String artist, String snippet) {
         MarkerOptions marker = new MarkerOptions().position(place).title(artist);
-        if(!snippet.equals("")){
+        if(snippet != null){
             marker.snippet(snippet);
         }
         Bitmap bmp = imageLoader.loadImageSync("drawable://" +R.drawable.location);
-        marker.icon(BitmapDescriptorFactory.fromBitmap(bmp)); // int pic
+        marker.icon(BitmapDescriptorFactory.fromBitmap(bmp));
         Marker m = googleMap.addMarker(marker);
         m.showInfoWindow();
         markerQueue.add(m);
@@ -202,7 +197,6 @@ public class TerritoryActivity extends FragmentActivity implements android.locat
 
     @Override
     public void onBackPressed() {
-
         if (!expListView.isGroupExpanded(0)) {
             super.onBackPressed();
             FragmentManager fm = getSupportFragmentManager();
@@ -213,13 +207,6 @@ public class TerritoryActivity extends FragmentActivity implements android.locat
         }else{
             expListView.collapseGroup(0);
         }
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        googleMap.clear();
-        System.gc();
     }
 
     @Override
