@@ -5,17 +5,15 @@ import android.content.Intent;
 import com.activeandroid.query.Select;
 import com.itworks.festapp.models.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class NotificationIntentService extends IntentService {
 
-    private JSONHelper jsonHelper;
     private List<PlaceModel> placeList;
     private List<ArtistModel> artistList;
     private List<GameModel> gameModels;
     private List<NotificationModel> notificationList;
-    private Boolean onBoot;
+    private ModelsController modelsController;
 
     public NotificationIntentService() {
         super(NotificationIntentService.class.getName());
@@ -27,14 +25,14 @@ public class NotificationIntentService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-
-        onBoot = intent.getBooleanExtra("BOOT" ,false);
+        Boolean onBoot = intent.getBooleanExtra("BOOT", false);
         if (getCount() == 0 || onBoot) {
-            jsonHelper = new JSONHelper(this);
-            placeList = jsonHelper.getPlacesFromJSON();
-            gameModels = jsonHelper.getGamesFromJSON();
-            artistList = jsonHelper.getArtistsFromJSON();
-            notificationList = jsonHelper.getNotificationsFromJSON();
+            JSONRepository jsonRepository = new JSONRepository(this);
+            placeList = jsonRepository.getPlacesFromJSON();
+            gameModels = jsonRepository.getGamesFromJSON();
+            artistList = jsonRepository.getArtistsFromJSON();
+            notificationList = jsonRepository.getNotificationsFromJSON();
+            modelsController = new ModelsController(getApplicationContext());
             if(getCount() == 0){
                 setDefaultAlarms();
                 setDefaultAlarmsToGames();
@@ -51,19 +49,10 @@ public class NotificationIntentService extends IntentService {
         List<ArtistNotificationModel> sqlList = getAllSqlNotifications();
         for (ArtistNotificationModel anArtistList : sqlList) {
             if (anArtistList.notification) {
-                ArtistModel artistModel = getArtistModelById(anArtistList.artistId);
+                ArtistModel artistModel = modelsController.getArtistModelById(anArtistList.artistId);
                 setArtistAlarms(artistModel);
             }
         }
-
-    }
-
-    private ArtistModel getArtistModelById(int id) { // TODO refactor
-        for(ArtistModel artistModel:artistList){
-            if (artistModel.id == id)
-                return artistModel;
-        }
-        return null;
     }
 
     private List<ArtistNotificationModel> getAllSqlNotifications() {
@@ -81,12 +70,12 @@ public class NotificationIntentService extends IntentService {
     }
 
     private void setArtistAlarms(ArtistModel anArtistList) {
-        List<TimetableModel> timetables = getTimetableModels(anArtistList);
-        for (int j = 0; j < timetables.size(); j++) {
-            for (int k = 0; k < placeList.size();k++) {
-                if (placeList.get(k).id == timetables.get(j).stageId) {
-                    String where = placeList.get(k).where;
-                    NotificationHelper.setAlarm(this, anArtistList.title, anArtistList.id, true, where, timetables.get(j)); // TODO iskelt i atskira metoda
+        List<TimetableModel> timetables = modelsController.getTimetableModelsByArtistId(anArtistList.id);
+        for (TimetableModel timetable : timetables) {
+            for (PlaceModel aPlaceList : placeList) {
+                if (aPlaceList.id == timetable.stageId) {
+                    String where = aPlaceList.where;
+                    NotificationController.setAlarm(this, anArtistList.title, anArtistList.id, true, where, timetable);
                 }
             }
         }
@@ -94,46 +83,24 @@ public class NotificationIntentService extends IntentService {
 
     private void setDefaultNotifications() {
         for (NotificationModel notificationModel : notificationList) {
-            NotificationHelper.setAlarm(this, notificationModel.title, notificationModel.id , false, "", notificationModel);
+            NotificationController.setAlarm(this, notificationModel.title, notificationModel.id, false, "", notificationModel);
         }
     }
 
     private void setDefaultAlarmsToGames() {
         for (GameModel aGameList : gameModels) {
             if (aGameList.notification) {
-                List<GameTimetableModel> timetables = getTimetableModels(aGameList);
-                for (int j = 0; j < timetables.size(); j++) {
-                    for (int k = 0; k < placeList.size();k++) {
-                        if (placeList.get(k).id == aGameList.placeId) {
-                            String where = placeList.get(k).where;
-                            NotificationHelper.setAlarm(this, aGameList.title, aGameList.id , false, where, timetables.get(j));
+                List<GameTimetableModel> timetables = modelsController.getGameTimetableModelsByGameId(aGameList.id);
+                for (GameTimetableModel timetable : timetables) {
+                    for (PlaceModel aPlaceList : placeList) {
+                        if (aPlaceList.id == aGameList.placeId) {
+                            String where = aPlaceList.where;
+                            NotificationController.setAlarm(this, aGameList.title, aGameList.id, false, where, timetable);
                         }
                     }
                 }
             }
         }
-    }
-
-    private List<TimetableModel> getTimetableModels(ArtistModel artistModel){ // TODO refactor su tokiu pat apacioj
-        List<TimetableModel> result = new ArrayList<>();
-        List<TimetableModel> timetableModels = jsonHelper.getTimetableFromJSON();
-        for(int i =0;i<timetableModels.size();i++){
-            if(timetableModels.get(i).artistId == artistModel.id){
-                result.add(timetableModels.get(i));
-            }
-        }
-        return result;
-    }
-
-    private List<GameTimetableModel> getTimetableModels(GameModel gameModel){
-        List<GameTimetableModel> result = new ArrayList<>();
-        List<GameTimetableModel> timetableModels = jsonHelper.getGameTimetableFromJSON();
-        for(int i =0;i<timetableModels.size();i++){
-            if(timetableModels.get(i).gameId == gameModel.id){
-                result.add(timetableModels.get(i));
-            }
-        }
-        return result;
     }
 
     private int getCount(){

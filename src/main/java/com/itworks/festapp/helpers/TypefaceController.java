@@ -4,12 +4,12 @@ import android.content.res.AssetManager;
 import android.graphics.Typeface;
 import android.widget.TextView;
 
-public class TypefaceHelper {
+public class TypefaceController {
 
     private final Typeface futura;
     private final Typeface arial;
 
-    public TypefaceHelper(AssetManager asset) {
+    public TypefaceController(AssetManager asset) {
         futura = Typeface.createFromAsset(asset, "fonts/futura_condensed_medium.ttf");
         arial = Typeface.createFromAsset(asset, "fonts/arial_narrow.ttf");
     }

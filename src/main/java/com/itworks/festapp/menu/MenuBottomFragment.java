@@ -10,8 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import com.itworks.festapp.R;
-import com.itworks.festapp.helpers.DateHelper;
-import com.itworks.festapp.helpers.JSONHelper;
+import com.itworks.festapp.helpers.DateController;
+import com.itworks.festapp.helpers.JSONRepository;
 import com.itworks.festapp.helpers.comparators.TimetableListComparator;
 import com.itworks.festapp.models.TimetableModel;
 
@@ -60,9 +60,9 @@ public class MenuBottomFragment extends Fragment { // TODO patikrint buga kur ap
     }
 
     private void setTimetableForBottom() {
-        JSONHelper jsonHelper = new JSONHelper(getActivity());
-        List<TimetableModel> timetables = jsonHelper.getTimetableFromJSON();
-        int dayNumber = DateHelper.getFestivalDay();
+        JSONRepository jsonRepository = new JSONRepository(getActivity());
+        List<TimetableModel> timetables = jsonRepository.getTimetableFromJSON();
+        int dayNumber = DateController.getFestivalDay();
         List<Integer> ids = findTimetables(dayNumber, timetables);
         TimetableModel timetable1 = getTimetableById(ids, 0, timetables);
         TimetableModel timetable2 = getTimetableById(ids, 1, timetables);
@@ -132,7 +132,7 @@ public class MenuBottomFragment extends Fragment { // TODO patikrint buga kur ap
         List<Integer> result = new ArrayList<>();
         for(int i=0;i<timetables.size();i++) {
             if(timetables.get(i).day == dayNumber) {
-                if(DateHelper.calculateIsItNow(dayNumber, timetables.get(i).start_time, timetables.get(i).end_time)){
+                if(DateController.calculateIsItNow(dayNumber, timetables.get(i).start_time, timetables.get(i).end_time)){
                     result.add(timetables.get(i).id);
                 }
             }

@@ -25,10 +25,13 @@ public class NotificationReceiver extends BroadcastReceiver {
         mBuilder.setSmallIcon(R.drawable.ic_stat);
         mBuilder.setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_launcher));
         String name = intent.getStringExtra("name");
+        String where = intent.getStringExtra("where");
+        String after10 = context.getString(R.string.after10) + " ";
+        Boolean isItArtist = intent.getBooleanExtra("isItArtist", true);
         if(!intent.getBooleanExtra("isItGeneral", false)){
             mBuilder.setContentTitle(name);
-            mBuilder.setTicker("Po 10 minučių " + intent.getStringExtra("where")); // TODO iskelt tuos where
-            mBuilder.setContentText("Po 10 minučių " + intent.getStringExtra("where"));
+            mBuilder.setTicker(after10 + where);
+            mBuilder.setContentText(after10 + where);
         }else{
             mBuilder.setContentTitle("Radistai Village 2015");
             mBuilder.setTicker(name);
@@ -38,7 +41,7 @@ public class NotificationReceiver extends BroadcastReceiver {
         /* Creates an explicit intent for an Activity in your app */
         Intent resultIntent = new Intent(context, MenuActivity.class);
         resultIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        resultIntent.putExtra("isItArtist", intent.getBooleanExtra("isItArtist", true));
+        resultIntent.putExtra("isItArtist", isItArtist);
         resultIntent.putExtra("id", id);
         if(intent.getBooleanExtra("isItGeneral", false)){
             resultIntent.putExtra("text", name);
@@ -58,7 +61,7 @@ public class NotificationReceiver extends BroadcastReceiver {
 
       /* notificationID allows you to delete the notification later on. */
         int notificationId = -2;
-        if(intent.getBooleanExtra("isItArtist", true))
+        if(isItArtist)
             notificationId = id;
 
         if(null != name)

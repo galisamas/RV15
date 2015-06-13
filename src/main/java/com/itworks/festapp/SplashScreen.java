@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.itworks.festapp.helpers.PhotoHelper;
+import com.itworks.festapp.helpers.PhotoController;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 public class SplashScreen extends Fragment {
@@ -29,6 +29,6 @@ public class SplashScreen extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        PhotoHelper.destroyDrawable(photo);
+        PhotoController.destroyDrawable(photo);
     }
 }

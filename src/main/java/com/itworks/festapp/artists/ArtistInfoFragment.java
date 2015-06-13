@@ -35,8 +35,8 @@ public class ArtistInfoFragment extends Fragment implements View.OnClickListener
     private ImageLoader imageLoader;
     private List<TimetableModel> timetables;
     private SharedPreferences sharedpreferences;
-    private BrowserHelper browserHelper;
-    private ModelsHelper modelsHelper;
+    private BrowserController browserController;
+    private ModelsController modelsController;
 
     public void setArtistModel(ArtistModel artistModel) {
         this.artistModel = artistModel;
@@ -69,27 +69,27 @@ public class ArtistInfoFragment extends Fragment implements View.OnClickListener
         linkSc.setOnClickListener(this);
         linkSp.setOnClickListener(this);
         imageLoader = ImageLoader.getInstance();
-        browserHelper = new BrowserHelper(getActivity());
-        modelsHelper = new ModelsHelper(getActivity());
+        browserController = new BrowserController(getActivity());
+        modelsController = new ModelsController(getActivity());
         sharedpreferences = getActivity().getSharedPreferences(artistInfoPref, Context.MODE_PRIVATE);
         if(null == artistModel){
             int id = sharedpreferences.getInt(key,-1);
-            artistModel = modelsHelper.getArtistModelById(id);
+            artistModel = modelsController.getArtistModelById(id);
         }
         paintSocialIcons();
-        timetables = modelsHelper.getTimetableModelsByArtistId(artistModel.id);
+        timetables = modelsController.getTimetableModelsByArtistId(artistModel.id);
         setAlarm();
 
         about.setText(artistModel.about);
         if(!timetables.isEmpty()) {
-            description.setText(DateHelper.convertDateFWE(timetables.get(0).day + "/" + timetables.get(0).start_time));
+            description.setText(DateController.convertDateFWE(timetables.get(0).day + "/" + timetables.get(0).start_time));
             place.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     openTerritoryActivity(description.getText(), timetables.get(0).stageId);
                 }
             });
-            location.setText(modelsHelper.convertPlaceIdToTitle(timetables.get(0).stageId));
+            location.setText(modelsController.convertPlaceIdToTitle(timetables.get(0).stageId));
             if (timetables.size() != 1) {
                 RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
                         RelativeLayout.LayoutParams.WRAP_CONTENT,
@@ -99,8 +99,8 @@ public class ArtistInfoFragment extends Fragment implements View.OnClickListener
                 params.setMargins(0, -12, 0, 0);
                 second.setLayoutParams(params);
                 second.requestLayout();
-                description2.setText(DateHelper.convertDateFWE(timetables.get(1).day + "/" + timetables.get(1).start_time));
-                location2.setText(modelsHelper.convertPlaceIdToTitle(timetables.get(1).stageId));
+                description2.setText(DateController.convertDateFWE(timetables.get(1).day + "/" + timetables.get(1).start_time));
+                location2.setText(modelsController.convertPlaceIdToTitle(timetables.get(1).stageId));
                 place2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -116,7 +116,7 @@ public class ArtistInfoFragment extends Fragment implements View.OnClickListener
             public void onClick(View v) {}
         });
         title.setText(artistModel.title);
-        int flag_id = getResources().getIdentifier(OriginHelper.getOriginDrawableTitle(artistModel.origin),
+        int flag_id = getResources().getIdentifier(OriginRepository.getOriginDrawableTitle(artistModel.origin),
                 "drawable", getActivity().getPackageName());
         imageLoader.displayImage(drawableString + flag_id, flag);
         setTypefaces();
@@ -125,8 +125,8 @@ public class ArtistInfoFragment extends Fragment implements View.OnClickListener
 
     private void openTerritoryActivity(CharSequence snippet, int stageId) {
         Intent intent = new Intent(getActivity(), TerritoryActivity.class);
-        intent.putExtra("place_latitude", modelsHelper.convertPlaceIdToLat(stageId));
-        intent.putExtra("place_longitude", modelsHelper.convertPlaceIdToLng(stageId));
+        intent.putExtra("place_latitude", modelsController.convertPlaceIdToLat(stageId));
+        intent.putExtra("place_longitude", modelsController.convertPlaceIdToLng(stageId));
         intent.putExtra("name", artistModel.title);
         intent.putExtra("snippet", snippet);
         ArtistInfoFragment.this.startActivity(intent);
@@ -151,13 +151,13 @@ public class ArtistInfoFragment extends Fragment implements View.OnClickListener
                     imageId = R.drawable.alarm_off;
                     toastText = getString(R.string.toast_cancel);
                     artistNotificationModel.notification = false;
-                    NotificationHelper.cancelAlarm(getActivity(), artistModel.id);
+                    NotificationController.cancelAlarm(getActivity(), artistModel.id);
                 } else {
                     artistNotificationModel.notification = true;
                     toastText = getString(R.string.toast_start);
                     for (TimetableModel timetable : timetables) {
-                        String where = modelsHelper.convertPlaceIdToWhere(timetable.stageId);
-                        NotificationHelper.setAlarm(getActivity(), artistModel.title, artistModel.id, true, where, timetable);
+                        String where = modelsController.convertPlaceIdToWhere(timetable.stageId);
+                        NotificationController.setAlarm(getActivity(), artistModel.title, artistModel.id, true, where, timetable);
                     }
                 }
                 Toast.makeText(getActivity().getApplicationContext(), toastText, Toast.LENGTH_LONG).show();
@@ -169,13 +169,13 @@ public class ArtistInfoFragment extends Fragment implements View.OnClickListener
     }
 
     private void setTypefaces() {
-        TypefaceHelper typefaceHelper = new TypefaceHelper(getActivity().getAssets());
-        typefaceHelper.setArial(about);
-        typefaceHelper.setFutura(title);
-        typefaceHelper.setFutura(description);
-        typefaceHelper.setFutura(location);
-        typefaceHelper.setFutura(description2);
-        typefaceHelper.setFutura(location2);
+        TypefaceController typefaceController = new TypefaceController(getActivity().getAssets());
+        typefaceController.setArial(about);
+        typefaceController.setFutura(title);
+        typefaceController.setFutura(description);
+        typefaceController.setFutura(location);
+        typefaceController.setFutura(description2);
+        typefaceController.setFutura(location2);
     }
 
     private void paintSocialIcons() {
@@ -207,7 +207,7 @@ public class ArtistInfoFragment extends Fragment implements View.OnClickListener
                 url = artistModel.link_spotify;
                 break;
         }
-        browserHelper.openBrowser(url);
+        browserController.openBrowser(url);
     }
 
     @Override

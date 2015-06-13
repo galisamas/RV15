@@ -8,12 +8,12 @@ import android.net.Uri;
 import android.widget.Toast;
 import com.itworks.festapp.R;
 
-public class BrowserHelper {
+public class BrowserController {
 
     private final Context context;
     private final String no_internet;
 
-    public BrowserHelper(Context context) {
+    public BrowserController(Context context) {
         this.context = context;
         no_internet = context.getString(R.string.noCon);
     }

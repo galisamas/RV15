@@ -6,9 +6,9 @@ import android.content.Context;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
-public class UsageHelper {
+public class UsageController {
 
-    public static float readUsage() {
+    public static float readUsage() { // TODO padaryti ta kad nestabiliai gali veikti appsas nes daug atminties uzimta
         try {
             RandomAccessFile reader = new RandomAccessFile("/proc/stat", "r");
             String load = reader.readLine();

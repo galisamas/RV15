@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.itworks.festapp.R;
-import com.itworks.festapp.helpers.JSONHelper;
+import com.itworks.festapp.helpers.JSONRepository;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
@@ -21,8 +21,8 @@ public class InfoRulesFragment extends android.support.v4.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.info_rules_fragment, container, false);
-        JSONHelper jsonHelper = new JSONHelper(getActivity());
-        List<String> rules = jsonHelper.getRulesFromJSON();
+        JSONRepository jsonRepository = new JSONRepository(getActivity());
+        List<String> rules = jsonRepository.getRulesFromJSON();
         photo = (ImageView) v.findViewById(R.id.imageView3);
         ImageLoader imageLoader = ImageLoader.getInstance();
         imageLoader.displayImage("drawable://" + R.drawable.taisykles, photo);

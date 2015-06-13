@@ -7,7 +7,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 
-public class PhotoHelper {
+public class PhotoController {
 
     public static void destroyDrawable(ImageView imageView){
         Drawable drawable = imageView.getDrawable();

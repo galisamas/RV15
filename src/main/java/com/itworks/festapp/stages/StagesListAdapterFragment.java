@@ -9,8 +9,8 @@ import android.view.View;
 import android.widget.ListView;
 import com.itworks.festapp.R;
 import com.itworks.festapp.artists.ArtistInfoFragment;
-import com.itworks.festapp.helpers.DateHelper;
-import com.itworks.festapp.helpers.JSONHelper;
+import com.itworks.festapp.helpers.DateController;
+import com.itworks.festapp.helpers.JSONRepository;
 import com.itworks.festapp.helpers.comparators.TimetableListComparator;
 import com.itworks.festapp.models.ArtistModel;
 import com.itworks.festapp.models.StageListItem;
@@ -49,16 +49,16 @@ public class StagesListAdapterFragment extends ListFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mItems = new ArrayList<>();
-        JSONHelper jsonHelper = new JSONHelper(getActivity());
-        timetable = getTimetable(jsonHelper.getTimetableFromJSON());
+        JSONRepository jsonRepository = new JSONRepository(getActivity());
+        timetable = getTimetable(jsonRepository.getTimetableFromJSON());
         imageLoader = ImageLoader.getInstance();
-        artists = jsonHelper.getArtistsFromJSON();
-        places = jsonHelper.getPlacesFromJSON();
+        artists = jsonRepository.getArtistsFromJSON();
+        places = jsonRepository.getPlacesFromJSON();
         resources = getResources();
         for(int i=0; i<timetable.size();i++) {
             ArtistModel artist = getArtistById(timetable.get(i).artistId);
             PlaceModel place = getPlaceById(timetable.get(i).stageId);
-            String date = DateHelper.convertTimeFWD(timetable.get(i).start_time, timetable.get(i).end_time);
+            String date = DateController.convertTimeFWD(timetable.get(i).start_time, timetable.get(i).end_time);
             mItems.add(new StageListItem(getColorByDate(timetable.get(i)),
                     resources.getIdentifier("m" + artist.id, "drawable", getActivity().getPackageName()),
                     artist.title, date, place.name));
@@ -122,7 +122,7 @@ public class StagesListAdapterFragment extends ListFragment {
     }
 
     private int getColorByDate(TimetableModel timetable){
-        if(DateHelper.calculateIsItNow(dayNumber, timetable.start_time, timetable.end_time))
+        if(DateController.calculateIsItNow(dayNumber, timetable.start_time, timetable.end_time))
             return resources.getColor(R.color.now_stage_indicator);
         return resources.getColor(R.color.basic_stage_indicator);
     }

@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.itworks.festapp.R;
-import com.itworks.festapp.helpers.TypefaceHelper;
+import com.itworks.festapp.helpers.TypefaceController;
 import com.itworks.festapp.models.FoodListItem;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -49,8 +49,8 @@ public class FoodListAdapter extends ArrayAdapter<FoodListItem> {
         imageLoader.displayImage("drawable://" + item.photoId ,viewHolder.ivIcon);
         viewHolder.tvTitle.setText(item.name);
 
-        TypefaceHelper typefaceHelper = new TypefaceHelper(context.getAssets());
-        typefaceHelper.setFutura(viewHolder.tvTitle);
+        TypefaceController typefaceController = new TypefaceController(context.getAssets());
+        typefaceController.setFutura(viewHolder.tvTitle);
         return convertView;
     }
 

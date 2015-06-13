@@ -12,10 +12,10 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.itworks.festapp.R;
-import com.itworks.festapp.helpers.BrowserHelper;
-import com.itworks.festapp.helpers.JSONHelper;
-import com.itworks.festapp.helpers.ModelsHelper;
-import com.itworks.festapp.helpers.TypefaceHelper;
+import com.itworks.festapp.helpers.BrowserController;
+import com.itworks.festapp.helpers.JSONRepository;
+import com.itworks.festapp.helpers.ModelsController;
+import com.itworks.festapp.helpers.TypefaceController;
 import com.itworks.festapp.map.TerritoryActivity;
 import com.itworks.festapp.models.FoodModel;
 import com.itworks.festapp.models.PlaceModel;
@@ -33,7 +33,7 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
     RelativeLayout place;
     ImageView iw, linkF;
     private SharedPreferences sharedpreferences;
-    private BrowserHelper browserHelper;
+    private BrowserController browserController;
 
     public void setFoodModel(FoodModel foodModel) {
         this.foodModel = foodModel;
@@ -46,16 +46,16 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
         place.setEnabled(true);
         linkF = (ImageView) v.findViewById(R.id.imageFb);
         linkF.setOnClickListener(this);
-        browserHelper = new BrowserHelper(getActivity());
-        JSONHelper jsonHelper = new JSONHelper(getActivity());
-        ModelsHelper modelsHelper = new ModelsHelper(getActivity());
+        browserController = new BrowserController(getActivity());
+        JSONRepository jsonRepository = new JSONRepository(getActivity());
+        ModelsController modelsController = new ModelsController(getActivity());
         sharedpreferences = getActivity().getSharedPreferences(foodInfoPref, Context.MODE_PRIVATE);
         if(null == foodModel){
             int id = sharedpreferences.getInt(key,-1);
-            foodModel = modelsHelper.getFoodModelById(id);
+            foodModel = modelsController.getFoodModelById(id);
         }
 
-        List<PlaceModel> places = jsonHelper.getPlacesFromJSON();
+        List<PlaceModel> places = jsonRepository.getPlacesFromJSON();
         ImageLoader imageLoader = ImageLoader.getInstance();
         PlaceModel coordinate = places.get(foodCourtId);
         place.setOnClickListener(new View.OnClickListener() {
@@ -88,15 +88,15 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
     }
 
     private void setTypefaces() {
-        TypefaceHelper typefaceHelper = new TypefaceHelper(getActivity().getAssets());
-        typefaceHelper.setFutura(title);
-        typefaceHelper.setFutura(location);
-        typefaceHelper.setArial(about);
+        TypefaceController typefaceController = new TypefaceController(getActivity().getAssets());
+        typefaceController.setFutura(title);
+        typefaceController.setFutura(location);
+        typefaceController.setArial(about);
     }
 
     @Override
     public void onClick(View v) {
-        browserHelper.openBrowser(foodModel.link_facebook);
+        browserController.openBrowser(foodModel.link_facebook);
     }
 
     @Override

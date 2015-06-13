@@ -1,6 +1,6 @@
 package com.itworks.festapp.helpers;
 
-public class OriginHelper {
+public class OriginRepository {
     public static String getOriginDrawableTitle(String origin){
         String name;
         switch (origin){

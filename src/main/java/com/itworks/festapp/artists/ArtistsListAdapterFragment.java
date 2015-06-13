@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 import com.itworks.festapp.BaseListFragment;
-import com.itworks.festapp.helpers.JSONHelper;
-import com.itworks.festapp.helpers.ModelsHelper;
+import com.itworks.festapp.helpers.JSONRepository;
+import com.itworks.festapp.helpers.ModelsController;
 import com.itworks.festapp.helpers.comparators.ArtistListComparator;
 import com.itworks.festapp.models.ArtistListItem;
 import com.itworks.festapp.models.ArtistModel;
@@ -18,15 +18,15 @@ public class ArtistsListAdapterFragment extends BaseListFragment {
 
     private List<ArtistListItem> mItems;
     private List<ArtistModel> artists;
-    private ModelsHelper modelHelper;
+    private ModelsController modelHelper;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mItems = new ArrayList<>();
-        modelHelper = new ModelsHelper(getActivity());
-        JSONHelper jsonHelper = new JSONHelper(getActivity());
-        artists = jsonHelper.getArtistsFromJSON();
+        modelHelper = new ModelsController(getActivity());
+        JSONRepository jsonRepository = new JSONRepository(getActivity());
+        artists = jsonRepository.getArtistsFromJSON();
         Collections.sort(artists, new ArtistListComparator());
         for (ArtistModel artist : artists) {
             int photo_id = getResources().getIdentifier("m" + artist.id, "drawable", packageName);

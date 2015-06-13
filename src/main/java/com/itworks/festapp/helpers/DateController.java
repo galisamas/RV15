@@ -1,11 +1,12 @@
 package com.itworks.festapp.helpers;
 
 import com.itworks.festapp.DayName;
+import com.itworks.festapp.models.BaseTimetable;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class DateHelper {
+public class DateController {
 
     private static final int DAY_HOURS = 24;
     private static final int FESTIVAL_DAY_1 = 11;
@@ -13,7 +14,9 @@ public class DateHelper {
     private static final int FESTIVAL_DAY_3 = FESTIVAL_DAY_2+1;
     public static final int FESTIVAL_MONTH = Calendar.JUNE; // TODO data sutvarkyti JULY - 17,18,19
 
-    public static String convertDate(String start, String end){
+    public static String convertDate(BaseTimetable timetableModel){
+        String start = timetableModel.day + "/" + timetableModel.start_time;
+        String end = timetableModel.day + "/" + timetableModel.end_time;
         String day = start.substring(0,1);
         String dayName = "";
         switch(Integer.parseInt(day)){

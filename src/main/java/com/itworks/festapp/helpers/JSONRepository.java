@@ -12,7 +12,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JSONHelper { // TODO refactor isskirti ir pervardinti kur repository kur controlers
+public class JSONRepository {
 
     private final String title = "title";
     private final String about = "about";
@@ -50,7 +50,7 @@ public class JSONHelper { // TODO refactor isskirti ir pervardinti kur repositor
     private final String notifications = "notifications";
     AssetManager mngr;
 
-    public JSONHelper(Context myContext) {
+    public JSONRepository(Context myContext) {
         mngr = myContext.getAssets();
     }
 

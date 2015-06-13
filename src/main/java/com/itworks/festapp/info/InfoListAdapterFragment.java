@@ -13,7 +13,7 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 import com.itworks.festapp.R;
-import com.itworks.festapp.helpers.JSONHelper;
+import com.itworks.festapp.helpers.JSONRepository;
 import com.itworks.festapp.models.InfoListItem;
 import com.itworks.festapp.models.PlaceModel;
 
@@ -40,8 +40,8 @@ public class InfoListAdapterFragment extends ListFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        JSONHelper jsonHelper = new JSONHelper(getActivity());
-        List<PlaceModel> places = jsonHelper.getPlacesFromJSON();
+        JSONRepository jsonRepository = new JSONRepository(getActivity());
+        List<PlaceModel> places = jsonRepository.getPlacesFromJSON();
         place = places.get(6);
         mItems = new ArrayList<>();
         String[] values = getResources().getStringArray(R.array.info_list_names);

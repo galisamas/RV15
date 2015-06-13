@@ -1,7 +1,6 @@
 package com.itworks.festapp.games;
 
 import android.content.Context;
-import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.itworks.festapp.R;
+import com.itworks.festapp.helpers.TypefaceController;
 import com.itworks.festapp.models.GamesListItem;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -46,10 +46,10 @@ public class GamesListAdapter extends ArrayAdapter<GamesListItem> {
         // update the item view
         GamesListItem item = getItem(position);
         ImageLoader imageLoader = ImageLoader.getInstance();
-        imageLoader.displayImage("drawable://" + item.photoId ,viewHolder.ivIcon);
+        imageLoader.displayImage("drawable://" + item.photoId, viewHolder.ivIcon);
         viewHolder.tvTitle.setText(item.name);
-        Typeface futura = Typeface.createFromAsset(context.getAssets(), "fonts/futura_condensed_medium.ttf");
-        viewHolder.tvTitle.setTypeface(futura);
+        TypefaceController typefaceController = new TypefaceController(context.getAssets());
+        typefaceController.setFutura(viewHolder.tvTitle);
 
         return convertView;
     }

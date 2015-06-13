@@ -21,7 +21,7 @@ import com.google.android.gms.maps.model.*;
 import com.itworks.festapp.R;
 import com.itworks.festapp.helpers.FloatingGroupExpandableListView.FloatingGroupExpandableListView;
 import com.itworks.festapp.helpers.FloatingGroupExpandableListView.WrapperExpandableListAdapter;
-import com.itworks.festapp.helpers.JSONHelper;
+import com.itworks.festapp.helpers.JSONRepository;
 import com.itworks.festapp.models.PlaceModel;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
@@ -74,15 +74,15 @@ public class TerritoryActivity extends FragmentActivity implements android.locat
 
     private void configExpandableList() {
         expListView = (FloatingGroupExpandableListView) findViewById(R.id.expandableListView);
-        JSONHelper jsonHelper = new JSONHelper(this);
-        listDataChild = jsonHelper.getMapLegendFromJSON();
+        JSONRepository jsonRepository = new JSONRepository(this);
+        listDataChild = jsonRepository.getMapLegendFromJSON();
         listAdapter = new ExpandableListAdapter(this, listDataChild);
         WrapperExpandableListAdapter wrapperAdapter = new WrapperExpandableListAdapter(listAdapter);
         expListView.setAdapter(wrapperAdapter);
         expListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-                List<PlaceModel> places = jsonHelper.getPlacesFromJSON();
+                List<PlaceModel> places = jsonRepository.getPlacesFromJSON();
                 PlaceModel place = places.get(childPosition);
                 LatLng location = new LatLng(place.latitude, place.longitude);
                 createMarker(location , place.name, "");

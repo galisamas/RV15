@@ -13,8 +13,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.itworks.festapp.R;
 import com.itworks.festapp.artists.ArtistsActivity;
-import com.itworks.festapp.helpers.DateHelper;
-import com.itworks.festapp.helpers.JSONHelper;
+import com.itworks.festapp.helpers.DateController;
+import com.itworks.festapp.helpers.JSONRepository;
 import com.itworks.festapp.models.ArtistModel;
 import com.itworks.festapp.models.TimetableModel;
 
@@ -44,8 +44,8 @@ public class MenuBottomElement extends Fragment {
 
     public void setInfo() {
         artistModel = new ArtistModel();
-        JSONHelper jsonHelper = new JSONHelper(getActivity());
-        List<ArtistModel> artists = jsonHelper.getArtistsFromJSON();
+        JSONRepository jsonRepository = new JSONRepository(getActivity());
+        List<ArtistModel> artists = jsonRepository.getArtistsFromJSON();
 
         if(timetableModel != null && !timetableModel.isItEmpty) {
             bg.setOnClickListener(new View.OnClickListener() {
@@ -64,7 +64,7 @@ public class MenuBottomElement extends Fragment {
             int photo_id = getResources().getIdentifier("m" + artistModel.id, "drawable", getActivity().getPackageName());
             photo.setImageResource(photo_id);
             title.setText(artistModel.title);
-            time.setText(DateHelper.convertTimeFWD(timetableModel.start_time, timetableModel.end_time));
+            time.setText(DateController.convertTimeFWD(timetableModel.start_time, timetableModel.end_time));
         }
         setTypefaces();
     }

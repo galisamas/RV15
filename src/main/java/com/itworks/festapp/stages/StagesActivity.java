@@ -19,7 +19,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.itworks.festapp.ActionBarActivity;
 import com.itworks.festapp.R;
-import com.itworks.festapp.helpers.DateHelper;
+import com.itworks.festapp.helpers.DateController;
 
 import java.util.Calendar;
 
@@ -68,10 +68,10 @@ public class StagesActivity extends ActionBarActivity implements View.OnClickLis
     private int getDay(){ // TODO refactor iskelti DateHelper
         int day = 1;
         Calendar today = Calendar.getInstance();
-        if(today.get(Calendar.MONTH) == DateHelper.FESTIVAL_MONTH){
-            if((today.get(Calendar.DAY_OF_MONTH) == DateHelper.defaultCalendar(2).get(Calendar.DAY_OF_MONTH) &&
+        if(today.get(Calendar.MONTH) == DateController.FESTIVAL_MONTH){
+            if((today.get(Calendar.DAY_OF_MONTH) == DateController.defaultCalendar(2).get(Calendar.DAY_OF_MONTH) &&
                     today.get(Calendar.HOUR_OF_DAY) > 10 )||
-                    today.get(Calendar.DAY_OF_MONTH)-1 == DateHelper.defaultCalendar(2).get(Calendar.DAY_OF_MONTH)){
+                    today.get(Calendar.DAY_OF_MONTH)-1 == DateController.defaultCalendar(2).get(Calendar.DAY_OF_MONTH)){
                 day = 2;
             }
         }

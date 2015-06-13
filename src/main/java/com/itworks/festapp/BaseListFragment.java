@@ -7,8 +7,10 @@ import android.support.v4.app.ListFragment;
 import android.view.View;
 import com.itworks.festapp.artists.ArtistInfoFragment;
 import com.itworks.festapp.food.FoodInfoFragment;
+import com.itworks.festapp.games.GameInfoFragment;
 import com.itworks.festapp.models.ArtistModel;
 import com.itworks.festapp.models.FoodModel;
+import com.itworks.festapp.models.GameModel;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.listener.PauseOnScrollListener;
 
@@ -53,5 +55,15 @@ public class BaseListFragment extends ListFragment {
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
 
+    }
+
+    public void openInfo(GameModel gameModel) {
+        FragmentManager fm = getActivity().getSupportFragmentManager();
+        GameInfoFragment fragment = new GameInfoFragment();
+        fragment.setGameModel(gameModel);
+        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+        fragmentTransaction.replace(android.R.id.content, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
 }

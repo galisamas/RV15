@@ -16,7 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.itworks.festapp.R;
-import com.itworks.festapp.helpers.JSONHelper;
+import com.itworks.festapp.helpers.JSONRepository;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
@@ -40,8 +40,8 @@ public class InfoBaseFragment extends Fragment implements View.OnClickListener {
         header = (ImageView) v.findViewById(R.id.imageView3);
         ImageLoader imageLoader = ImageLoader.getInstance();
         imageLoader.displayImage("drawable://" + photoId, header);
-        JSONHelper jsonHelper = new JSONHelper(getActivity());
-        infoList = jsonHelper.getInfoFromJSON(jsonId);
+        JSONRepository jsonRepository = new JSONRepository(getActivity());
+        infoList = jsonRepository.getInfoFromJSON(jsonId);
         about.setText(infoList.get(0));
         if(infoList.size() > 1){
             link.setText(getString(R.string.link_text));
