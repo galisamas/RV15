@@ -47,6 +47,7 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.food_info_fragment, container, false);
         place = (RelativeLayout) v.findViewById(R.id.place);
+        place.setEnabled(true);
         linkF = (ImageView) v.findViewById(R.id.imageFb);
         linkF.setOnClickListener(this);
         jsonHelper = new JSONHelper(getActivity());
@@ -66,6 +67,7 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
                 intent.putExtra("place_longitude", coordinate.longitude);
                 intent.putExtra("name", foodModel.title);
                 FoodInfoFragment.this.startActivity(intent);
+                place.setEnabled(false);
             }
         });
 
@@ -141,4 +143,9 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        place.setEnabled(true);
+    }
 }

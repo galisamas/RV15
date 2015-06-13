@@ -51,6 +51,7 @@ public class GameInfoFragment extends Fragment implements View.OnClickListener{
         View v = inflater.inflate(R.layout.game_info_fragment, container, false);
         location = (TextView) v.findViewById(R.id.location);
         place = (RelativeLayout) v.findViewById(R.id.place);
+        place.setEnabled(true);
         title = (TextView) v.findViewById(R.id.textView3);
         about = (TextView) v.findViewById(R.id.about);
         description = (TextView) v.findViewById(R.id.description);
@@ -78,6 +79,7 @@ public class GameInfoFragment extends Fragment implements View.OnClickListener{
                 intent.putExtra("place_longitude", placeModel.longitude); // TODO uzdeti disable kai paspaudzia karta ant mapo
                 intent.putExtra("name", gameModel.title);
                 GameInfoFragment.this.startActivity(intent);
+                place.setEnabled(false);
             }
         });
         int photo_id = getResources().getIdentifier("p" + gameModel.id, "drawable", getActivity().getPackageName());
@@ -176,5 +178,11 @@ public class GameInfoFragment extends Fragment implements View.OnClickListener{
                 = (ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        place.setEnabled(true);
     }
 }

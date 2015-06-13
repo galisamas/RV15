@@ -314,7 +314,6 @@ public class ArtistInfoFragment extends Fragment implements View.OnClickListener
         super.onResume();
         place.setEnabled(true);
         place2.setEnabled(true);
-
     }
 
     @Override
