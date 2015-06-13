@@ -65,7 +65,7 @@ public class StagesActivity extends ActionBarActivity implements View.OnClickLis
         loadCustomPageAdapter(getDay(),1);
     }
 
-    private int getDay(){
+    private int getDay(){ // TODO refactor iskelti DateHelper
         int day = 1;
         Calendar today = Calendar.getInstance();
         if(today.get(Calendar.MONTH) == DateHelper.FESTIVAL_MONTH){

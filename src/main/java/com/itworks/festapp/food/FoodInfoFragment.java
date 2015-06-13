@@ -100,7 +100,6 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         openBrowser(foodModel.link_facebook);
-
     }
 
     @Override

@@ -27,7 +27,7 @@ public class NotificationReceiver extends BroadcastReceiver {
         String name = intent.getStringExtra("name");
         if(!intent.getBooleanExtra("isItGeneral", false)){
             mBuilder.setContentTitle(name);
-            mBuilder.setTicker("Po 10 minučių " + intent.getStringExtra("where"));
+            mBuilder.setTicker("Po 10 minučių " + intent.getStringExtra("where")); // TODO iskelt tuos where
             mBuilder.setContentText("Po 10 minučių " + intent.getStringExtra("where"));
         }else{
             mBuilder.setContentTitle("Radistai Village 2015");

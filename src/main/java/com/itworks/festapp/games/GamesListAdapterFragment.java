@@ -20,8 +20,7 @@ import java.util.List;
 public class GamesListAdapterFragment extends ListFragment {
 
     private String packageName;
-
-    private List<GamesListItem> mItems;   // ListView items list
+    private List<GamesListItem> mItems;
     private List<GameModel> games;
 
     public void setPackageName(String packageName) {

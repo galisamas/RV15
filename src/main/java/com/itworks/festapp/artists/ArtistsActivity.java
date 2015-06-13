@@ -5,9 +5,6 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import com.itworks.festapp.ActionBarActivity;
 
-/**
- * Created by Naglis on 2015-01-31.
- */
 public class ArtistsActivity extends ActionBarActivity {
 
     FragmentManager fm;

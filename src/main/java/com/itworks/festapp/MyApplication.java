@@ -9,9 +9,7 @@ import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.parse.Parse;
 import com.parse.ParseInstallation;
 
-/**
- * Created by Naglis on 2015-02-01.
- */
+
 public class MyApplication extends com.activeandroid.app.Application {
     @Override
     public void onCreate()

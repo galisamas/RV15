@@ -20,7 +20,6 @@ public class NotificationHelper {
         }else{
             timeFormat = DateHelper.minusTenMinutes(timetable.day + "/" + timetable.start_time);
         }
-
         int hour = DateHelper.getHour(timeFormat);
         int minute = DateHelper.getMinutes(timeFormat);
         int day = DateHelper.defaultCalendar(DateHelper.getDay(timeFormat)).get(Calendar.DAY_OF_MONTH);

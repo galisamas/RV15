@@ -18,9 +18,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FoodListAdapterFragment extends ListFragment {
-    private String packageName;
 
-    private List<FoodListItem> mItems;   // ListView items list
+    private String packageName;
+    private List<FoodListItem> mItems;
     private List<FoodModel> food;
 
     public void setPackageName(String packageName) {
@@ -31,7 +31,7 @@ public class FoodListAdapterFragment extends ListFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mItems = new ArrayList<FoodListItem>();
+        mItems = new ArrayList<>();
         JSONHelper jsonHelper = new JSONHelper(getActivity());
         food = jsonHelper.getFoodFromJSON();
 
@@ -39,7 +39,6 @@ public class FoodListAdapterFragment extends ListFragment {
             int photo_id = this.getResources().getIdentifier("g" + food.get(i).id, "drawable", packageName);
             mItems.add(new FoodListItem(photo_id, food.get(i).title));
         }
-
         setListAdapter(new FoodListAdapter(getActivity(), mItems));
     }
 

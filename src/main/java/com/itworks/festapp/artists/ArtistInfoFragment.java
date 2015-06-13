@@ -93,15 +93,18 @@ public class ArtistInfoFragment extends Fragment implements View.OnClickListener
         about.setText(artistModel.about);
         if(!timetables.isEmpty()) {
             description.setText(DateHelper.convertDateFWE(timetables.get(0).day + "/" + timetables.get(0).start_time));
-            place.setOnClickListener(v1 -> {
-                Intent intent = new Intent(getActivity(), TerritoryActivity.class);
-                intent.putExtra("place_latitude", convertPlaceIdToLat(timetables.get(0).stageId));
-                intent.putExtra("place_longitude", convertPlaceIdToLng(timetables.get(0).stageId));
-                intent.putExtra("name", artistModel.title);
-                intent.putExtra("snippet", description.getText());
-                ArtistInfoFragment.this.startActivity(intent);
-                place.setEnabled(false);
-                place2.setEnabled(false);
+            place.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getActivity(), TerritoryActivity.class);
+                    intent.putExtra("place_latitude", convertPlaceIdToLat(timetables.get(0).stageId));
+                    intent.putExtra("place_longitude", convertPlaceIdToLng(timetables.get(0).stageId));
+                    intent.putExtra("name", artistModel.title);
+                    intent.putExtra("snippet", description.getText());
+                    ArtistInfoFragment.this.startActivity(intent);
+                    place.setEnabled(false);
+                    place2.setEnabled(false);
+                }
             });
             location.setText(convertPlaceIdToTitle(timetables.get(0).stageId));
             if (timetables.size() != 1) {
@@ -115,21 +118,27 @@ public class ArtistInfoFragment extends Fragment implements View.OnClickListener
                 second.requestLayout();
                 description2.setText(DateHelper.convertDateFWE(timetables.get(1).day + "/" + timetables.get(1).start_time));
                 location2.setText(convertPlaceIdToTitle(timetables.get(1).stageId));
-                place2.setOnClickListener(v1 -> {
-                    Intent intent = new Intent(getActivity(), TerritoryActivity.class); // TODO refactor iskelt nes virsuj tas pats
-                    intent.putExtra("place_latitude", convertPlaceIdToLat(timetables.get(1).stageId));
-                    intent.putExtra("place_longitude", convertPlaceIdToLng(timetables.get(1).stageId));
-                    intent.putExtra("name", artistModel.title);
-                    intent.putExtra("snippet", description2.getText());
-                    ArtistInfoFragment.this.startActivity(intent);
-                    place.setEnabled(false);
-                    place2.setEnabled(false);
+                place2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getActivity(), TerritoryActivity.class); // TODO refactor iskelt nes virsuj tas pats
+                        intent.putExtra("place_latitude", convertPlaceIdToLat(timetables.get(1).stageId));
+                        intent.putExtra("place_longitude", convertPlaceIdToLng(timetables.get(1).stageId));
+                        intent.putExtra("name", artistModel.title);
+                        intent.putExtra("snippet", description2.getText());
+                        ArtistInfoFragment.this.startActivity(intent);
+                        place.setEnabled(false);
+                        place2.setEnabled(false);
+                    }
                 });
             }
         }
         int photo_id = getResources().getIdentifier("b"+artistModel.id, "drawable", getActivity().getPackageName());
         imageLoader.displayImage("drawable://" + photo_id, photo);
-        background.setOnClickListener(v1 -> {});
+        background.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {}
+        });
         title.setText(artistModel.title);
         int flag_id = getResources().getIdentifier(OriginHelper.getOriginDrawableTitle(artistModel.origin),
                 "drawable", getActivity().getPackageName());
@@ -146,26 +155,29 @@ public class ArtistInfoFragment extends Fragment implements View.OnClickListener
         if(artistNotificationModel.notification){
             imageLoader.displayImage("drawable://" + R.drawable.alarm_on, alarm);
         }
-        alarm.setOnClickListener(v -> {
-            String toastText;
-            int imageId = R.drawable.alarm_on;
-            if(artistNotificationModel.notification){
-                imageId = R.drawable.alarm_off;
-                toastText = getString(R.string.toast_cancel);
-                artistNotificationModel.notification = false;
-                NotificationHelper.cancelAlarm(getActivity(), artistModel.id);
-            }else{
-                artistNotificationModel.notification = true;
-                toastText = getString(R.string.toast_start);
-                for(TimetableModel timetable : timetables){
-                    String where = convertPlaceIdToWhere(timetable.stageId);
-                    NotificationHelper.setAlarm(getActivity(), artistModel.title, artistModel.id, true, where, timetable);
+        alarm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String toastText;
+                int imageId = R.drawable.alarm_on;
+                if (artistNotificationModel.notification) {
+                    imageId = R.drawable.alarm_off;
+                    toastText = getString(R.string.toast_cancel);
+                    artistNotificationModel.notification = false;
+                    NotificationHelper.cancelAlarm(getActivity(), artistModel.id);
+                } else {
+                    artistNotificationModel.notification = true;
+                    toastText = getString(R.string.toast_start);
+                    for (TimetableModel timetable : timetables) {
+                        String where = convertPlaceIdToWhere(timetable.stageId);
+                        NotificationHelper.setAlarm(getActivity(), artistModel.title, artistModel.id, true, where, timetable);
+                    }
                 }
-            }
-            Toast.makeText(getActivity().getApplicationContext(), toastText, Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity().getApplicationContext(), toastText, Toast.LENGTH_LONG).show();
 
-            artistNotificationModel.save();
-            imageLoader.displayImage("drawable://" + imageId, alarm);
+                artistNotificationModel.save();
+                imageLoader.displayImage("drawable://" + imageId, alarm);
+            }
         });
     }
 

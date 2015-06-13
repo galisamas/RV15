@@ -16,7 +16,6 @@ import java.util.List;
 
 public class GamesListAdapter extends ArrayAdapter<GamesListItem> {
 
-
     private final Context context;
 
     public GamesListAdapter(Context context, List<GamesListItem> items) {

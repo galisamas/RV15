@@ -15,9 +15,6 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.*;
 
-/**
- * Created by Naglis on 2015-02-01.
- */
 public class ArtistsListAdapter extends ArrayAdapter<ArtistListItem> implements SectionIndexer {
 
     private final Context context;

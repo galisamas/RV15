@@ -147,6 +147,6 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
         Point size = new Point();
         display.getSize(size);
         int height = size.y;
-        return (height < 900 )? true: false;
+        return (height < 900);
     }
 }

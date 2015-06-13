@@ -37,8 +37,7 @@ public class TerritoryActivity extends FragmentActivity implements android.locat
 
     GoogleMap googleMap;
     Location location;
-    double latitude;
-    double longitude;
+    double latitude, longitude, lat, lng;
     LatLng cameraStart = new LatLng(55.160313, 25.309264);
     private FloatingGroupExpandableListView expListView;
     ExpandableListAdapter listAdapter;
@@ -46,7 +45,6 @@ public class TerritoryActivity extends FragmentActivity implements android.locat
     private ImageLoader imageLoader;
     private Queue<Marker> markerQueue;
     private String name, snippet;
-    private double lat, lng;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -98,7 +96,7 @@ public class TerritoryActivity extends FragmentActivity implements android.locat
     private void googleMapSetting(){
 
         int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(this.getBaseContext());
-        if(status!= ConnectionResult.SUCCESS){ // Google Play Services are not available
+        if(status!= ConnectionResult.SUCCESS){
             int requestCode = 10;
             Dialog dialog = GooglePlayServicesUtil.getErrorDialog(status, this, requestCode);
             dialog.show();
@@ -165,7 +163,7 @@ public class TerritoryActivity extends FragmentActivity implements android.locat
 
     private void createMarker(LatLng place, String artist, String snippet) {
         MarkerOptions marker = new MarkerOptions().position(place).title(artist);
-        if(snippet != null){
+        if(snippet != null && !snippet.isEmpty()){
             marker.snippet(snippet);
         }
         Bitmap bmp = imageLoader.loadImageSync("drawable://" +R.drawable.location);

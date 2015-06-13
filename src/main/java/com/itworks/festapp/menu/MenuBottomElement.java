@@ -39,7 +39,6 @@ public class MenuBottomElement extends Fragment {
         title = (TextView) v.findViewById(R.id.item_title);
         time = (TextView) v.findViewById(R.id.item_time);
         setInfo();
-
         return v;
     }
 
@@ -74,11 +73,5 @@ public class MenuBottomElement extends Fragment {
         Typeface futura = Typeface.createFromAsset(getActivity().getAssets(), "fonts/futura_condensed_medium.ttf");
         title.setTypeface(futura);
         time.setTypeface(futura);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        onDestroyView();
     }
 }

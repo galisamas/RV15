@@ -23,15 +23,15 @@ import java.util.Locale;
 
 public class InfoListAdapterFragment extends ListFragment {
 
-    private final int PARKING = 5;
-    private final int BRING = 4;
-    private final int DODONT = 3;
     private final int DRIVE_ME_THERE = 0;
     private final int RULES = 1;
     private final int HISTORY = 2;
-    private final int ITWORKS = 8;
+    private final int DODONT = 3;
+    private final int BRING = 4;
+    private final int PARKING = 5;
     private final int TICKETS = 6;
     private final int HOWTOUSE = 7;
+    private final int ITWORKS = 8;
 
     private final String destinationName = "Radistai Village";
     private List<InfoListItem> mItems;
@@ -45,10 +45,7 @@ public class InfoListAdapterFragment extends ListFragment {
         place = places.get(6);
         mItems = new ArrayList<>();
         String[] values = getResources().getStringArray(R.array.info_list_names);
-        for(int i=0; i<values.length;i++)
-            mItems.add(new InfoListItem(values[i]));
-
-
+        for (String value : values) mItems.add(new InfoListItem(value));
         setListAdapter(new InfoListAdapter(getActivity(), mItems));
     }
 
@@ -75,7 +72,6 @@ public class InfoListAdapterFragment extends ListFragment {
 //            return;
         } else if(position == RULES){
             fragment = new InfoRulesFragment();
-
         } else if(position == HISTORY){
             fragment = new InfoBaseFragment();
             bundle.putInt(photoId, R.drawable.istorija);

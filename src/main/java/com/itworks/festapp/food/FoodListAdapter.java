@@ -16,7 +16,6 @@ import java.util.List;
 
 public class FoodListAdapter extends ArrayAdapter<FoodListItem> {
 
-
     private final Context context;
 
     public FoodListAdapter(Context context, List<FoodListItem> items) {

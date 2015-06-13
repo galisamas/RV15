@@ -12,10 +12,9 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JSONHelper {
+public class JSONHelper { // TODO refactor isskirti ir pervardinti kur repository kur controlers
     private final String title = "title";
     private final String about = "about";
-    private final String photo_name = "photo_name";
     private final String start_time = "start_time";
     private final String end_time = "end_time";
     private final String id = "id";
@@ -56,7 +55,7 @@ public class JSONHelper {
 
     public List<ArtistModel> getArtistsFromJSON(){
         JSONObject obj ;
-        List<ArtistModel> formList= new ArrayList<ArtistModel>();
+        List<ArtistModel> formList= new ArrayList<>();
         try {
             obj = new JSONObject(loadJSONFromAsset(artistsJSON));
             JSONArray jsonArray = obj.getJSONArray(artists);
@@ -226,7 +225,7 @@ public class JSONHelper {
                 String title = jsonObject.getString(this.title);
                 String about = jsonObject.getString(this.about);
                 int id = jsonObject.getInt(this.id);
-                foodModel =new FoodModel(id, photo_name, title, about, link_facebook);
+                foodModel =new FoodModel(id, title, about, link_facebook);
                 formList.add(foodModel);
             }
 
@@ -236,7 +235,7 @@ public class JSONHelper {
         return formList;
     }
 
-    public List<String> getRulesFromJSON(){
+    public List<String> getRulesFromJSON(){ // TODO refactor, suspausti su info
         JSONObject obj ;
         List<String> rules = new ArrayList<>();
         try {

@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class MenuBottomFragment extends Fragment {
+public class MenuBottomFragment extends Fragment { // TODO patikrint buga kur apacioj buvo neaiskus atlikejai (antra diena)
     TextView title, now, after;
     private MenuBottomElement element1 , element2, element3, element4;
     int index = 0;
@@ -85,7 +85,7 @@ public class MenuBottomFragment extends Fragment {
         return timetableModel;
     }
 
-    private TimetableModel getTimetableModelById(int id, List<TimetableModel> timetables ) {
+    private TimetableModel getTimetableModelById(int id, List<TimetableModel> timetables ) { // TODO refactor iskelt
         TimetableModel timetableModel = new TimetableModel();
         for(int i=0;i<timetables.size();i++) {
             if(timetables.get(i).id == id){

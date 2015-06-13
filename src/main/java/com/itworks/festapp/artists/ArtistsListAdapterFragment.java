@@ -18,9 +18,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Created by Naglis on 2015-01-31.
- */
 public class ArtistsListAdapterFragment extends ListFragment {
 
     private String packageName;

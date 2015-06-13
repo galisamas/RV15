@@ -58,7 +58,7 @@ public class NotificationIntentService extends IntentService {
 
     }
 
-    private ArtistModel getArtistModelById(int id) {
+    private ArtistModel getArtistModelById(int id) { // TODO refactor
         for(ArtistModel artistModel:artistList){
             if (artistModel.id == id)
                 return artistModel;
@@ -86,7 +86,7 @@ public class NotificationIntentService extends IntentService {
             for (int k = 0; k < placeList.size();k++) {
                 if (placeList.get(k).id == timetables.get(j).stageId) {
                     String where = placeList.get(k).where;
-                    NotificationHelper.setAlarm(this, anArtistList.title, anArtistList.id, true, where, timetables.get(j));
+                    NotificationHelper.setAlarm(this, anArtistList.title, anArtistList.id, true, where, timetables.get(j)); // TODO iskelt i atskira metoda
                 }
             }
         }
@@ -114,7 +114,7 @@ public class NotificationIntentService extends IntentService {
         }
     }
 
-    private List<TimetableModel> getTimetableModels(ArtistModel artistModel){
+    private List<TimetableModel> getTimetableModels(ArtistModel artistModel){ // TODO refactor su tokiu pat apacioj
         List<TimetableModel> result = new ArrayList<>();
         List<TimetableModel> timetableModels = jsonHelper.getTimetableFromJSON();
         for(int i =0;i<timetableModels.size();i++){
