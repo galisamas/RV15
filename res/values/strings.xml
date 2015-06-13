@@ -17,6 +17,7 @@
     <string name="toast_cancel">Priminimas atšauktas</string>
     <string name="toast_warning">Prašome įsirašyti žemėlapio programėlę</string>
     <string name="link_text">Įsigyk bilietą čia!</string>
+    <string name="noCon">Nėra prieigos prie tinklo</string>
 
     <!-- Timetables strings -->
     <string-array name="tabs_icons">

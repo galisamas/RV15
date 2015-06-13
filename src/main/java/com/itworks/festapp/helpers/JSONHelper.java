@@ -49,7 +49,7 @@ public class JSONHelper { // TODO refactor isskirti ir pervardinti kur repositor
     private final String notifications = "notifications";
     AssetManager mngr;
 
-    public JSONHelper(Context myContext) {
+    protected JSONHelper(Context myContext) {
         mngr = myContext.getAssets();
     }
 
