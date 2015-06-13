@@ -1,7 +1,6 @@
 package com.itworks.festapp.artists;
 
 import android.content.Context;
-import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.SectionIndexer;
 import android.widget.TextView;
 import com.itworks.festapp.R;
+import com.itworks.festapp.helpers.TypefaceHelper;
 import com.itworks.festapp.models.ArtistListItem;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -71,10 +71,10 @@ public class ArtistsListAdapter extends ArrayAdapter<ArtistListItem> implements 
         // update the item view
         ArtistListItem item = getItem(position);
         ImageLoader imageLoader = ImageLoader.getInstance();
-        imageLoader.displayImage("drawable://" + item.photoId ,viewHolder.ivIcon);
+        imageLoader.displayImage("drawable://" + item.photoId, viewHolder.ivIcon);
         viewHolder.tvTitle.setText(item.name);
-        Typeface futura = Typeface.createFromAsset(context.getAssets(), "fonts/futura_condensed_medium.ttf"); // TODO refactor neturetu jo cia buti
-        viewHolder.tvTitle.setTypeface(futura);
+        TypefaceHelper typefaceHelper = new TypefaceHelper(context.getAssets());
+        typefaceHelper.setFutura(viewHolder.tvTitle);
         return convertView;
     }
 

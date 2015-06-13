@@ -2,6 +2,7 @@ package com.itworks.festapp.helpers;
 
 import android.content.Context;
 import com.itworks.festapp.models.ArtistModel;
+import com.itworks.festapp.models.FoodModel;
 import com.itworks.festapp.models.PlaceModel;
 import com.itworks.festapp.models.TimetableModel;
 
@@ -20,36 +21,36 @@ public class ModelsHelper {
     }
 
     public String convertPlaceIdToWhere(int id){
-        for(int i =0;i< places.size();i++){
-            if(places.get(i).id == id){
-                return places.get(i).where;
+        for (PlaceModel place : places) {
+            if (place.id == id) {
+                return place.where;
             }
         }
         return "";
     }
 
     public String convertPlaceIdToTitle(int id){
-        for(int i =0;i< places.size();i++){
-            if(places.get(i).id == id){
-                return places.get(i).name;
+        for (PlaceModel place : places) {
+            if (place.id == id) {
+                return place.name;
             }
         }
         return "";
     }
 
     public Double convertPlaceIdToLat(int id){
-        for(int i =0;i< places.size();i++){
-            if(places.get(i).id == id){
-                return places.get(i).latitude;
+        for (PlaceModel place : places) {
+            if (place.id == id) {
+                return place.latitude;
             }
         }
         return 0.0;
     }
 
     public Double convertPlaceIdToLng(int id){
-        for(int i =0;i< places.size();i++){
-            if(places.get(i).id == id){
-                return places.get(i).longitude;
+        for (PlaceModel place : places) {
+            if (place.id == id) {
+                return place.longitude;
             }
         }
         return 0.0;
@@ -58,9 +59,9 @@ public class ModelsHelper {
     public List<TimetableModel> getTimetableModelsByArtistId(int id){
         List<TimetableModel> result = new ArrayList<>();
         List<TimetableModel> timetableModels = jsonHelper.getTimetableFromJSON();
-        for(int i =0;i<timetableModels.size();i++){
-            if(timetableModels.get(i).artistId == id){
-                result.add(timetableModels.get(i));
+        for (TimetableModel timetableModel : timetableModels) {
+            if (timetableModel.artistId == id) {
+                result.add(timetableModel);
             }
         }
         return result;
@@ -74,5 +75,15 @@ public class ModelsHelper {
             }
         }
         return new ArtistModel();
+    }
+
+    public FoodModel getFoodModelById(int id){
+        List<FoodModel> list = jsonHelper.getFoodFromJSON();
+        for(FoodModel foodModel: list){
+            if(foodModel.id == id){
+                return foodModel;
+            }
+        }
+        return new FoodModel();
     }
 }

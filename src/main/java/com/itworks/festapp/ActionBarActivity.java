@@ -1,6 +1,7 @@
 package com.itworks.festapp;
 
 import android.app.ActionBar;
+import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
@@ -9,11 +10,9 @@ import android.widget.ImageView;
 
 public class ActionBarActivity extends FragmentActivity {
 
-    private FragmentManager fm;
+    private FragmentManager fm = getSupportFragmentManager();
 
-    protected void setActionBar() {
-        fm = getSupportFragmentManager();
-        //+******************************
+    public void setActionBar() {
         ActionBar mActionBar = getActionBar();
         mActionBar.setDisplayShowHomeEnabled(false);
         mActionBar.setDisplayShowTitleEnabled(false);
@@ -44,6 +43,19 @@ public class ActionBarActivity extends FragmentActivity {
         });
         ActionBar.LayoutParams layoutParams = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT);
         mActionBar.setCustomView(mCustomView, layoutParams);
-        //+******************************
+    }
+
+    public void OpenFragmentWithoutBundle(BaseListFragment fragment){
+        OpenFragment(null, fragment);
+    }
+
+    public void OpenFragment(Bundle bundle, BaseListFragment fragment){
+        if (fm.findFragmentById(android.R.id.content) == null) {
+            if(bundle != null){
+                fragment.setArguments(bundle);
+            }
+            fragment.setPackageName(this.getPackageName());
+            fm.beginTransaction().add(android.R.id.content, fragment).commit();
+        }
     }
 }
