@@ -8,30 +8,36 @@ import com.itworks.festapp.helpers.NotificationIntentService;
 import com.itworks.festapp.menu.MenuActivity;
 
 public class MyActivity extends FragmentActivity {
+
     protected MyApplication app;
+    private Handler handler;
+    private Runnable runnable;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_activity);
 
-        int myTimer = 2000;
-        new Handler().postDelayed(new Runnable() {
+        int myTimer = 1800;
+        handler = new Handler();
+        runnable = new Runnable() {
             @Override
             public void run() {
-                app = (MyApplication)getApplication();
+                app = (MyApplication) getApplication();
                 setDefaultNotifications();
                 Intent intent = new Intent(MyActivity.this, MenuActivity.class);
                 MyActivity.this.startActivity(intent);
                 MyActivity.this.finish();
             }
-        }, myTimer);
+        };
+        handler.postDelayed(runnable
+        , myTimer);
     }
 
     @Override
-    public void onBackPressed()
-    {
+    public void onBackPressed() {
         super.onBackPressed();
+        handler.removeCallbacks(runnable);
         this.finish();
     }
     private void setDefaultNotifications(){

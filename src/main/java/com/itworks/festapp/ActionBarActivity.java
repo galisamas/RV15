@@ -2,6 +2,7 @@ package com.itworks.festapp;
 
 import android.app.ActionBar;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
@@ -45,16 +46,17 @@ public class ActionBarActivity extends FragmentActivity {
         mActionBar.setCustomView(mCustomView, layoutParams);
     }
 
-    public void openFragmentWithoutBundle(BaseListFragment fragment){
+    public void openFragmentWithoutBundle(Fragment fragment){
         openFragment(null, fragment);
     }
 
-    public void openFragment(Bundle bundle, BaseListFragment fragment){
+    public void openFragment(Bundle bundle, Fragment fragment){
         if (fm.findFragmentById(android.R.id.content) == null) {
             if(bundle != null){
                 fragment.setArguments(bundle);
             }
-            fragment.setPackageName(this.getPackageName());
+            if(fragment instanceof BaseListFragment)
+                ((BaseListFragment)fragment).setPackageName(this.getPackageName());
             fm.beginTransaction().add(android.R.id.content, fragment).commit();
         }
     }

@@ -24,7 +24,6 @@ public class StagesListAdapterFragment extends BaseListFragment {
     private List<TimetableModel> timetable;
     private List<ArtistModel> artists;
     private Resources resources;
-    private ModelsController modelsController;
 
     public void setStage(int stageNumber){
         this.stageNumber = stageNumber;
@@ -38,7 +37,7 @@ public class StagesListAdapterFragment extends BaseListFragment {
         super.onCreate(savedInstanceState);
         List<StageListItem> mItems = new ArrayList<>();
         JSONRepository jsonRepository = new JSONRepository(getActivity());
-        modelsController = new ModelsController(getActivity());
+        ModelsController modelsController = new ModelsController(getActivity());
         timetable = modelsController.getTimetablesByStageIdAndByDay(dayNumber, stageNumber);
         artists = jsonRepository.getArtistsFromJSON();
         resources = getResources();

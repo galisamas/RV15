@@ -105,12 +105,6 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        System.gc();
-    }
-
-    @Override
     public void onResume() {
         super.onResume();
         b4.setEnabled(true);
@@ -139,7 +133,6 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
             intent = new Intent(getActivity(),GamesActivity.class);
         }
         getActivity().startActivity(intent);
-
     }
 
     private boolean isItSmallScreen(){

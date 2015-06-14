@@ -11,11 +11,10 @@ import com.parse.ParseInstallation;
 
 
 public class MyApplication extends com.activeandroid.app.Application {
-    @Override
-    public void onCreate()
-    {
-        super.onCreate();
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
         DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
                 .cacheOnDisc(true).cacheInMemory(true)
                 .imageScaleType(ImageScaleType.EXACTLY)
@@ -31,8 +30,5 @@ public class MyApplication extends com.activeandroid.app.Application {
 
         Parse.initialize(this, "82oOrqqYacCPkNSBhBy4cwTJ5NNbMkpPghYNvltZ", "vpgRI8ZHKK3T2p1jecM3wWpF0TKdyzjMmwapWdMr");
         ParseInstallation.getCurrentInstallation().saveInBackground();
-
-
     }
-
 }

@@ -2,7 +2,6 @@ package com.itworks.festapp.menu;
 
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -14,11 +13,10 @@ import android.widget.TextView;
 import com.itworks.festapp.R;
 import com.itworks.festapp.artists.ArtistsActivity;
 import com.itworks.festapp.helpers.DateController;
-import com.itworks.festapp.helpers.JSONRepository;
+import com.itworks.festapp.helpers.ModelsController;
+import com.itworks.festapp.helpers.TypefaceController;
 import com.itworks.festapp.models.ArtistModel;
 import com.itworks.festapp.models.TimetableModel;
-
-import java.util.List;
 
 public class MenuBottomElement extends Fragment {
 
@@ -44,10 +42,10 @@ public class MenuBottomElement extends Fragment {
 
     public void setInfo() {
         artistModel = new ArtistModel();
-        JSONRepository jsonRepository = new JSONRepository(getActivity());
-        List<ArtistModel> artists = jsonRepository.getArtistsFromJSON();
-
         if(timetableModel != null && !timetableModel.isItEmpty) {
+            ModelsController modelsController = new ModelsController(getActivity());
+            artistModel = modelsController.getArtistModelById(timetableModel.artistId);
+
             bg.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -56,11 +54,7 @@ public class MenuBottomElement extends Fragment {
                     startActivity(intent);
                 }
             });
-            for (ArtistModel artist : artists) {
-                if (artist.id == timetableModel.artistId) {
-                    artistModel = artist;
-                }
-            }
+
             int photo_id = getResources().getIdentifier("m" + artistModel.id, "drawable", getActivity().getPackageName());
             photo.setImageResource(photo_id);
             title.setText(artistModel.title);
@@ -70,8 +64,8 @@ public class MenuBottomElement extends Fragment {
     }
 
     private void setTypefaces() {
-        Typeface futura = Typeface.createFromAsset(getActivity().getAssets(), "fonts/futura_condensed_medium.ttf");
-        title.setTypeface(futura);
-        time.setTypeface(futura);
+        TypefaceController typefaceController = new TypefaceController(getActivity().getAssets());
+        typefaceController.setFutura(title);
+        typefaceController.setFutura(time);
     }
 }
