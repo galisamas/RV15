@@ -83,13 +83,13 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="3dp"
                 android:id="@+id/pic"
-                android:src="@drawable/location"/>
+                android:src="@drawable/location_75"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-"
                 android:id="@+id/location"
-                android:textColor="@color/actionbar_first"
+                android:textColor="@color/location_text"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_toRightOf="@+id/pic"/>
     </RelativeLayout>
@@ -121,13 +121,13 @@
                                 android:layout_height="@dimen/location_icon_size"
                                 android:layout_centerVertical="true"
                                 android:id="@+id/pic2"
-                                android:src="@drawable/location"/>
+                                android:src="@drawable/location_75"/>
                         <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="location2"
                                 android:id="@+id/location2"
-                                android:textColor="@color/grey"
+                                android:textColor="@color/location_text"
                                 android:textAppearance="?android:attr/textAppearanceMedium"
                                 android:layout_toRightOf="@+id/pic2"/>
                 </RelativeLayout>

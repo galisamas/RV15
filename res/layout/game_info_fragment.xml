@@ -82,13 +82,13 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="3dp"
                     android:id="@+id/pic"
-                    android:src="@drawable/location"/>
+                    android:src="@drawable/location_75"/>
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="-"
                     android:id="@+id/location"
-                    android:textColor="@color/actionbar_first"
+                    android:textColor="@color/location_text"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:singleLine="true"
                     android:lines="1"

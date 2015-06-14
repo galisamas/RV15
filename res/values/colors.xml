@@ -23,6 +23,7 @@
 
     <item name="basic_stage_indicator" type="color">#FF5D7698</item>
     <item name="now_stage_indicator" type="color">#FFfbd583</item>
+    <item name="location_text" type="color">#FF405067</item>
     <item name="day_background" type="color">#FFe1eec9</item>
     <item name="tabs_background" type="color">#FFf7fbf1</item>
     <item name="expandable_background" type="color">#9De1eec9</item>

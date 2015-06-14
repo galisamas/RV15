@@ -4,7 +4,6 @@ package com.itworks.festapp.menu;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -91,10 +90,10 @@ public class MenuBottomFragment extends Fragment {
                 break;
             }
         }
-        for (TimetableModel i:timetables){ // TODO log
-            Log.d("MENUUUUU", i.id + " - " + modelsController.getArtistModelById(i.artistId).title);
-        }
-        Log.d("indexaaas",index + " !!!!!!!!!!!!!!");
+//        for (TimetableModel i:timetables){ // TODO log
+//            Log.d("MENUUUUU", i.id + " - " + modelsController.getArtistModelById(i.artistId).title);
+//        }
+//        Log.d("indexaaas",index + " !!!!!!!!!!!!!!");
         setTimtableByIndex(timetables, index + 1, element3);
         setTimtableByIndex(timetables, index + 2, element4);
     }
