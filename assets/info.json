@@ -167,6 +167,7 @@ Festivalio teritorijoje atsiskaitymas TIK grynais.
 
 Festivalyje bus galima įsigyti bilietus grynais, jei jų liks, nes visų kategorjų bilietų kiekis ribotas."
 	],
+
 	"history":[
 	"Įspūdingos dekoracijos, keletas scenų, pramogos dieną ir naktį, moderniausia įgarsinimo ir 
 apšvietimo technika ir, žinoma, visas kūno ląsteles drebinanti muzika. Tai – Lietuvos vasaros 
@@ -179,6 +180,7 @@ Tuo abejoti neleidžia jau paskelbtas „Radistai Village '15” scenų taškyto
 sudėliota kelios dešimtys puikiai žinomų didžėjų ir atlikėjų."
 
 	],
+
   "bring":["Daiktų sąrašas (rekomenduojame):
 
 1. palapinė
@@ -201,21 +203,24 @@ sudėliota kelios dešimtys puikiai žinomų didžėjų ir atlikėjų."
 18. priemonė nuo uodų.
 19. šlapios servetėlės (!!!) :D
 
-Nesivežti:
+Nesivežti: 
 
 1.	geriamo vandens – kempingo teritorijoje galėsite įsigyti “Neptūnas” mineralinio vandens parduotuvės kainomis.
 2.	didelių ir sunkių fotoaparatų – nebent tikrai planuoji jį išsitraukti iš dėklo.
 3.	peilių ar kitokių ginklų, galinčių sužeisti aplinkinius ir jus pačius.
 4.	savo garso sistemų."],
+
   "parking":["Automobilių parkingas - tai speciali  ir kuruojama zona kitoje kelio pusėje nuo salos. Būk geras, nebūk kaimietis ir nepalik savo automobilio kelkraštyje - bus labai nepatogu visiems. Sek kelio ženklus, klausk savanorių, parkuokis tvarkingai ir žinok, jog Tavo automobilis saugus.
 Automobilių stovėjimo aikštelė yra įsikūrusi atvirame lauke, todėl prašome vairuoti atsargiai, kad nebūtų sugadinti jūsų automobilai! Festivalio organizatoriai maloniai prašo pastatyti kiekvieną transporto priemonę tam skirtoje zonoje ir eiti į festivalį pėsčiomis. Transporto priemonių statymo mokestis yra mokamas už kiekvieną įvažiavimą, nepriklausomai nuo automobilio stovėjimo trukmės.
 
 Organizatoriai negali būti atsakingi už bet kokius daiktus paliktus automobilyje. Nepalikite savo vertingų daiktų automobilyje. Dėl saugumo sumetimų, griežtai draudžiama statyti palapines automobilių aikštelėje, nors automobilyje galima miegoti.
 
 
-Įsigyk išankstinį parkavimo bilietą dabar ir negaišk laiko festivalyje, kaina tik 2 EUR.", 
+Įsigyk išankstinį parkavimo bilietą dabar ir negaišk laiko festivalyje, kaina tik 2 EUR.",
+"Pirkti!",
 "https://shop.piletilevi.ee/public/?concert=161298&design=bilietupasaulis&lang=lit&center=233&key=#view=ticketsselect&concert=161298&section=29915"],
-  "dodont":["Ne:
+
+  "dodont":["Nedaryti:
 1. Nepraleisk savo mėgstamų atlikėjų pasirodymų. Kai taip nutinka festivalyje, vėliau klausantis draugų pasakojimų, būna liūdna...
 
 2. Neimk narkotikų ar kitokių neaiškių medžiagų iš nepažįstamų, nes nei viena gera istorija neprasideda “taigi, aš gavau tai iš vieno nepažįstamo vyruko…”. O jei rimtai, tai nevartokite narkotikų visai.
@@ -226,7 +231,7 @@ Organizatoriai negali būti atsakingi už bet kokius daiktus paliktus automobily
 
 5. Nevaikščiok basas – nors Obuolių sala ir yra tvarkinga ir graži erdvė poilsiui, tačiau niekada negali žinoti...
 
-Taip:
+Daryti:
 1. Pasirūpink savimi: nepamiršk gerti daug skysčių, kremo nuo saulės, purškalo nuo uodų, praustis bei kartais pavalgyti. Gera savijauta – būtina, norint gerai praleisti laiką pačiam bei užkrėsti gera nuotaika aplinkinius.
 
 2. Devėk maudymosi kostiumą po savo rūbais – beach zona yra pakeliui einant iš kempingo link scenų – kodėl gi neatsigaivinus dažniau?
@@ -242,8 +247,67 @@ Taip:
 7. Visuomet nešiokis su savimi servetėlių. Neturėdamas jų su savimi, kuomet labai reikės, sugaiši daug brangaus laiko.
 
 8. Atsivežk kamuolį arba frisbee – tai puikus būdas susirasti naujų draugų!"],
-  "drivemethere":["Informacija ruošiama"],
-  "tickets":["Informacija ruošiama"],
-  "howtouse":["Informacija ruošiama"],
-  "itworks":["Informacija ruošiama"]
+
+  "drivemethere":["Į Obuolių salą automobiliu: 55.161648, 25.300374
+
+Į Obuolių salą autobusu:",
+"iš Vilniaus",
+"http://lmgtfy.com/?q=autobusu+bilietai+Vilnius+Moletai",
+"iš Kauno",
+"http://lmgtfy.com/?q=autobusu+bilietai+Kaunas+Moletai",
+"iš Klaipėdos",
+"http://lmgtfy.com/?q=autobusu+bilietai+Klaipeda+Moletai",
+"iš Panevėžio",
+"http://lmgtfy.com/?q=autobusu+bilietai+Panevezys+Moletai",
+"iš Šiaulių",
+"http://lmgtfy.com/?q=autobusu+bilietai+Siauliai+Moletai",
+"iš Alytaus",
+"http://lmgtfy.com/?q=autobusu+bilietai+Alytus+Moletai"],
+
+  "tickets":["VIP palapinė 2-iems asmenims - į kainą įskaičiuota :
+- dvivietė palapinė
+- 2 miegmaišiai
+- 2 dviejų dienų festivalio bilietai
+- kepingo mokestis 2 žmonėms
+- parkingas 1 automobiliui
+VIP palapinė 4-iems asmenims - į kainą įskaičiuota:
+- keturvietė palapinė
+- 4 miegmaišiai
+- 4 dviejų dienų festivalio bilietai
+- kepingo mokestis 4 žmonėms
+- parkingas 2 automobiliams
+Vienos dienos bilietai:
+2015.07.17 17:00 - 2015.07.18 03:00
+2015.07.17 12:00 - 2015.07.19 12:00
+
+Kempingo mokestis taikomas asmeniui!
+",
+"Pirkti!",
+"https://shop.piletilevi.ee/public/?concert=161298&design=bilietupasaulis&lang=lit&center=233&key=#view=ticketsselect",
+"2-jų dienų bilietas (24,00 €)",
+"https://shop.piletilevi.ee/public/?concert=161298&design=bilietupasaulis&lang=lit&center=233&key=#view=ticketsselect&concert=161298&section=29910",
+"Kempingo vieta (40,00 €)",
+"https://shop.piletilevi.ee/public/?concert=161298&design=bilietupasaulis&lang=lit&center=233&key=#view=ticketsselect&concert=161298&section=29911",
+"Kempingas (4,00 €)",
+"https://shop.piletilevi.ee/public/?concert=161298&design=bilietupasaulis&lang=lit&center=233&key=#view=ticketsselect&concert=161298&section=29912",
+"Parkavimas (2,00 €)",
+"https://shop.piletilevi.ee/public/?concert=161298&design=bilietupasaulis&lang=lit&center=233&key=#view=ticketsselect&concert=161298&section=29915",
+"Penktadienio bilietas (14,00 €)",
+"https://shop.piletilevi.ee/public/?concert=161298&design=bilietupasaulis&lang=lit&center=233&key=#view=ticketsselect&concert=161298&section=29909",
+"VIP palapinė 2-iems asmenims (120,00 €)",
+"https://shop.piletilevi.ee/public/?concert=161298&design=bilietupasaulis&lang=lit&center=233&key=#view=ticketsselect&concert=161298&section=29913",
+"VIP palapinė 4-iems asmenims (220,00 €)",
+"https://shop.piletilevi.ee/public/?concert=161298&design=bilietupasaulis&lang=lit&center=233&key=#view=ticketsselect&concert=161298&section=29914",
+"Šeštadienio bilietas (14,00 €)",
+"https://shop.piletilevi.ee/public/?concert=161298&design=bilietupasaulis&lang=lit&center=233&key=#view=ticketsselect&concert=161298&section=29917"],
+
+  "howtouse":["Appsas skirtas VISIEMS festivalio RADISTAI VILLAGE 2015 lankytojams. Visa svarbiausia informacija, tvarkaraščiai ir kita reikalingiausia festivalio informacija - Tavo telefone."],
+
+  "itworks":["ItWorks! or It Works? or IT works? We are designing mobile innovation right now. Life's too short to make bad apps. 
+
+We're not your average mobile app developer. Hiring us is like gaining a premium design studio, a top-notch development team, a strategic business consultant, a product manager, a marketing guru, a numbers cruncher and a mad genius - all in one. 
+
+If you have a genius idea, feel free to contact us and we’ll find an solution for you!
+",
+"https://www.facebook.com/itworksmobile"]
 }

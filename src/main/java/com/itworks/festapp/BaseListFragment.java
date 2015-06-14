@@ -18,7 +18,7 @@ public class BaseListFragment extends ListFragment {
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
+    public void onViewCreated(View view, Bundle savedInstanceState) { // TODO nerodo spalvos game liste
         super.onViewCreated(view, savedInstanceState);
         getListView().setDivider(getResources().getDrawable(R.color.list_separator));
         getListView().setDividerHeight(2);

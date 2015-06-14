@@ -1,7 +1,6 @@
 package com.itworks.festapp.info;
 
 
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,6 +11,7 @@ import android.widget.TextView;
 import com.itworks.festapp.R;
 import com.itworks.festapp.helpers.BrowserController;
 import com.itworks.festapp.helpers.JSONRepository;
+import com.itworks.festapp.helpers.TypefaceController;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
@@ -38,19 +38,19 @@ public class InfoBaseFragment extends Fragment implements View.OnClickListener {
         JSONRepository jsonRepository = new JSONRepository(getActivity());
         infoList = jsonRepository.getInfoFromJSON(jsonId);
         about.setText(infoList.get(0));
-        if(infoList.size() > 1){
-            link.setText(getString(R.string.link_text));
+        if(infoList.size() > 2){
+            link.setText(infoList.get(1));
             link.setOnClickListener(this);
         }
-        Typeface arial = Typeface.createFromAsset(getActivity().getAssets(), "fonts/arial_narrow.ttf");
-        about.setTypeface(arial);
-        link.setTypeface(arial,Typeface.BOLD);
+        TypefaceController typefaceController = new TypefaceController(getActivity().getAssets());
+        typefaceController.setArial(about);
+        typefaceController.setArialBold(link);
         return v;
     }
 
     @Override
     public void onClick(View v) {
-        browserContoller.openBrowser(infoList.get(1));
+        browserContoller.openBrowser(infoList.get(2));
     }
 
 }

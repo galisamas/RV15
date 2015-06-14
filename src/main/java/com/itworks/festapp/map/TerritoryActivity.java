@@ -99,7 +99,6 @@ public class TerritoryActivity extends FragmentActivity implements android.locat
             dialog.show();
 
         }else {
-
             googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             googleMap.setMyLocationEnabled(true);
             googleMap.getUiSettings().setRotateGesturesEnabled(false);
@@ -131,7 +130,7 @@ public class TerritoryActivity extends FragmentActivity implements android.locat
                 }
             }
             imageLoader = ImageLoader.getInstance();
-            imageLoader.loadImage("drawable://" + R.drawable.test2, new SimpleImageLoadingListener() {
+            imageLoader.loadImage("drawable://" + R.drawable.map_v3_1604, new SimpleImageLoadingListener() { // TODO uzdeti geresnes kokybes mapus
                 @Override
                 public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
                     LatLngBounds newarkBounds = new LatLngBounds(
