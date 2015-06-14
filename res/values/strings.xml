@@ -18,6 +18,7 @@
     <string name="toast_warning">Prašome įsirašyti žemėlapio programėlę</string>
     <string name="noCon">Nėra prieigos prie tinklo</string>
     <string name="after10">Po 10 minučių</string>
+    <string name="openMap">Atidaryti navigacijos programėlę</string>
 
     <!-- Timetables strings -->
     <string-array name="tabs_icons">

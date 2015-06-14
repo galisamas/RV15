@@ -16,7 +16,7 @@
     <item name="white" type="color">#FFFFFFFF</item>
     <item name="black" type="color">#FF000000</item>
 
-    <item name="actionbar_first" type="color">#FF9279A9</item>
+    <item name="actionbar_first" type="color">#FF9179A9</item>
     <item name="actionbar_second" type="color">#FF5D7698</item>
     <item name="list_separator" type="color">#FFfbd583</item>
     <item name="list_item_onclick" type="color">#FFe5f2d2</item>

@@ -1,24 +1,17 @@
 package com.itworks.festapp.info;
 
-import android.content.ActivityNotFoundException;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.Toast;
 import com.itworks.festapp.BaseListFragment;
 import com.itworks.festapp.R;
-import com.itworks.festapp.helpers.JSONRepository;
 import com.itworks.festapp.models.InfoListItem;
-import com.itworks.festapp.models.PlaceModel;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class InfoListAdapterFragment extends BaseListFragment {
 
@@ -32,17 +25,10 @@ public class InfoListAdapterFragment extends BaseListFragment {
     private final int HOWTOUSE = 7;
     private final int ITWORKS = 8;
 
-    private final String destinationName = "Radistai Village";
-    private List<InfoListItem> mItems;
-    private PlaceModel place;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        JSONRepository jsonRepository = new JSONRepository(getActivity());
-        List<PlaceModel> places = jsonRepository.getPlacesFromJSON();
-        place = places.get(6);
-        mItems = new ArrayList<>();
+        List<InfoListItem> mItems = new ArrayList<>();
         String[] values = getResources().getStringArray(R.array.info_list_names);
         for (String value : values) mItems.add(new InfoListItem(value));
         setListAdapter(new InfoListAdapter(getActivity(), mItems));
@@ -56,11 +42,9 @@ public class InfoListAdapterFragment extends BaseListFragment {
         Fragment fragment = null;
         String photoId = "photoId", jsonId = "jsonId";
         if(position == DRIVE_ME_THERE){
-            fragment = new InfoBaseFragment();
+            fragment = new InfoDriveMeThereFragment();
             bundle.putInt(photoId, R.drawable.kaip_atvykti);
             bundle.putInt(jsonId, DRIVE_ME_THERE);
-//            driveMeThere();
-//            return;
         } else if(position == RULES){
             fragment = new InfoRulesFragment();
         } else if(position == HISTORY){
@@ -80,7 +64,7 @@ public class InfoListAdapterFragment extends BaseListFragment {
             bundle.putInt(photoId, R.drawable.parkavimas);
             bundle.putInt(jsonId, PARKING);
         } else if(position == TICKETS){
-            fragment = new InfoBaseFragment();
+            fragment = new InfoTicketsFragment();
             bundle.putInt(photoId, R.drawable.bilietai);
             bundle.putInt(jsonId, TICKETS);
         } else if(position == HOWTOUSE){
@@ -96,31 +80,5 @@ public class InfoListAdapterFragment extends BaseListFragment {
         fragmentTransaction.replace(android.R.id.content, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
-
-
     }
-
-    private void driveMeThere(){
-        String uri = String.format(Locale.ENGLISH, "http://maps.google.com/maps?daddr=%f,%f (%s)", place.latitude,
-                place.longitude, destinationName);
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-        intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
-        try
-        {
-            startActivity(intent);
-        }
-        catch(ActivityNotFoundException ex)
-        {
-            try
-            {
-                Intent unrestrictedIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-                startActivity(unrestrictedIntent);
-            }
-            catch(ActivityNotFoundException innerEx)
-            {
-                Toast.makeText(getActivity(), getString(R.string.toast_warning), Toast.LENGTH_LONG).show();
-            }
-        }
-    }
-
 }
