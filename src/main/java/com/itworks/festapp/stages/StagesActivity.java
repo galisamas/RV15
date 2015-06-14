@@ -1,8 +1,6 @@
 package com.itworks.festapp.stages;
 
 import android.content.Context;
-import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -11,7 +9,6 @@ import android.support.v4.view.ViewPager;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
-import android.text.style.ImageSpan;
 import android.text.style.RelativeSizeSpan;
 import android.text.style.TypefaceSpan;
 import android.view.View;
@@ -28,7 +25,6 @@ public class StagesActivity extends ActionBarActivity implements View.OnClickLis
     TextView tv1, tv2;
     CustomPagerAdapter mCustomPagerAdapter;
     ViewPager mViewPager;
-    Drawable[] myDrawable;
     RelativeLayout b1, b2;
     private String[] tabTitles;
     protected int pagePosition;
@@ -51,11 +47,7 @@ public class StagesActivity extends ActionBarActivity implements View.OnClickLis
         b2.setOnClickListener(this);
 
         tabTitles = getResources().getStringArray(R.array.tabs_names);
-        TypedArray tabIcons = getResources().obtainTypedArray(R.array.tabs_icons);
-        myDrawable = new Drawable[tabIcons.length()];
-        for(int i=0;i<tabIcons.length();i++){
-            myDrawable[i] = getResources().getDrawable(tabIcons.getResourceId(i, -1));
-        }
+
 
         mViewPager = (ViewPager) findViewById(R.id.pager);
         loadCustomPageAdapter(getDay(),1);
@@ -123,16 +115,13 @@ public class StagesActivity extends ActionBarActivity implements View.OnClickLis
 
         @Override
         public CharSequence getPageTitle(int position) {
-            SpannableStringBuilder sb = new SpannableStringBuilder("  stage");
+            SpannableStringBuilder sb = new SpannableStringBuilder(tabTitles[position]);
             TypefaceSpan futuraSpan = new CustomTypefaceSpan(typefaceController.getFutura());
-            myDrawable[position].setBounds(0, 0, myDrawable[position].getIntrinsicWidth(), myDrawable[position].getIntrinsicHeight());
-            ImageSpan imageSpan = new ImageSpan(myDrawable[position], ImageSpan.ALIGN_BASELINE);
             ForegroundColorSpan colorSpan = new ForegroundColorSpan(getResources().getColor(R.color.list_separator));
 
             sb.setSpan(new RelativeSizeSpan(1.5f), 0, sb.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             sb.setSpan(futuraSpan, 0, sb.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
             sb.setSpan(colorSpan, 0, sb.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            sb.setSpan(imageSpan, 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             return sb;
         }
     }

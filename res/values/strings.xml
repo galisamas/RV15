@@ -28,9 +28,9 @@
     </string-array>
 
     <string-array name="tabs_names">
-        <item >Main   \r\n stage</item>
-        <item >Beach  \r\n stage</item>
-        <item >Silent \r\n stage</item>
+        <item >Main stage</item>
+        <item >Beach stage</item>
+        <item >Silent stage</item>
     </string-array>
 
     <string-array name="info_list_names">

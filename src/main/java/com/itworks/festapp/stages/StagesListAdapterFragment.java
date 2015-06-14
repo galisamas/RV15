@@ -53,7 +53,6 @@ public class StagesListAdapterFragment extends BaseListFragment {
         setListAdapter(new StagesListAdapter(getActivity(), mItems));
     }
 
-
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         openInfo(artists.get(timetable.get(position).artistId), new ArtistInfoFragment());

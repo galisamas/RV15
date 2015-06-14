@@ -82,7 +82,7 @@ public class InfoDriveMeThereFragment extends Fragment implements View.OnClickLi
         typefaceController.setArial(link4);
         typefaceController.setArial(link5);
         typefaceController.setArial(link6);
-        typefaceController.setArialBold(link);
+        typefaceController.setArial(link);
 
         return v;
     }
