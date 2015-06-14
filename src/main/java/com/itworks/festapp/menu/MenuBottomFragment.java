@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class MenuBottomFragment extends Fragment { // TODO patikrint buga kur apacioj buvo neaiskus atlikejai (antra diena)
+public class MenuBottomFragment extends Fragment {
 
     TextView title, now, after;
     private MenuBottomElement element1 , element2, element3, element4;
@@ -83,15 +83,15 @@ public class MenuBottomFragment extends Fragment { // TODO patikrint buga kur ap
 
     private void setNextTimetables(TimetableModel current, TimetableModel other, List<TimetableModel> timetables, int dayNumber){
         timetables = prepareTimetableList(timetables, dayNumber, current);
-        int index = (other.isItEmpty)?-1:current.id;
+        int index = (other.isItEmpty)?-1:other.id;
         for(int i=0;i<timetables.size();i++) {
             if(timetables.get(i).id == index){
                 index = i;
                 break;
             }
         }
-        setTimtableByIndex(timetables, index+1, element3);
-        setTimtableByIndex(timetables, index+2, element4);
+        setTimtableByIndex(timetables, index + 1, element3);
+        setTimtableByIndex(timetables, index + 2, element4);
     }
 
     private void setTimtableByIndex(List<TimetableModel> timetables, int index, MenuBottomElement element) {
@@ -108,7 +108,6 @@ public class MenuBottomFragment extends Fragment { // TODO patikrint buga kur ap
                 stageTimetable.add(aList);
             }
         }
-
         Collections.sort(stageTimetable, new TimetableListComparator());
         return stageTimetable;
     }
