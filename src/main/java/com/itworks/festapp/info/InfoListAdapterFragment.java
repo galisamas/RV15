@@ -72,7 +72,7 @@ public class InfoListAdapterFragment extends BaseListFragment {
             bundle.putInt(photoId, R.drawable.kas_per_festapp);
             bundle.putInt(jsonId, HOWTOUSE);
         } else if(position == ITWORKS){
-            fragment = new InfoBaseFragment();
+            fragment = new InfoItWorksFragment();
             bundle.putInt(photoId, R.drawable.itworks);
             bundle.putInt(jsonId, ITWORKS);
         }

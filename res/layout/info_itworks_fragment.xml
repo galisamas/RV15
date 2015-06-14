@@ -38,14 +38,30 @@
                     android:textColor="@color/actionbar_second"
                     android:id="@+id/about"
                     android:textAppearance="?android:attr/textAppearanceMedium"/>
-            <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/actionbar_first"
-                    android:id="@+id/link"
-                    android:textAppearance="?android:attr/textAppearanceMedium"/>
 
         </LinearLayout>
     </ScrollView>
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@+id/links"
+            android:id="@+id/line3"
+            android:background="@color/list_separator" />
+    <LinearLayout
+            android:id="@+id/links"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="@dimen/social_icon_bottom_margin"
+            android:paddingTop="@dimen/social_icon_bottom_margin"
+            android:layout_height="wrap_content">
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/social_icon_size"
+                android:src="@null"
+                android:id="@+id/imageFb"/>
+    </LinearLayout>
 
 </RelativeLayout>

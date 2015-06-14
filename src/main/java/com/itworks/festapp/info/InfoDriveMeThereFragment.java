@@ -54,16 +54,16 @@ public class InfoDriveMeThereFragment extends Fragment implements View.OnClickLi
         browserContoller = new BrowserController(getActivity());
         imageLoader.displayImage("drawable://" + photoId, header);
         infoList = jsonRepository.getInfoFromJSON(jsonId);
-        String separator = ", ";
+
         about.setText(infoList.get(0));
-        link.setText(infoList.get(1) + separator);
+        link.setText(infoList.get(1));
         about2.setText(infoList.get(2));
-        link1.setText(infoList.get(3) + separator);
-        link2.setText(infoList.get(5) + separator);
-        link3.setText(infoList.get(7) + separator);
-        link4.setText(infoList.get(9) + separator);
-        link5.setText(infoList.get(11) + separator);
-        link6.setText(infoList.get(13) + ".");
+        link1.setText(infoList.get(3));
+        link2.setText(infoList.get(5));
+        link3.setText(infoList.get(7));
+        link4.setText(infoList.get(9));
+        link5.setText(infoList.get(11));
+        link6.setText(infoList.get(13));
 
         link1.setOnClickListener(this);
         link2.setOnClickListener(this);
@@ -76,12 +76,12 @@ public class InfoDriveMeThereFragment extends Fragment implements View.OnClickLi
         TypefaceController typefaceController = new TypefaceController(getActivity().getAssets());
         typefaceController.setArial(about);
         typefaceController.setArial(about2);
-        typefaceController.setArialBold(link1);
-        typefaceController.setArialBold(link2);
-        typefaceController.setArialBold(link3);
-        typefaceController.setArialBold(link4);
-        typefaceController.setArialBold(link5);
-        typefaceController.setArialBold(link6);
+        typefaceController.setArial(link1);
+        typefaceController.setArial(link2);
+        typefaceController.setArial(link3);
+        typefaceController.setArial(link4);
+        typefaceController.setArial(link5);
+        typefaceController.setArial(link6);
         typefaceController.setArialBold(link);
 
         return v;

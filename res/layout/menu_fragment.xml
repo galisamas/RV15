@@ -5,20 +5,6 @@
         android:id="@+id/menu_background">
 
         <ImageView
-                android:layout_width="80dp"
-                android:layout_height="25dp"
-                android:layout_marginTop="10dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:id="@+id/radistaiLogo"/>
-        <ImageView
-                android:layout_width="60dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="10dp"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-                android:id="@+id/ziplogo"/>
-        <ImageView
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"

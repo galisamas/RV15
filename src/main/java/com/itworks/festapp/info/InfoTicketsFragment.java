@@ -46,16 +46,15 @@ public class InfoTicketsFragment extends android.support.v4.app.Fragment impleme
         infoList = jsonRepository.getInfoFromJSON(jsonId);
         about.setText(infoList.get(0));
         link1.setText(infoList.get(1));
-        link2.setText(infoList.get(3));
-        link3.setText(infoList.get(5));
-        link4.setText(infoList.get(7));
-        link5.setText(infoList.get(9));
-        link6.setText(infoList.get(11));
-        link7.setText(infoList.get(13));
-        link8.setText(infoList.get(15));
-        link9.setText(infoList.get(17));
+        link2.setText(infoList.get(2));
+        link3.setText(infoList.get(4));
+        link4.setText(infoList.get(6));
+        link5.setText(infoList.get(8));
+        link6.setText(infoList.get(10));
+        link7.setText(infoList.get(12));
+        link8.setText(infoList.get(14));
+        link9.setText(infoList.get(16));
 
-        link1.setOnClickListener(this);
         link2.setOnClickListener(this);
         link3.setOnClickListener(this);
         link4.setOnClickListener(this);
@@ -68,48 +67,45 @@ public class InfoTicketsFragment extends android.support.v4.app.Fragment impleme
         TypefaceController typefaceController = new TypefaceController(getActivity().getAssets());
         typefaceController.setArial(about);
         typefaceController.setArialBold(link1);
-        typefaceController.setArialBold(link2);
-        typefaceController.setArialBold(link3);
-        typefaceController.setArialBold(link4);
-        typefaceController.setArialBold(link5);
-        typefaceController.setArialBold(link6);
-        typefaceController.setArialBold(link7);
-        typefaceController.setArialBold(link8);
-        typefaceController.setArialBold(link9);
+        typefaceController.setArial(link2);
+        typefaceController.setArial(link3);
+        typefaceController.setArial(link4);
+        typefaceController.setArial(link5);
+        typefaceController.setArial(link6);
+        typefaceController.setArial(link7);
+        typefaceController.setArial(link8);
+        typefaceController.setArial(link9);
 
         return v;
     }
 
     @Override
     public void onClick(View v) {
-        int index = 2;
+        int index = 3;
         switch (v.getId()){
-            case R.id.link1:
-                index = 2;
-                break;
             case R.id.link2:
-                index = 4;
+                index = 3;
                 break;
             case R.id.link3:
-                index = 6;
+                index = 5;
                 break;
             case R.id.link4:
-                index = 8;
+                index = 7;
                 break;
             case R.id.link5:
-                index = 10;
+                index = 9;
                 break;
             case R.id.link6:
-                index = 12;
+                index = 11;
                 break;
             case R.id.link7:
-                index = 14;
+                index = 13;
                 break;
             case R.id.link8:
-                index = 16;
+                index = 15;
                 break;
             case R.id.link9:
-                index = 18;
+                index = 17;
                 break;
         }
         browserContoller.openBrowser(infoList.get(index));

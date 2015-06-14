@@ -42,7 +42,7 @@
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/actionbar_first"
+                    android:textColor="@color/actionbar_second"
                     android:id="@+id/link1"
                     android:textAppearance="?android:attr/textAppearanceMedium"/>
             <TextView

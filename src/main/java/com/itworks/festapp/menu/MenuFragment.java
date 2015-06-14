@@ -29,7 +29,7 @@ import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListene
 public class MenuFragment extends Fragment implements View.OnClickListener {
 
     Button b1,b2,b3,b4,b5, b6;
-    ImageView radistaiLogo, zipLogo, festLogo, logo;
+    ImageView festLogo, logo;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -43,12 +43,9 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
             }
         });
 
-        radistaiLogo = (ImageView) v.findViewById(R.id.radistaiLogo);
-        zipLogo = (ImageView) v.findViewById(R.id.ziplogo);
+
         festLogo = (ImageView) v.findViewById(R.id.festLogo);
         logo = (ImageView) v.findViewById(R.id.logo);
-        imageLoader.displayImage("drawable://"+ R.drawable.radistai_logo, radistaiLogo);
-        imageLoader.displayImage("drawable://"+ R.drawable.zipfm, zipLogo);
         imageLoader.displayImage("drawable://"+ R.drawable.fest_app, festLogo);
         imageLoader.displayImage("drawable://"+ R.drawable.logo, logo);
 
