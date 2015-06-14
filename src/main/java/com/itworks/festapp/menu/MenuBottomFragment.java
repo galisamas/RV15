@@ -4,6 +4,7 @@ package com.itworks.festapp.menu;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -82,14 +83,18 @@ public class MenuBottomFragment extends Fragment {
     }
 
     private void setNextTimetables(TimetableModel current, TimetableModel other, List<TimetableModel> timetables, int dayNumber){
-        timetables = prepareTimetableList(timetables, dayNumber, current);
-        int index = (other.isItEmpty)?-1:other.id;
+        timetables = prepareTimetableList(timetables, dayNumber, other);
+        int index = (current.isItEmpty)?-1:current.id;
         for(int i=0;i<timetables.size();i++) {
             if(timetables.get(i).id == index){
                 index = i;
                 break;
             }
         }
+        for (TimetableModel i:timetables){ // TODO log
+            Log.d("MENUUUUU", i.id + " - " + modelsController.getArtistModelById(i.artistId).title);
+        }
+        Log.d("indexaaas",index + " !!!!!!!!!!!!!!");
         setTimtableByIndex(timetables, index + 1, element3);
         setTimtableByIndex(timetables, index + 2, element4);
     }

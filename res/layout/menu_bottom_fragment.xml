@@ -13,8 +13,9 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_centerHorizontal="true"
+                android:layout_marginBottom="-5dp"
                 android:text="@string/menu_bottom_title"
-                android:textColor="@color/white"
+                android:textColor="@color/day_background"
                 android:id="@+id/textView3"/>
     </RelativeLayout>
 
@@ -23,7 +24,7 @@
             android:layout_height="3dp"
             android:layout_below="@+id/onscene"
             android:id="@+id/line1"
-            android:background="@color/white" />
+            android:background="@color/day_background" />
 
     <LinearLayout
             android:orientation="horizontal"
@@ -44,7 +45,7 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:layout_centerHorizontal="true"
-                        android:textColor="@color/white"
+                        android:textColor="@color/day_background"
                         android:text="@string/menu_bottom_name1"
                         android:id="@+id/textView"/>
             </RelativeLayout>
@@ -58,7 +59,7 @@
         <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:background="@color/white" />
+                android:background="@color/day_background" />
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -72,7 +73,7 @@
                         android:layout_height="wrap_content"
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:layout_centerHorizontal="true"
-                        android:textColor="@color/white"
+                        android:textColor="@color/day_background"
                         android:text="@string/menu_bottom_name2"
                         android:id="@+id/textView4"/>
             </RelativeLayout>

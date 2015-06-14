@@ -29,13 +29,13 @@
                 android:scrollHorizontally="true"
                 android:ellipsize="end"
                 android:textStyle="bold"
-                android:textColor="@color/white"
+                android:textColor="@color/day_background"
                 android:id="@+id/item_title"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-4dp"
-                android:textColor="@color/white"
+                android:textColor="@color/day_background"
                 android:id="@+id/item_time"/>
     </LinearLayout>
 

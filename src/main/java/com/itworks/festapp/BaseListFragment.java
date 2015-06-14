@@ -1,5 +1,6 @@
 package com.itworks.festapp;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -18,11 +19,11 @@ public class BaseListFragment extends ListFragment {
     }
 
     @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) { // TODO nerodo spalvos game liste
+    public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getListView().setDivider(getResources().getDrawable(R.color.list_separator));
         getListView().setDividerHeight(2);
-        getListView().setFastScrollEnabled(true);
+        getListView().setBackgroundColor(Color.WHITE);
         ImageLoader imageLoader = ImageLoader.getInstance();
         PauseOnScrollListener listener = new PauseOnScrollListener(imageLoader, false, true);
         getListView().setOnScrollListener(listener);
