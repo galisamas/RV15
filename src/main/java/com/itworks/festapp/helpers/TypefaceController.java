@@ -6,6 +6,10 @@ import android.widget.TextView;
 
 public class TypefaceController {
 
+    public Typeface getFutura() {
+        return futura;
+    }
+
     private final Typeface futura;
     private final Typeface arial;
 
@@ -21,4 +25,13 @@ public class TypefaceController {
     public void setArial(TextView view){
         view.setTypeface(arial);
     }
+
+    public void setArialBold(TextView view){
+        view.setTypeface(arial, Typeface.BOLD);
+    }
+
+    public void setArialItalic(TextView view){
+        view.setTypeface(arial, Typeface.ITALIC);
+    }
+
 }

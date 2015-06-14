@@ -125,10 +125,23 @@ public class DateController {
             case FESTIVAL_DAY_2:
                 day = 2;
                 break;
-            case FESTIVAL_DAY_2+1:
-                if(today.get(Calendar.HOUR_OF_DAY) < 4)
+            case FESTIVAL_DAY_3:
+                if(today.get(Calendar.HOUR_OF_DAY) < 7)
                     day = 2;
                 break;
+        }
+        return day;
+    }
+
+    public static int getDayForStage(){
+        int day = 1;
+        Calendar today = Calendar.getInstance();
+        if(today.get(Calendar.MONTH) == DateController.FESTIVAL_MONTH){
+            if((today.get(Calendar.DAY_OF_MONTH) == DateController.defaultCalendar(2).get(Calendar.DAY_OF_MONTH) &&
+                    today.get(Calendar.HOUR_OF_DAY) > 10 )||
+                    today.get(Calendar.DAY_OF_MONTH)-1 == DateController.defaultCalendar(2).get(Calendar.DAY_OF_MONTH)){
+                day = 2;
+            }
         }
         return day;
     }

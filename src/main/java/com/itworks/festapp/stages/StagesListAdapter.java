@@ -1,16 +1,18 @@
 package com.itworks.festapp.stages;
 
 import android.content.Context;
-import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.*;
-import com.itworks.festapp.models.StageListItem;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 import com.itworks.festapp.R;
+import com.itworks.festapp.helpers.TypefaceController;
+import com.itworks.festapp.models.StageListItem;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
-import java.util.*;
+import java.util.List;
 
 public class StagesListAdapter extends ArrayAdapter<StageListItem> {
 
@@ -51,9 +53,9 @@ public class StagesListAdapter extends ArrayAdapter<StageListItem> {
         imageLoader.displayImage("drawable://" + item.photoId, viewHolder.ivIcon);
         viewHolder.tvTime.setText(item.time + ", " + item.place);
         viewHolder.tvTitle.setText(item.name);
-        Typeface futura = Typeface.createFromAsset(context.getAssets(), "fonts/futura_condensed_medium.ttf");
-        viewHolder.tvTitle.setTypeface(futura);
-        viewHolder.tvTime.setTypeface(futura);
+        TypefaceController typefaceController = new TypefaceController(context.getAssets());
+        typefaceController.setFutura(viewHolder.tvTitle);
+        typefaceController.setFutura(viewHolder.tvTime);
 
         return convertView;
     }

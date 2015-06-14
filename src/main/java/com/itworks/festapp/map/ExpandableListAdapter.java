@@ -1,26 +1,26 @@
 package com.itworks.festapp.map;
 
 import android.content.Context;
-import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 import com.itworks.festapp.R;
+import com.itworks.festapp.helpers.TypefaceController;
 
 import java.util.List;
 
 public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
-    private final Typeface arial;
+    private final TypefaceController typefaceController;
     private Context _context;
     private List<String> _listDataChild;
 
     public ExpandableListAdapter(Context context, List<String> listChildData) {
         this._context = context;
         this._listDataChild = listChildData;
-        arial = Typeface.createFromAsset(context.getAssets(), "fonts/arial_narrow.ttf");
+        typefaceController = new TypefaceController(context.getAssets());
     }
 
     @Override
@@ -46,7 +46,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         }
 
         TextView txtListChild = (TextView) convertView.findViewById(R.id.lblListItem);
-        txtListChild.setTypeface(arial);
+        typefaceController.setArial(txtListChild);
         txtListChild.setText(childText);
         return convertView;
     }
@@ -81,8 +81,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         }
 
         TextView lblListHeader = (TextView) convertView.findViewById(R.id.lblListHeader);
-        lblListHeader.setTypeface(arial);
-
+        typefaceController.setArial(lblListHeader);
         return convertView;
     }
 

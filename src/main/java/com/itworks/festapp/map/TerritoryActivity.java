@@ -30,9 +30,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-/**
- * Created by Naglis on 2015-02-04.
- */
 public class TerritoryActivity extends FragmentActivity implements android.location.LocationListener{
 
     GoogleMap googleMap;

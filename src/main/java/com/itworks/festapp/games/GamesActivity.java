@@ -2,7 +2,6 @@ package com.itworks.festapp.games;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import com.itworks.festapp.ActionBarActivity;
 
 public class GamesActivity extends ActionBarActivity {
@@ -15,6 +14,6 @@ public class GamesActivity extends ActionBarActivity {
         Intent intent = getIntent();
         Bundle bundle = new Bundle();
         bundle.putInt("id", intent.getIntExtra("id", -1));
-        OpenFragment(bundle, new GamesListAdapterFragment());
+        openFragment(bundle, new GamesListAdapterFragment());
     }
 }

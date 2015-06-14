@@ -45,11 +45,11 @@ public class ActionBarActivity extends FragmentActivity {
         mActionBar.setCustomView(mCustomView, layoutParams);
     }
 
-    public void OpenFragmentWithoutBundle(BaseListFragment fragment){
-        OpenFragment(null, fragment);
+    public void openFragmentWithoutBundle(BaseListFragment fragment){
+        openFragment(null, fragment);
     }
 
-    public void OpenFragment(Bundle bundle, BaseListFragment fragment){
+    public void openFragment(Bundle bundle, BaseListFragment fragment){
         if (fm.findFragmentById(android.R.id.content) == null) {
             if(bundle != null){
                 fragment.setArguments(bundle);

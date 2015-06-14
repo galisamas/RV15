@@ -1,7 +1,7 @@
 package com.itworks.festapp.info;
 
-import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,11 +9,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.itworks.festapp.R;
 import com.itworks.festapp.helpers.JSONRepository;
+import com.itworks.festapp.helpers.TypefaceController;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
 
-public class InfoRulesFragment extends android.support.v4.app.Fragment {
+public class InfoRulesFragment extends Fragment {
 
     TextView about1, about2, about3, about4, about5, about6, about7, about8, about9, about10, about11, about12, about13,
             about14, about15, about16, about17, about18, about19, about20;
@@ -57,28 +58,27 @@ public class InfoRulesFragment extends android.support.v4.app.Fragment {
         about16.setText(rules.get(7));
         about18.setText(rules.get(8));
         about20.setText(rules.get(9));
-
-        Typeface arial = Typeface.createFromAsset(getActivity().getAssets(), "fonts/arial_narrow.ttf");
-        about1.setTypeface(arial);
-        about2.setTypeface(arial, Typeface.BOLD);
-        about3.setTypeface(arial, Typeface.ITALIC);
-        about4.setTypeface(arial);
-        about5.setTypeface(arial, Typeface.ITALIC);
-        about6.setTypeface(arial);
-        about7.setTypeface(arial, Typeface.ITALIC);
-        about8.setTypeface(arial);
-        about9.setTypeface(arial, Typeface.BOLD);
-        about10.setTypeface(arial);
-        about11.setTypeface(arial, Typeface.BOLD);
-        about12.setTypeface(arial);
-        about13.setTypeface(arial, Typeface.BOLD);
-        about14.setTypeface(arial);
-        about15.setTypeface(arial, Typeface.BOLD);
-        about16.setTypeface(arial);
-        about17.setTypeface(arial, Typeface.BOLD);
-        about18.setTypeface(arial);
-        about19.setTypeface(arial, Typeface.BOLD);
-        about20.setTypeface(arial);
+        TypefaceController typefaceController = new TypefaceController(getActivity().getAssets());
+        typefaceController.setArial(about1);
+        typefaceController.setArial(about4);
+        typefaceController.setArial(about6);
+        typefaceController.setArial(about8);
+        typefaceController.setArial(about10);
+        typefaceController.setArial(about12);
+        typefaceController.setArial(about14);
+        typefaceController.setArial(about16);
+        typefaceController.setArial(about18);
+        typefaceController.setArial(about20);
+        typefaceController.setArialBold(about2);
+        typefaceController.setArialBold(about9);
+        typefaceController.setArialBold(about11);
+        typefaceController.setArialBold(about13);
+        typefaceController.setArialBold(about15);
+        typefaceController.setArialBold(about17);
+        typefaceController.setArialBold(about19);
+        typefaceController.setArialItalic(about3);
+        typefaceController.setArialItalic(about5);
+        typefaceController.setArialItalic(about7);
 
         return v;
     }

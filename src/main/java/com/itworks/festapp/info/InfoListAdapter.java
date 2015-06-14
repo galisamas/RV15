@@ -1,13 +1,13 @@
 package com.itworks.festapp.info;
 
 import android.content.Context;
-import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import com.itworks.festapp.R;
+import com.itworks.festapp.helpers.TypefaceController;
 import com.itworks.festapp.models.InfoListItem;
 
 import java.util.List;
@@ -39,13 +39,11 @@ public class InfoListAdapter extends ArrayAdapter<InfoListItem> {
             // recycle the already inflated view
             viewHolder = (ViewHolder) convertView.getTag();
         }
-
         // update the item view
         InfoListItem item = getItem(position);
         viewHolder.tvTitle.setText(item.name);
-        Typeface futura = Typeface.createFromAsset(context.getAssets(), "fonts/futura_condensed_medium.ttf");
-        viewHolder.tvTitle.setTypeface(futura);
-
+        TypefaceController typefaceController = new TypefaceController(context.getAssets());
+        typefaceController.setFutura(viewHolder.tvTitle);
         return convertView;
     }
 

@@ -1,9 +1,11 @@
 package com.itworks.festapp.helpers;
 
 import android.content.Context;
+import com.itworks.festapp.helpers.comparators.TimetableListComparator;
 import com.itworks.festapp.models.*;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ModelsController {
@@ -113,5 +115,17 @@ public class ModelsController {
             }
         }
         return new GameModel();
+    }
+
+    public List<TimetableModel> getTimetablesByStageIdAndByDay(int dayNumber, int stageId){
+        List<TimetableModel> stageTimetable = new ArrayList<>();
+        List<TimetableModel> timetableModels = jsonRepository.getTimetableFromJSON();
+        for (TimetableModel timetableModel : timetableModels) {
+            if (timetableModel.stageId == stageId && timetableModel.day == dayNumber) {
+                stageTimetable.add(timetableModel);
+            }
+        }
+        Collections.sort(stageTimetable, new TimetableListComparator());
+        return stageTimetable;
     }
 }

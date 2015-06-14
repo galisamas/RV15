@@ -2,7 +2,6 @@ package com.itworks.festapp.stages;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -11,43 +10,40 @@ import android.support.v4.app.ListFragment;
 import android.support.v4.view.ViewPager;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
-import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.ImageSpan;
+import android.text.style.RelativeSizeSpan;
+import android.text.style.TypefaceSpan;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.itworks.festapp.ActionBarActivity;
 import com.itworks.festapp.R;
+import com.itworks.festapp.helpers.CustomTypefaceSpan;
 import com.itworks.festapp.helpers.DateController;
+import com.itworks.festapp.helpers.TypefaceController;
 
-import java.util.Calendar;
-
-/**
- * Created by Naglis on 2015-02-01.
- */
 public class StagesActivity extends ActionBarActivity implements View.OnClickListener {
 
     TextView tv1, tv2;
-    private FragmentManager fm;
     CustomPagerAdapter mCustomPagerAdapter;
     ViewPager mViewPager;
     Drawable[] myDrawable;
     RelativeLayout b1, b2;
     private String[] tabTitles;
     protected int pagePosition;
+    private TypefaceController typefaceController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stage_activity);
-        fm = getSupportFragmentManager();
         setActionBar();
         tv1 = (TextView) findViewById(R.id.textView5);
         tv2 = (TextView) findViewById(R.id.textView2);
-        Typeface futura = Typeface.createFromAsset(getAssets(), "fonts/futura_condensed_medium.ttf");
-        tv1.setTypeface(futura);
-        tv2.setTypeface(futura);
+        typefaceController = new TypefaceController(getAssets());
+        typefaceController.setFutura(tv1);
+        typefaceController.setFutura(tv2);
 
         b1 = (RelativeLayout) findViewById(R.id.button7);
         b2 = (RelativeLayout) findViewById(R.id.button8);
@@ -65,16 +61,8 @@ public class StagesActivity extends ActionBarActivity implements View.OnClickLis
         loadCustomPageAdapter(getDay(),1);
     }
 
-    private int getDay(){ // TODO refactor iskelti DateHelper
-        int day = 1;
-        Calendar today = Calendar.getInstance();
-        if(today.get(Calendar.MONTH) == DateController.FESTIVAL_MONTH){
-            if((today.get(Calendar.DAY_OF_MONTH) == DateController.defaultCalendar(2).get(Calendar.DAY_OF_MONTH) &&
-                    today.get(Calendar.HOUR_OF_DAY) > 10 )||
-                    today.get(Calendar.DAY_OF_MONTH)-1 == DateController.defaultCalendar(2).get(Calendar.DAY_OF_MONTH)){
-                day = 2;
-            }
-        }
+    private int getDay(){
+        int day = DateController.getDayForStage();
         setDayButtonBackground(day);
         return day;
     }
@@ -93,7 +81,7 @@ public class StagesActivity extends ActionBarActivity implements View.OnClickLis
     }
 
     private void loadCustomPageAdapter(int day, int tabNumber) {
-        mCustomPagerAdapter = new CustomPagerAdapter(fm, this, day);
+        mCustomPagerAdapter = new CustomPagerAdapter(getSupportFragmentManager(), this, day);
         mViewPager.setAdapter(mCustomPagerAdapter);
         mViewPager.setCurrentItem(tabNumber);
     }
@@ -132,14 +120,19 @@ public class StagesActivity extends ActionBarActivity implements View.OnClickLis
         public int getCount() {
             return tabTitles.length;
         }
+
         @Override
         public CharSequence getPageTitle(int position) {
             SpannableStringBuilder sb = new SpannableStringBuilder("  stage");
-            myDrawable[position].setBounds(0, 0, myDrawable[position].getIntrinsicWidth(),
-                    myDrawable[position].getIntrinsicHeight());
-            ImageSpan span = new ImageSpan(myDrawable[position], ImageSpan.ALIGN_BASELINE);
-            sb.setSpan(new ForegroundColorSpan(getResources().getColor(R.color.list_separator)), 0, 7, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            sb.setSpan(span, 0, 1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            TypefaceSpan futuraSpan = new CustomTypefaceSpan(typefaceController.getFutura());
+            myDrawable[position].setBounds(0, 0, myDrawable[position].getIntrinsicWidth(), myDrawable[position].getIntrinsicHeight());
+            ImageSpan imageSpan = new ImageSpan(myDrawable[position], ImageSpan.ALIGN_BASELINE);
+            ForegroundColorSpan colorSpan = new ForegroundColorSpan(getResources().getColor(R.color.list_separator));
+
+            sb.setSpan(new RelativeSizeSpan(1.5f), 0, sb.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            sb.setSpan(futuraSpan, 0, sb.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+            sb.setSpan(colorSpan, 0, sb.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+            sb.setSpan(imageSpan, 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             return sb;
         }
     }

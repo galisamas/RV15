@@ -2,16 +2,15 @@ package com.itworks.festapp.info;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.app.ListFragment;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
+import com.itworks.festapp.BaseListFragment;
 import com.itworks.festapp.R;
 import com.itworks.festapp.helpers.JSONRepository;
 import com.itworks.festapp.models.InfoListItem;
@@ -21,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class InfoListAdapterFragment extends ListFragment {
+public class InfoListAdapterFragment extends BaseListFragment {
 
     private final int DRIVE_ME_THERE = 0;
     private final int RULES = 1;
@@ -47,14 +46,6 @@ public class InfoListAdapterFragment extends ListFragment {
         String[] values = getResources().getStringArray(R.array.info_list_names);
         for (String value : values) mItems.add(new InfoListItem(value));
         setListAdapter(new InfoListAdapter(getActivity(), mItems));
-    }
-
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        getListView().setDivider(getResources().getDrawable(R.color.list_separator));
-        getListView().setDividerHeight(2);
-        getListView().setBackgroundColor(Color.WHITE);
     }
 
     @Override

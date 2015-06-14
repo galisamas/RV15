@@ -10,7 +10,7 @@ public class FoodActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setActionBar();
-        OpenFragmentWithoutBundle(new FoodListAdapterFragment());
+        openFragmentWithoutBundle(new FoodListAdapterFragment());
 
     }
 }
