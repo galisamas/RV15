@@ -128,4 +128,23 @@ public class ModelsController {
         Collections.sort(stageTimetable, new TimetableListComparator());
         return stageTimetable;
     }
+
+    public TimetableModel getTimetable(List<TimetableModel> timetableModels, int number){
+        TimetableModel timetableModel = new TimetableModel();
+        if(timetableModels.size() > number)
+            timetableModel = timetableModels.get(number);
+        return timetableModel;
+    }
+
+    public List<TimetableModel> findNowTimetables(int dayNumber, List<TimetableModel> timetables){
+        List<TimetableModel> result = new ArrayList<>();
+        for (TimetableModel timetable : timetables) {
+            if (timetable.day == dayNumber) {
+                if (DateController.calculateIsItNow(dayNumber, timetable.start_time, timetable.end_time)) {
+                    result.add(timetable);
+                }
+            }
+        }
+        return result;
+    }
 }

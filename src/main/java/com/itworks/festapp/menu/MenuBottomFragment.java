@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.itworks.festapp.R;
 import com.itworks.festapp.helpers.DateController;
 import com.itworks.festapp.helpers.JSONRepository;
+import com.itworks.festapp.helpers.ModelsController;
 import com.itworks.festapp.helpers.TypefaceController;
 import com.itworks.festapp.helpers.comparators.TimetableListComparator;
 import com.itworks.festapp.models.TimetableModel;
@@ -24,6 +25,7 @@ public class MenuBottomFragment extends Fragment { // TODO patikrint buga kur ap
     TextView title, now, after;
     private MenuBottomElement element1 , element2, element3, element4;
     int index = 0;
+    private ModelsController modelsController;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class MenuBottomFragment extends Fragment { // TODO patikrint buga kur ap
         now = (TextView)v.findViewById(R.id.textView);
         after = (TextView)v.findViewById(R.id.textView4);
         setTypefaces();
+        modelsController = new ModelsController(getActivity());
         element1 = new MenuBottomElement();
         element2 = new MenuBottomElement();
         element3 = new MenuBottomElement();
@@ -63,9 +66,9 @@ public class MenuBottomFragment extends Fragment { // TODO patikrint buga kur ap
         JSONRepository jsonRepository = new JSONRepository(getActivity());
         List<TimetableModel> timetables = jsonRepository.getTimetableFromJSON();
         int dayNumber = DateController.getFestivalDay();
-        List<Integer> ids = findTimetables(dayNumber, timetables);
-        TimetableModel timetable1 = getTimetableById(ids, 0, timetables);
-        TimetableModel timetable2 = getTimetableById(ids, 1, timetables);
+        List<TimetableModel> timetableModels = modelsController.findNowTimetables(dayNumber, timetables);
+        TimetableModel timetable1 = modelsController.getTimetable(timetableModels, 0);
+        TimetableModel timetable2 = modelsController.getTimetable(timetableModels, 1);
         element1.setTimetableModel(timetable1);
         element2.setTimetableModel(timetable2);
         setNextTimetables(timetable1, timetable2, timetables, dayNumber);
@@ -78,65 +81,37 @@ public class MenuBottomFragment extends Fragment { // TODO patikrint buga kur ap
         typefaceController.setFutura(after);
     }
 
-    private TimetableModel getTimetableById(List<Integer> id, int number, List<TimetableModel> timetables){ // TODO refactor perduoti visa modeli timetable o ne id
-        TimetableModel timetableModel = new TimetableModel();
-        if(id.size() > number)
-            timetableModel = getTimetableModelById(id.get(number),timetables);
-        return timetableModel;
-    }
-
-    private TimetableModel getTimetableModelById(int id, List<TimetableModel> timetables ) { // TODO refactor iskelt
-        TimetableModel timetableModel = new TimetableModel();
-        for(int i=0;i<timetables.size();i++) {
-            if(timetables.get(i).id == id){
-                timetableModel = timetables.get(i);
-                break;
-            }
-        }
-        return timetableModel;
-    }
-
     private void setNextTimetables(TimetableModel current, TimetableModel other, List<TimetableModel> timetables, int dayNumber){
-        timetables = prepareTimetableList(timetables, dayNumber, other);
-        int index = (current.isItEmpty)?-1:current.id;
+        timetables = prepareTimetableList(timetables, dayNumber, current);
+        int index = (other.isItEmpty)?-1:current.id;
         for(int i=0;i<timetables.size();i++) {
             if(timetables.get(i).id == index){
                 index = i;
                 break;
             }
         }
-        TimetableModel element = new TimetableModel();
-        if(timetables.size() > index+1)
-            element =timetables.get(index + 1);
-        element3.setTimetableModel(element);
-        element = new TimetableModel();
-        if(timetables.size() > index+2)
-            element =timetables.get(index + 2);
-        element4.setTimetableModel(element);
+        setTimtableByIndex(timetables, index+1, element3);
+        setTimtableByIndex(timetables, index+2, element4);
+    }
+
+    private void setTimtableByIndex(List<TimetableModel> timetables, int index, MenuBottomElement element) {
+        TimetableModel timetableModel = new TimetableModel();
+        if(timetables.size() > index)
+            timetableModel =timetables.get(index);
+        element.setTimetableModel(timetableModel);
     }
 
     private List<TimetableModel> prepareTimetableList(List<TimetableModel> list, int dayNumber, TimetableModel notThis){
         List<TimetableModel> stageTimetable = new ArrayList<>();
-        for(int i=0;i<list.size();i++){
-            if (list.get(i).day == dayNumber) {
-                stageTimetable.add(list.get(i));
+        for (TimetableModel aList : list) {
+            if (aList.day == dayNumber && notThis.id != aList.id) {
+                stageTimetable.add(aList);
             }
         }
-        if(!notThis.isItEmpty)
-            stageTimetable.remove(notThis);
+
         Collections.sort(stageTimetable, new TimetableListComparator());
         return stageTimetable;
     }
 
-    private List<Integer> findTimetables(int dayNumber, List<TimetableModel> timetables){
-        List<Integer> result = new ArrayList<>();
-        for(int i=0;i<timetables.size();i++) {
-            if(timetables.get(i).day == dayNumber) {
-                if(DateController.calculateIsItNow(dayNumber, timetables.get(i).start_time, timetables.get(i).end_time)){
-                    result.add(timetables.get(i).id);
-                }
-            }
-        }
-        return result;
-    }
+
 }
