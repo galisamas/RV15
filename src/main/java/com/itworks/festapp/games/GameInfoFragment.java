@@ -4,19 +4,20 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import com.itworks.festapp.BaseFragment;
 import com.itworks.festapp.R;
 import com.itworks.festapp.helpers.BrowserController;
 import com.itworks.festapp.helpers.DateController;
 import com.itworks.festapp.helpers.ModelsController;
 import com.itworks.festapp.helpers.TypefaceController;
 import com.itworks.festapp.map.TerritoryActivity;
+import com.itworks.festapp.models.BaseModel;
 import com.itworks.festapp.models.GameModel;
 import com.itworks.festapp.models.GameTimetableModel;
 import com.itworks.festapp.models.PlaceModel;
@@ -24,7 +25,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
 
-public class GameInfoFragment extends Fragment implements View.OnClickListener{
+public class GameInfoFragment extends BaseFragment implements View.OnClickListener{
 
     private final String gameInfoPref = "GameInfoPref";
     private final String key = "id";
@@ -35,8 +36,8 @@ public class GameInfoFragment extends Fragment implements View.OnClickListener{
     private SharedPreferences sharedpreferences;
     private BrowserController browserController;
 
-    public void setGameModel(GameModel gameModel) {
-        this.gameModel = gameModel;
+    public void setBaseModel(BaseModel gameModel) {
+        this.gameModel = (GameModel) gameModel;
     }
 
     @Override
@@ -60,7 +61,7 @@ public class GameInfoFragment extends Fragment implements View.OnClickListener{
             gameModel = modelsController.getGameModelById(id);
         }
         PlaceModel placeModel = modelsController.getPlaceModelById(gameModel.placeId);
-        if(!gameModel.link_fb.isEmpty()) {
+        if(!gameModel.link_facebook.isEmpty()) {
             linkF = (ImageView) v.findViewById(R.id.imageFb);
             imageLoader.displayImage("drawable://" + R.drawable.social_fb, linkF);
             linkF.setOnClickListener(this);
@@ -109,7 +110,7 @@ public class GameInfoFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        browserController.openBrowser(gameModel.link_fb);
+        browserController.openBrowser(gameModel.link_facebook);
     }
 
     @Override

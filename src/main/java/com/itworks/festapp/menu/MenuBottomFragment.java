@@ -1,7 +1,6 @@
 package com.itworks.festapp.menu;
 
 
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -12,6 +11,7 @@ import android.widget.TextView;
 import com.itworks.festapp.R;
 import com.itworks.festapp.helpers.DateController;
 import com.itworks.festapp.helpers.JSONRepository;
+import com.itworks.festapp.helpers.TypefaceController;
 import com.itworks.festapp.helpers.comparators.TimetableListComparator;
 import com.itworks.festapp.models.TimetableModel;
 
@@ -20,6 +20,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class MenuBottomFragment extends Fragment { // TODO patikrint buga kur apacioj buvo neaiskus atlikejai (antra diena)
+
     TextView title, now, after;
     private MenuBottomElement element1 , element2, element3, element4;
     int index = 0;
@@ -44,7 +45,6 @@ public class MenuBottomFragment extends Fragment { // TODO patikrint buga kur ap
         transaction.commit();
         return v;
     }
-
 
     @Override
     public void onResume() {
@@ -72,13 +72,13 @@ public class MenuBottomFragment extends Fragment { // TODO patikrint buga kur ap
     }
 
     private void setTypefaces() {
-        Typeface futura = Typeface.createFromAsset(getActivity().getAssets(), "fonts/futura_condensed_medium.ttf");
-        title.setTypeface(futura);
-        now.setTypeface(futura);
-        after.setTypeface(futura);
+        TypefaceController typefaceController = new TypefaceController(getActivity().getAssets());
+        typefaceController.setFutura(title);
+        typefaceController.setFutura(now);
+        typefaceController.setFutura(after);
     }
 
-    private TimetableModel getTimetableById(List<Integer> id, int number, List<TimetableModel> timetables){
+    private TimetableModel getTimetableById(List<Integer> id, int number, List<TimetableModel> timetables){ // TODO refactor perduoti visa modeli timetable o ne id
         TimetableModel timetableModel = new TimetableModel();
         if(id.size() > number)
             timetableModel = getTimetableModelById(id.get(number),timetables);

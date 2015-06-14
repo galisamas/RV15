@@ -1,10 +1,6 @@
 package com.itworks.festapp.models;
 
-public class FoodModel {
-    public int id;
-    public String title;
-    public String about;
-    public String link_facebook;
+public class FoodModel extends BaseModel {
 
     public FoodModel() {
     }

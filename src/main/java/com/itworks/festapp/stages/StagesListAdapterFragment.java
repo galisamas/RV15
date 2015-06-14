@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.ListView;
 import com.itworks.festapp.BaseListFragment;
 import com.itworks.festapp.R;
+import com.itworks.festapp.artists.ArtistInfoFragment;
 import com.itworks.festapp.helpers.DateController;
 import com.itworks.festapp.helpers.JSONRepository;
 import com.itworks.festapp.helpers.ModelsController;
@@ -55,7 +56,7 @@ public class StagesListAdapterFragment extends BaseListFragment {
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
-        openInfo(artists.get(timetable.get(position).artistId));
+        openInfo(artists.get(timetable.get(position).artistId), new ArtistInfoFragment());
     }
 
     private int getColorByDate(TimetableModel timetable){

@@ -1,11 +1,8 @@
 package com.itworks.festapp.models;
 
-public class ArtistModel {
-    public int id;
-    public String title;
+public class ArtistModel extends BaseModel{
+
     public boolean notification;
-    public String about;
-    public String link_facebook;
     public String link_youtube;
     public String link_soundcloud;
     public String link_spotify;

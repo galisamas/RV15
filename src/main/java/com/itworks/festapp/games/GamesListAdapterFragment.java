@@ -44,11 +44,11 @@ public class GamesListAdapterFragment extends BaseListFragment {
     }
 
     private void openInfoById(int position) {
-        openInfo(modelsController.getGameModelById(position));
+        openInfo(modelsController.getGameModelById(position), new GameInfoFragment());
     }
 
     private void openInfoByPosition(int position) {
-        openInfo(games.get(position));
+        openInfo(games.get(position), new GameInfoFragment());
     }
 
 }

@@ -1,12 +1,9 @@
 package com.itworks.festapp.models;
 
-public class GameModel {
-    public int id;
-    public String title;
+public class GameModel extends BaseModel{
+
     public int placeId;
-    public String about;
     public Boolean notification;
-    public String link_fb;
 
     public GameModel() {
     }
@@ -18,6 +15,6 @@ public class GameModel {
         this.placeId = placeId;
         this.about = about;
         this.notification = notification;
-        this.link_fb = link_fb;
+        this.link_facebook = link_fb;
     }
 }

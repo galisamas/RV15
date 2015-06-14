@@ -4,26 +4,27 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import com.itworks.festapp.BaseFragment;
 import com.itworks.festapp.R;
 import com.itworks.festapp.helpers.BrowserController;
 import com.itworks.festapp.helpers.JSONRepository;
 import com.itworks.festapp.helpers.ModelsController;
 import com.itworks.festapp.helpers.TypefaceController;
 import com.itworks.festapp.map.TerritoryActivity;
+import com.itworks.festapp.models.BaseModel;
 import com.itworks.festapp.models.FoodModel;
 import com.itworks.festapp.models.PlaceModel;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
 
-public class FoodInfoFragment extends Fragment implements View.OnClickListener {
+public class FoodInfoFragment extends BaseFragment implements View.OnClickListener {
 
     private final String foodInfoPref = "FoodInfoPref";
     private final String key = "id";
@@ -35,8 +36,8 @@ public class FoodInfoFragment extends Fragment implements View.OnClickListener {
     private SharedPreferences sharedpreferences;
     private BrowserController browserController;
 
-    public void setFoodModel(FoodModel foodModel) {
-        this.foodModel = foodModel;
+    public void setBaseModel(BaseModel foodModel) {
+        this.foodModel = (FoodModel) foodModel;
     }
 
     @Override

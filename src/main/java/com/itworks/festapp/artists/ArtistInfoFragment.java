@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,17 +12,19 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.activeandroid.query.Select;
+import com.itworks.festapp.BaseFragment;
 import com.itworks.festapp.R;
 import com.itworks.festapp.helpers.*;
 import com.itworks.festapp.map.TerritoryActivity;
 import com.itworks.festapp.models.ArtistModel;
 import com.itworks.festapp.models.ArtistNotificationModel;
+import com.itworks.festapp.models.BaseModel;
 import com.itworks.festapp.models.TimetableModel;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
 
-public class ArtistInfoFragment extends Fragment implements View.OnClickListener {
+public class ArtistInfoFragment extends BaseFragment implements View.OnClickListener {
 
     private final String artistInfoPref = "ArtistInfoPref";
     private final String key = "id";
@@ -38,8 +39,8 @@ public class ArtistInfoFragment extends Fragment implements View.OnClickListener
     private BrowserController browserController;
     private ModelsController modelsController;
 
-    public void setArtistModel(ArtistModel artistModel) {
-        this.artistModel = artistModel;
+    public void setBaseModel(BaseModel artistModel) {
+        this.artistModel = (ArtistModel) artistModel;
     }
 
     @Override

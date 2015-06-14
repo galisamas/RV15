@@ -43,7 +43,6 @@ public class JSONRepository {
     private final String timetableJSON = "timetable.json";
     private final String where = "where";
     private final String infoJSON = "info.json";
-    private final String rules = "rules";
     private final String gameTimetableJSON = "gametimetable.json";
     private final String game_id = "game_id";
     private final String notificationsJSON = "notifications.json";
@@ -236,20 +235,8 @@ public class JSONRepository {
         return formList;
     }
 
-    public List<String> getRulesFromJSON(){ // TODO refactor, suspausti su info
-        JSONObject obj ;
-        List<String> rules = new ArrayList<>();
-        try {
-            obj = new JSONObject(loadJSONFromAsset(infoJSON));
-            JSONArray jsonRulesArray = obj.getJSONArray(this.rules);
-            for(int j=0; j<jsonRulesArray.length(); j++){
-                rules.add(jsonRulesArray.getString(j));
-            }
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return rules;
+    public List<String> getRulesFromJSON(){
+        return getInfoFromJSON(9);
     }
 
     public List<String> getInfoFromJSON(int jsonId) {
@@ -303,6 +290,9 @@ public class JSONRepository {
                 break;
             case 8:
                 result = "itworks";
+                break;
+            case 9:
+                result = "rules";
         }
         return result;
     }

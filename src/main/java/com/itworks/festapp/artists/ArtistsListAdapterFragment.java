@@ -48,11 +48,11 @@ public class ArtistsListAdapterFragment extends BaseListFragment {
     }
 
     private void openInfoByPosition(int position) {
-        openInfo(artists.get(position));
+        openInfo(artists.get(position), new ArtistInfoFragment());
     }
 
     private void openInfoById(int id) {
-        openInfo(modelHelper.getArtistModelById(id));
+        openInfo(modelHelper.getArtistModelById(id), new ArtistInfoFragment());
     }
 
 }

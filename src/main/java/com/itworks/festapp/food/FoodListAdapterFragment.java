@@ -30,6 +30,6 @@ public class FoodListAdapterFragment extends BaseListFragment {
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
-        openInfo(food.get(position));
+        openInfo(food.get(position), new FoodInfoFragment());
     }
 }
