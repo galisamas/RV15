@@ -7,12 +7,11 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.itworks.festapp.R;
-import com.itworks.festapp.helpers.DateController;
-import com.itworks.festapp.helpers.JSONRepository;
-import com.itworks.festapp.helpers.ModelsController;
-import com.itworks.festapp.helpers.TypefaceController;
+import com.itworks.festapp.helpers.*;
 import com.itworks.festapp.helpers.comparators.TimetableListComparator;
 import com.itworks.festapp.models.TimetableModel;
 
@@ -23,7 +22,7 @@ import java.util.List;
 public class MenuBottomFragment extends Fragment {
 
     TextView title, now, after;
-    private MenuBottomElement element1 , element2, element3, element4;
+    private MenuBottomElement element1, element2, element3, element4;
     int index = 0;
     private ModelsController modelsController;
 
@@ -46,6 +45,18 @@ public class MenuBottomFragment extends Fragment {
         transaction.add(R.id.after1, element3);
         transaction.add(R.id.after2, element4);
         transaction.commit();
+
+        if (PhotoController.isItSmallScreen(getActivity())) {
+            FrameLayout frameLayout = (FrameLayout) v.findViewById(R.id.now2);
+            frameLayout.getLayoutParams().height = 0;
+            frameLayout.requestLayout();
+            FrameLayout frameLayout2 = (FrameLayout) v.findViewById(R.id.after2);
+            frameLayout2.getLayoutParams().height = 0;
+            frameLayout2.requestLayout();
+            RelativeLayout relativeLayout = (RelativeLayout) v.findViewById(R.id.onscene);
+            relativeLayout.getLayoutParams().height = 0;
+            relativeLayout.requestLayout();
+        }
         return v;
     }
 
@@ -93,7 +104,7 @@ public class MenuBottomFragment extends Fragment {
 //        for (TimetableModel i:timetables){ // TODO log
 //            Log.d("MENUUUUU", i.id + " - " + modelsController.getArtistModelById(i.artistId).title);
 //        }
-//        Log.d("indexaaas",index + " !!!!!!!!!!!!!!");
+//        Log.d("indexaaas", index + " !!!!!!!!!!!!!!");
         setTimtableByIndex(timetables, index + 1, element3);
         setTimtableByIndex(timetables, index + 2, element4);
     }
@@ -115,6 +126,4 @@ public class MenuBottomFragment extends Fragment {
         Collections.sort(stageTimetable, new TimetableListComparator());
         return stageTimetable;
     }
-
-
 }

@@ -5,11 +5,9 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +18,7 @@ import com.itworks.festapp.ComingSoonActivity;
 import com.itworks.festapp.R;
 import com.itworks.festapp.artists.ArtistsActivity;
 import com.itworks.festapp.games.GamesActivity;
+import com.itworks.festapp.helpers.PhotoController;
 import com.itworks.festapp.info.InfoActivity;
 import com.itworks.festapp.map.TerritoryActivity;
 import com.itworks.festapp.stages.StagesActivity;
@@ -43,11 +42,10 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
             }
         });
 
-
         festLogo = (ImageView) v.findViewById(R.id.festLogo);
         logo = (ImageView) v.findViewById(R.id.logo);
         imageLoader.displayImage("drawable://"+ R.drawable.fest_app, festLogo);
-        imageLoader.displayImage("drawable://"+ R.drawable.logo, logo);
+        imageLoader.displayImage("drawable://"+ R.drawable.logo, logo); // TODO pakelt logo(vienodi tarpai tarp mygtuku ir actionbaro)
 
         b1 = (Button) v.findViewById(R.id.button);
         b2 = (Button) v.findViewById(R.id.button2);
@@ -78,12 +76,10 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
                 setAlertDialog(text);
             }
         }
-
-        if (isItSmallScreen()) {
-            MenuBottomFragment menuBottomFragment = (MenuBottomFragment) (getFragmentManager().findFragmentById(R.id.bottomLine));
-            ViewGroup.LayoutParams params = menuBottomFragment.getView().getLayoutParams();
-            params.height = 0;
-            menuBottomFragment.getView().setLayoutParams(params); // TODO reikia apacios maziems ekranams, kazkokios bent
+        if(PhotoController.isItSmallScreen(getActivity())){
+            RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)festLogo.getLayoutParams();
+            params.setMargins(0, 0, 0, 10); //left, top, right, bottom
+            festLogo.setLayoutParams(params);
         }
         return v;
     }
@@ -130,13 +126,5 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
             intent = new Intent(getActivity(),GamesActivity.class);
         }
         getActivity().startActivity(intent);
-    }
-
-    private boolean isItSmallScreen(){
-        Display display = getActivity().getWindowManager().getDefaultDisplay();
-        Point size = new Point();
-        display.getSize(size);
-        int height = size.y;
-        return (height < 900);
     }
 }

@@ -16,7 +16,7 @@
                 android:layout_height="25dp"
                 android:layout_centerHorizontal="true"
                 android:layout_above="@+id/firstLine"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="35dp"
                 android:id="@+id/festLogo"/>
 
         <LinearLayout
@@ -76,7 +76,7 @@
 
         </LinearLayout>
         <fragment android:layout_width="320dp"
-                  android:layout_height="130dp"
+                  android:layout_height="wrap_content"
                   android:name="com.itworks.festapp.menu.MenuBottomFragment"
                   android:layout_marginLeft="@dimen/menu_button_margins"
                   android:layout_marginRight="@dimen/menu_button_margins"

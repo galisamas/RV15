@@ -3,8 +3,11 @@ package com.itworks.festapp.helpers;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.support.v4.app.FragmentActivity;
+import android.view.Display;
 import android.widget.ImageView;
 
 public class PhotoController {
@@ -57,5 +60,13 @@ public class PhotoController {
         }
 
         return inSampleSize;
+    }
+
+    public static boolean isItSmallScreen(FragmentActivity context){
+        Display display = context.getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int height = size.y;
+        return (height < 900);
     }
 }
