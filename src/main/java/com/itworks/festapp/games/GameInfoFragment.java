@@ -79,8 +79,6 @@ public class GameInfoFragment extends BaseFragment implements View.OnClickListen
         int marginTop = -12;
         if(PhotoController.isItSmallScreen(getActivity())){
             marginTop = -7;
-            iw.getLayoutParams().height = 149;
-            iw.requestLayout();
         }
         location.setText(placeModel.name);
         List<GameTimetableModel> timetables = modelsController.getGameTimetableModelsByGameId(gameModel.id);

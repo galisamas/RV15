@@ -15,7 +15,6 @@ import android.widget.Toast;
 import com.itworks.festapp.R;
 import com.itworks.festapp.helpers.BrowserController;
 import com.itworks.festapp.helpers.JSONRepository;
-import com.itworks.festapp.helpers.PhotoController;
 import com.itworks.festapp.helpers.TypefaceController;
 import com.itworks.festapp.models.PlaceModel;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -54,10 +53,6 @@ public class InfoDriveMeThereFragment extends Fragment implements View.OnClickLi
         ImageLoader imageLoader = ImageLoader.getInstance();
         browserContoller = new BrowserController(getActivity());
         imageLoader.displayImage("drawable://" + photoId, header);
-        if(PhotoController.isItSmallScreen(getActivity())){
-            header.getLayoutParams().height = 213;
-            header.requestLayout();
-        }
         infoList = jsonRepository.getInfoFromJSON(jsonId);
 
         about.setText(infoList.get(0));

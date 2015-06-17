@@ -78,10 +78,6 @@ public class FoodInfoFragment extends BaseFragment implements View.OnClickListen
         }
         int photo_id = getResources().getIdentifier("f" + foodModel.id, "drawable", getActivity().getPackageName());
         imageLoader.displayImage("drawable://" + photo_id, iw);
-        if(PhotoController.isItSmallScreen(getActivity())){
-            iw.getLayoutParams().height = 149;
-            iw.requestLayout();
-        }
         title.setText(foodModel.title);
         location.setText(coordinate.name);
         about.setText(foodModel.about);

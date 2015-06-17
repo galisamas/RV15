@@ -11,7 +11,6 @@ import android.widget.TextView;
 import com.itworks.festapp.R;
 import com.itworks.festapp.helpers.BrowserController;
 import com.itworks.festapp.helpers.JSONRepository;
-import com.itworks.festapp.helpers.PhotoController;
 import com.itworks.festapp.helpers.TypefaceController;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -36,10 +35,6 @@ public class InfoItWorksFragment extends Fragment implements View.OnClickListene
         ImageLoader imageLoader = ImageLoader.getInstance();
         browserContoller = new BrowserController(getActivity());
         imageLoader.displayImage("drawable://" + photoId, header);
-        if(PhotoController.isItSmallScreen(getActivity())){
-            header.getLayoutParams().height = 213;
-            header.requestLayout();
-        }
         imageLoader.displayImage("drawable://" + R.drawable.social_fb, link);
         JSONRepository jsonRepository = new JSONRepository(getActivity());
         infoList = jsonRepository.getInfoFromJSON(jsonId);

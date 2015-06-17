@@ -85,8 +85,6 @@ public class ArtistInfoFragment extends BaseFragment implements View.OnClickList
         int marginTop = -12;
         if(PhotoController.isItSmallScreen(getActivity())){
             marginTop = -7;
-//            photo.getLayoutParams().height = 149;
-//            photo.requestLayout();
         }
         about.setText(artistModel.about);
         if(!timetables.isEmpty()) {
