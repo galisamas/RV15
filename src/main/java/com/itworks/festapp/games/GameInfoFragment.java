@@ -12,10 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.itworks.festapp.BaseFragment;
 import com.itworks.festapp.R;
-import com.itworks.festapp.helpers.BrowserController;
-import com.itworks.festapp.helpers.DateController;
-import com.itworks.festapp.helpers.ModelsController;
-import com.itworks.festapp.helpers.TypefaceController;
+import com.itworks.festapp.helpers.*;
 import com.itworks.festapp.map.TerritoryActivity;
 import com.itworks.festapp.models.BaseModel;
 import com.itworks.festapp.models.GameModel;
@@ -79,6 +76,12 @@ public class GameInfoFragment extends BaseFragment implements View.OnClickListen
         });
         int photo_id = getResources().getIdentifier("p" + gameModel.id, "drawable", getActivity().getPackageName());
         imageLoader.displayImage("drawable://" + photo_id, iw);
+        int marginTop = -12;
+        if(PhotoController.isItSmallScreen(getActivity())){
+            marginTop = -7;
+            iw.getLayoutParams().height = 149;
+            iw.requestLayout();
+        }
         location.setText(placeModel.name);
         List<GameTimetableModel> timetables = modelsController.getGameTimetableModelsByGameId(gameModel.id);
         description.setText(DateController.convertDate(timetables.get(0)));
@@ -88,7 +91,7 @@ public class GameInfoFragment extends BaseFragment implements View.OnClickListen
                     RelativeLayout.LayoutParams.WRAP_CONTENT
             );
             params.addRule(RelativeLayout.BELOW, R.id.description);
-            params.setMargins(0, -12, 0, 0);
+            params.setMargins(0, marginTop, 0, 0);
             second.setLayoutParams(params);
             second.requestLayout();
             description2.setText(DateController.convertDate(timetables.get(1)));

@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.itworks.festapp.R;
 import com.itworks.festapp.helpers.JSONRepository;
+import com.itworks.festapp.helpers.PhotoController;
 import com.itworks.festapp.helpers.TypefaceController;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -27,6 +28,10 @@ public class InfoRulesFragment extends Fragment {
         photo = (ImageView) v.findViewById(R.id.imageView3);
         ImageLoader imageLoader = ImageLoader.getInstance();
         imageLoader.displayImage("drawable://" + R.drawable.taisykles, photo);
+        if(PhotoController.isItSmallScreen(getActivity())){
+            photo.getLayoutParams().height = 213;
+            photo.requestLayout();
+        }
         about1 = (TextView) v.findViewById(R.id.about1);
         about2 = (TextView) v.findViewById(R.id.about2);
         about3 = (TextView) v.findViewById(R.id.about3);

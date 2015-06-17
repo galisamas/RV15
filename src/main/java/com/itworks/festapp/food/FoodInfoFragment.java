@@ -12,10 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.itworks.festapp.BaseFragment;
 import com.itworks.festapp.R;
-import com.itworks.festapp.helpers.BrowserController;
-import com.itworks.festapp.helpers.JSONRepository;
-import com.itworks.festapp.helpers.ModelsController;
-import com.itworks.festapp.helpers.TypefaceController;
+import com.itworks.festapp.helpers.*;
 import com.itworks.festapp.map.TerritoryActivity;
 import com.itworks.festapp.models.BaseModel;
 import com.itworks.festapp.models.FoodModel;
@@ -81,6 +78,10 @@ public class FoodInfoFragment extends BaseFragment implements View.OnClickListen
         }
         int photo_id = getResources().getIdentifier("f" + foodModel.id, "drawable", getActivity().getPackageName());
         imageLoader.displayImage("drawable://" + photo_id, iw);
+        if(PhotoController.isItSmallScreen(getActivity())){
+            iw.getLayoutParams().height = 149;
+            iw.requestLayout();
+        }
         title.setText(foodModel.title);
         location.setText(coordinate.name);
         about.setText(foodModel.about);

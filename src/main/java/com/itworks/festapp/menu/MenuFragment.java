@@ -45,7 +45,7 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
         festLogo = (ImageView) v.findViewById(R.id.festLogo);
         logo = (ImageView) v.findViewById(R.id.logo);
         imageLoader.displayImage("drawable://"+ R.drawable.fest_app, festLogo);
-        imageLoader.displayImage("drawable://"+ R.drawable.logo, logo); // TODO pakelt logo(vienodi tarpai tarp mygtuku ir actionbaro)
+        imageLoader.displayImage("drawable://"+ R.drawable.logo, logo);
 
         b1 = (Button) v.findViewById(R.id.button);
         b2 = (Button) v.findViewById(R.id.button2);
@@ -80,6 +80,8 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
             RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)festLogo.getLayoutParams();
             params.setMargins(0, 0, 0, 10); //left, top, right, bottom
             festLogo.setLayoutParams(params);
+            params.height = 20;
+            festLogo.requestLayout();
         }
         return v;
     }
@@ -101,6 +103,7 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
     public void onResume() {
         super.onResume();
         b4.setEnabled(true);
+        System.gc();
     }
 
     @Override

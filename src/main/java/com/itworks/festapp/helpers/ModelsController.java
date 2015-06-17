@@ -117,11 +117,18 @@ public class ModelsController {
         return new GameModel();
     }
 
-    public List<TimetableModel> getTimetablesByStageIdAndByDay(int dayNumber, int stageId){
-        List<TimetableModel> stageTimetable = new ArrayList<>();
+    public List<BaseTimetable> getTimetablesByStageIdAndByDay(int dayNumber, int stageId){
+        List<BaseTimetable> stageTimetable = new ArrayList<>();
         List<TimetableModel> timetableModels = jsonRepository.getTimetableFromJSON();
         for (TimetableModel timetableModel : timetableModels) {
             if (timetableModel.stageId == stageId && timetableModel.day == dayNumber) {
+                stageTimetable.add(timetableModel);
+            }
+        }
+        List<GameTimetableModel> gameTimetableModels = jsonRepository.getGameTimetableFromJSON();
+        for (GameTimetableModel timetableModel : gameTimetableModels) {
+            GameModel gameModel = getGameModelById(timetableModel.gameId);
+            if (gameModel.placeId == stageId && timetableModel.day == dayNumber) {
                 stageTimetable.add(timetableModel);
             }
         }

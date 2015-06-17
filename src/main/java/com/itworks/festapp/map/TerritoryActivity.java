@@ -9,6 +9,7 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
@@ -22,6 +23,7 @@ import com.itworks.festapp.R;
 import com.itworks.festapp.helpers.FloatingGroupExpandableListView.FloatingGroupExpandableListView;
 import com.itworks.festapp.helpers.FloatingGroupExpandableListView.WrapperExpandableListAdapter;
 import com.itworks.festapp.helpers.JSONRepository;
+import com.itworks.festapp.helpers.UsageController;
 import com.itworks.festapp.models.PlaceModel;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
@@ -47,6 +49,7 @@ public class TerritoryActivity extends FragmentActivity implements android.locat
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.territory_activity);
+        System.gc();
         markerQueue = new LinkedList<>();
         Intent intent = getIntent();
         lat = intent.getDoubleExtra("place_latitude", 0.0);
@@ -130,7 +133,8 @@ public class TerritoryActivity extends FragmentActivity implements android.locat
                 }
             }
             imageLoader = ImageLoader.getInstance();
-            imageLoader.loadImage("drawable://" + R.drawable.map_v3_1604, new SimpleImageLoadingListener() { // TODO uzdeti geresnes kokybes mapus
+            Log.d("TERRITORY","laisvos: " + UsageController.getMemoryUsage(this));
+            imageLoader.loadImage("drawable://" + R.drawable.map_v3, new SimpleImageLoadingListener() { // TODO uzdeti geresnes kokybes mapus
                 @Override
                 public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
                     LatLngBounds newarkBounds = new LatLngBounds(
@@ -140,6 +144,7 @@ public class TerritoryActivity extends FragmentActivity implements android.locat
                             .image(BitmapDescriptorFactory.fromBitmap(loadedImage))
                             .positionFromBounds(newarkBounds);
                     googleMap.addGroundOverlay(newarkMap);
+                    Log.d("TERRITORY", "laisva po!!!!!!!!!: " + UsageController.getMemoryUsage(TerritoryActivity.this));
                 }
             });
         }
@@ -201,6 +206,13 @@ public class TerritoryActivity extends FragmentActivity implements android.locat
         }else{
             expListView.collapseGroup(0);
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        googleMap.clear();
+        System.gc();
     }
 
     @Override

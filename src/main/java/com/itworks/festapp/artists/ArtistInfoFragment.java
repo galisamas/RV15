@@ -80,7 +80,14 @@ public class ArtistInfoFragment extends BaseFragment implements View.OnClickList
         paintSocialIcons();
         timetables = modelsController.getTimetableModelsByArtistId(artistModel.id);
         setAlarm();
-
+        int photo_id = getResources().getIdentifier("b"+artistModel.id, "drawable", getActivity().getPackageName());
+        imageLoader.displayImage(drawableString + photo_id, photo);
+        int marginTop = -12;
+        if(PhotoController.isItSmallScreen(getActivity())){
+            marginTop = -7;
+//            photo.getLayoutParams().height = 149;
+//            photo.requestLayout();
+        }
         about.setText(artistModel.about);
         if(!timetables.isEmpty()) {
             description.setText(DateController.convertDateFWE(timetables.get(0).day + "/" + timetables.get(0).start_time));
@@ -97,7 +104,8 @@ public class ArtistInfoFragment extends BaseFragment implements View.OnClickList
                         RelativeLayout.LayoutParams.WRAP_CONTENT
                 );
                 params.addRule(RelativeLayout.BELOW, R.id.description);
-                params.setMargins(0, -12, 0, 0);
+
+                params.setMargins(0, marginTop, 0, 0);
                 second.setLayoutParams(params);
                 second.requestLayout();
                 description2.setText(DateController.convertDateFWE(timetables.get(1).day + "/" + timetables.get(1).start_time));
@@ -110,8 +118,7 @@ public class ArtistInfoFragment extends BaseFragment implements View.OnClickList
                 });
             }
         }
-        int photo_id = getResources().getIdentifier("b"+artistModel.id, "drawable", getActivity().getPackageName());
-        imageLoader.displayImage(drawableString + photo_id, photo);
+
         background.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {}
