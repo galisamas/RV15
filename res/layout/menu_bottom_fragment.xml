@@ -8,13 +8,13 @@
     <RelativeLayout
             android:layout_width="match_parent"
             android:id="@+id/onscene"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-5dp">
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_centerHorizontal="true"
-                android:layout_marginBottom="-5dp"
                 android:text="@string/menu_bottom_title"
                 android:textColor="@color/day_background"
                 android:id="@+id/textView3"/>
@@ -33,11 +33,11 @@
             android:background="#4D000000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_weight="1"
-                android:layout_marginBottom="5dp"
                 android:layout_height="wrap_content">
             <RelativeLayout
                     android:layout_width="match_parent"
@@ -56,17 +56,18 @@
                       android:id="@+id/now1"/>
             <FrameLayout android:layout_width="match_parent"
                       android:layout_height="wrap_content"
+                         android:layout_marginBottom="2dp"
                       android:id="@+id/now2"/>
         </LinearLayout>
         <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
+                android:id="@+id/separator"
                 android:background="@color/day_background" />
         <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_weight="1"
-                android:layout_marginBottom="5dp"
                 android:layout_height="wrap_content">
             <RelativeLayout
                     android:layout_width="match_parent"
@@ -85,6 +86,7 @@
                       android:id="@+id/after1"/>
             <FrameLayout android:layout_width="match_parent"
                       android:layout_height="wrap_content"
+                         android:layout_marginBottom="2dp"
                       android:id="@+id/after2"/>
 
         </LinearLayout>

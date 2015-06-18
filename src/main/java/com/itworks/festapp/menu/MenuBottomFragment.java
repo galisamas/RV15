@@ -56,10 +56,15 @@ public class MenuBottomFragment extends Fragment {
             FrameLayout frameLayout2 = (FrameLayout) v.findViewById(R.id.after2);
             frameLayout2.getLayoutParams().height = 0;
             frameLayout2.requestLayout();
-            RelativeLayout relativeLayout = (RelativeLayout) v.findViewById(R.id.onscene);
-            relativeLayout.getLayoutParams().height = 0;
-            relativeLayout.requestLayout();
-            after.setText("");
+//            RelativeLayout relativeLayout = (RelativeLayout) v.findViewById(R.id.onscene);
+//            relativeLayout.getLayoutParams().height = 0;
+//            relativeLayout.requestLayout();
+            title.setText("DABAR ANT SCENOS LIPA");
+//            View separator = v.findViewById(R.id.separator);
+//            separator.setVisibility(View.GONE);
+        }else{
+            now.setText(getString(R.string.menu_bottom_name1));
+            after.setText(getString(R.string.menu_bottom_name2));
         }
         return v;
     }

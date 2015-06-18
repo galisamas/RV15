@@ -10,7 +10,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -115,8 +114,7 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
         RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) secondLine.getLayoutParams();
         int marginH = lp.topMargin;
         int fragmentH = element.onWindowFocusChanged();
-
-        Log.d("DYDIS", size.y +" "+logoH + " "+festH+" "+buttonsH+" "+fragmentH+" "+marginH+" "+(size.y-logoH-festH-buttonsH-fragmentH-marginH));
+//        Log.d("DYDIS", size.y +" "+logoH + " "+festH+" "+buttonsH+" "+fragmentH+" "+marginH+" "+(size.y-logoH-festH-buttonsH-fragmentH-marginH)); // TODO log
         return (size.y-logoH-festH-buttonsH-fragmentH-marginH)/3;
     }
 
