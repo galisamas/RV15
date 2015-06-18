@@ -1,9 +1,11 @@
 package com.itworks.festapp.menu;
 
 
+import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,7 +49,6 @@ public class MenuBottomFragment extends Fragment {
         transaction.add(R.id.after1, (PhotoController.isItSmallScreen(getActivity()))?element2:element3);
         transaction.add(R.id.after2, element4);
         transaction.commit();
-
         if (PhotoController.isItSmallScreen(getActivity())) {
             FrameLayout frameLayout = (FrameLayout) v.findViewById(R.id.now2);
             frameLayout.getLayoutParams().height = 0;
@@ -59,15 +60,20 @@ public class MenuBottomFragment extends Fragment {
             relativeLayout.getLayoutParams().height = 0;
             relativeLayout.requestLayout();
             after.setText("");
-            RelativeLayout.LayoutParams relativeParams = new RelativeLayout.LayoutParams(
-                            RelativeLayout.LayoutParams.MATCH_PARENT,
-                            RelativeLayout.LayoutParams.WRAP_CONTENT);
-            relativeParams.setMargins(0, 0, 0, 0);
-            parent.setLayoutParams(relativeParams);
-            parent.requestLayout();
         }
-
         return v;
+    }
+
+    public int onWindowFocusChanged() {
+        if(PhotoController.isItSmallScreen(getActivity())){
+            parent.setPadding(0,0,0,0);
+        }else{
+            Display display = getActivity().getWindowManager().getDefaultDisplay();
+            Point size = new Point();
+            display.getSize(size);
+            parent.setPadding(0,0,0,(size.x - getView().getWidth())/2);
+        }
+        return getView().getHeight();
     }
 
     @Override

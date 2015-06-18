@@ -7,6 +7,7 @@ import com.itworks.festapp.ActionBarActivity;
 public class MenuActivity extends ActionBarActivity {
 
     private MenuFragment fragment;
+    private static int index;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,8 @@ public class MenuActivity extends ActionBarActivity {
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
-        fragment.onWindowFocusChanged(hasFocus);
+        if(hasFocus && index == 0)
+            fragment.onWindowFocusChanged();
+        index++;
     }
 }

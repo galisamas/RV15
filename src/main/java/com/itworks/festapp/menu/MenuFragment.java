@@ -9,6 +9,7 @@ import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
@@ -30,7 +31,8 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
     Button b1,b2,b3,b4,b5,b6;
     ImageView festLogo, logo;
     Space space1, space2, space3;
-    private LinearLayout imageView;
+    private LinearLayout secondLine;
+    private MenuBottomFragment element;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -77,25 +79,20 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
                 setAlertDialog(text);
             }
         }
-//        if(PhotoController.isItSmallScreen(getActivity())){
-//            RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)festLogo.getLayoutParams();
-//            params.setMargins(0, 0, 0, 10); //left, top, right, bottom
-//            festLogo.setLayoutParams(params);
-//            params.height = 20;
-//            festLogo.requestLayout();
-//        }
+        element = new MenuBottomFragment();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.add(R.id.bottomLine, element);
+        transaction.commit();
+
         space1 = (Space) v.findViewById(R.id.space1);
         space2 = (Space) v.findViewById(R.id.space2);
         space3 = (Space) v.findViewById(R.id.space3);
-        imageView = (LinearLayout) v.findViewById(R.id.secondLine);
+        secondLine = (LinearLayout) v.findViewById(R.id.secondLine);
         return v;
     }
 
-
-    public void onWindowFocusChanged(boolean hasFocus) {
-        if (hasFocus) {
-            identifySpaceHeight();
-        }
+    public void onWindowFocusChanged() {
+        identifySpaceHeight();
     }
 
     private void identifySpaceHeight() {
@@ -115,10 +112,10 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
         int logoH = logo.getHeight();
         int festH = festLogo.getHeight();
         int buttonsH = b1.getHeight()*2;
-        Fragment mMapFragment = getFragmentManager().findFragmentById(R.id.bottomLine);
-        int fragmentH = mMapFragment.getView().getLayoutParams().height; // TODO blogas
-        RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) imageView.getLayoutParams();
+        RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) secondLine.getLayoutParams();
         int marginH = lp.topMargin;
+        int fragmentH = element.onWindowFocusChanged();
+
         Log.d("DYDIS", size.y +" "+logoH + " "+festH+" "+buttonsH+" "+fragmentH+" "+marginH+" "+(size.y-logoH-festH-buttonsH-fragmentH-marginH));
         return (size.y-logoH-festH-buttonsH-fragmentH-marginH)/3;
     }

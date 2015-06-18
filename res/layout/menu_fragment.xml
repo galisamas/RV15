@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-        android:id="@+id/menu_background">
+                android:id="@+id/menu_background">
 
         <Space
                 android:layout_width="match_parent"
@@ -33,6 +33,7 @@
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
+                android:layout_marginBottom="@dimen/menu_button_margins"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_above="@+id/secondLine"
@@ -58,7 +59,6 @@
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"
-                android:layout_marginTop="@dimen/menu_button_margins"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
@@ -70,7 +70,6 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/artists_background"
                         android:id="@+id/button"/>
-
                 <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -83,7 +82,6 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/info_background"
                         android:id="@+id/button5"/>
-
         </LinearLayout>
         <Space
                 android:layout_width="match_parent"
@@ -91,9 +89,8 @@
                 android:layout_above="@+id/bottomLine"
                 android:id="@+id/space3"
                 />
-        <fragment android:layout_width="320dp"
+        <FrameLayout android:layout_width="320dp"
                   android:layout_height="wrap_content"
-                  android:name="com.itworks.festapp.menu.MenuBottomFragment"
                   android:layout_marginLeft="@dimen/menu_button_margins"
                   android:layout_marginRight="@dimen/menu_button_margins"
                   android:layout_centerHorizontal="true"
