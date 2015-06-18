@@ -9,8 +9,8 @@
     <string name="mk_artists">Atlikėjai</string>
     <string name="mk_games">Pramogos</string>
 
-    <string name="menu_bottom_name1">DABAR:</string>
-    <string name="menu_bottom_name2">TOLIAU:</string>
+    <string name="menu_bottom_name1">DABAR</string>
+    <string name="menu_bottom_name2">TOLIAU</string>
     <string name="menu_bottom_title">ANT SCENOS LIPA</string>
 
     <string name="toast_start">Užstatytas priminimas 10 minučių prieš atlikėjo pasirodymą</string>

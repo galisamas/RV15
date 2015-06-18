@@ -25,6 +25,7 @@ public class MenuBottomFragment extends Fragment {
     private MenuBottomElement element1, element2, element3, element4;
     int index = 0;
     private ModelsController modelsController;
+    RelativeLayout parent;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -32,6 +33,7 @@ public class MenuBottomFragment extends Fragment {
         title = (TextView)v.findViewById(R.id.textView3);
         now = (TextView)v.findViewById(R.id.textView);
         after = (TextView)v.findViewById(R.id.textView4);
+        parent = (RelativeLayout) v.findViewById(R.id.bottomParent);
         setTypefaces();
         modelsController = new ModelsController(getActivity());
         element1 = new MenuBottomElement();
@@ -41,8 +43,8 @@ public class MenuBottomFragment extends Fragment {
         setTimetableForBottom();
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.add(R.id.now1, element1);
-        transaction.add(R.id.now2, element2);
-        transaction.add(R.id.after1, element3);
+        transaction.add(R.id.now2, (PhotoController.isItSmallScreen(getActivity()))?element3:element2);
+        transaction.add(R.id.after1, (PhotoController.isItSmallScreen(getActivity()))?element2:element3);
         transaction.add(R.id.after2, element4);
         transaction.commit();
 
@@ -56,7 +58,15 @@ public class MenuBottomFragment extends Fragment {
             RelativeLayout relativeLayout = (RelativeLayout) v.findViewById(R.id.onscene);
             relativeLayout.getLayoutParams().height = 0;
             relativeLayout.requestLayout();
+            after.setText("");
+            RelativeLayout.LayoutParams relativeParams = new RelativeLayout.LayoutParams(
+                            RelativeLayout.LayoutParams.MATCH_PARENT,
+                            RelativeLayout.LayoutParams.WRAP_CONTENT);
+            relativeParams.setMargins(0, 0, 0, 0);
+            parent.setLayoutParams(relativeParams);
+            parent.requestLayout();
         }
+
         return v;
     }
 

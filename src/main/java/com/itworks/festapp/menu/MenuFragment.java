@@ -27,7 +27,7 @@ import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListene
 
 public class MenuFragment extends Fragment implements View.OnClickListener {
 
-    Button b1,b2,b3,b4,b5, b6;
+    Button b1,b2,b3,b4,b5,b6;
     ImageView festLogo, logo;
 
     @Override
@@ -77,6 +77,7 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
             }
         }
         if(PhotoController.isItSmallScreen(getActivity())){
+
             RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)festLogo.getLayoutParams();
             params.setMargins(0, 0, 0, 10); //left, top, right, bottom
             festLogo.setLayoutParams(params);

@@ -82,7 +82,6 @@
                   android:layout_marginRight="@dimen/menu_button_margins"
                   android:layout_centerHorizontal="true"
                   android:layout_alignParentBottom="true"
-                  android:layout_marginBottom="@dimen/menu_button_margins"
                   android:id="@+id/bottomLine"/>
 
 </RelativeLayout>
