@@ -5,20 +5,20 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
+import android.widget.*;
 import com.itworks.festapp.ComingSoonActivity;
 import com.itworks.festapp.R;
 import com.itworks.festapp.artists.ArtistsActivity;
 import com.itworks.festapp.games.GamesActivity;
-import com.itworks.festapp.helpers.PhotoController;
 import com.itworks.festapp.info.InfoActivity;
 import com.itworks.festapp.map.TerritoryActivity;
 import com.itworks.festapp.stages.StagesActivity;
@@ -29,6 +29,8 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
 
     Button b1,b2,b3,b4,b5,b6;
     ImageView festLogo, logo;
+    Space space1, space2, space3;
+    private LinearLayout imageView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -46,7 +48,6 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
         logo = (ImageView) v.findViewById(R.id.logo);
         imageLoader.displayImage("drawable://"+ R.drawable.fest_app, festLogo);
         imageLoader.displayImage("drawable://"+ R.drawable.logo, logo);
-
         b1 = (Button) v.findViewById(R.id.button);
         b2 = (Button) v.findViewById(R.id.button2);
         b3 = (Button) v.findViewById(R.id.button3);
@@ -76,15 +77,50 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
                 setAlertDialog(text);
             }
         }
-        if(PhotoController.isItSmallScreen(getActivity())){
-
-            RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)festLogo.getLayoutParams();
-            params.setMargins(0, 0, 0, 10); //left, top, right, bottom
-            festLogo.setLayoutParams(params);
-            params.height = 20;
-            festLogo.requestLayout();
-        }
+//        if(PhotoController.isItSmallScreen(getActivity())){
+//            RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)festLogo.getLayoutParams();
+//            params.setMargins(0, 0, 0, 10); //left, top, right, bottom
+//            festLogo.setLayoutParams(params);
+//            params.height = 20;
+//            festLogo.requestLayout();
+//        }
+        space1 = (Space) v.findViewById(R.id.space1);
+        space2 = (Space) v.findViewById(R.id.space2);
+        space3 = (Space) v.findViewById(R.id.space3);
+        imageView = (LinearLayout) v.findViewById(R.id.secondLine);
         return v;
+    }
+
+
+    public void onWindowFocusChanged(boolean hasFocus) {
+        if (hasFocus) {
+            identifySpaceHeight();
+        }
+    }
+
+    private void identifySpaceHeight() {
+        int height = calculateSpaceHeight();
+        space1.getLayoutParams().height = height;
+        space2.getLayoutParams().height = height;
+        space3.getLayoutParams().height = height;
+        space1.requestLayout();
+        space2.requestLayout();
+        space3.requestLayout();
+    }
+
+    private int calculateSpaceHeight() {
+        Display display = getActivity().getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int logoH = logo.getHeight();
+        int festH = festLogo.getHeight();
+        int buttonsH = b1.getHeight()*2;
+        Fragment mMapFragment = getFragmentManager().findFragmentById(R.id.bottomLine);
+        int fragmentH = mMapFragment.getView().getLayoutParams().height; // TODO blogas
+        RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) imageView.getLayoutParams();
+        int marginH = lp.topMargin;
+        Log.d("DYDIS", size.y +" "+logoH + " "+festH+" "+buttonsH+" "+fragmentH+" "+marginH+" "+(size.y-logoH-festH-buttonsH-fragmentH-marginH));
+        return (size.y-logoH-festH-buttonsH-fragmentH-marginH)/3;
     }
 
     private void setAlertDialog(String text) {

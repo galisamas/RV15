@@ -4,10 +4,17 @@
                 android:layout_height="match_parent"
         android:id="@+id/menu_background">
 
+        <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_alignParentTop="true"
+                android:id="@+id/space1"
+                />
         <ImageView
-                android:layout_width="250dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
+                android:layout_below="@+id/space1"
                 android:layout_above="@+id/festLogo"
                 android:id="@+id/logo"/>
 
@@ -15,10 +22,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
                 android:layout_centerHorizontal="true"
-                android:layout_above="@+id/firstLine"
-                android:layout_marginBottom="35dp"
+                android:layout_above="@+id/space2"
                 android:id="@+id/festLogo"/>
-
+        <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_above="@+id/firstLine"
+                android:id="@+id/space2"
+                />
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
@@ -48,11 +59,10 @@
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_marginTop="@dimen/menu_button_margins"
-                android:layout_marginBottom="@dimen/menu_button_margins"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_above="@+id/bottomLine"
+                android:layout_above="@+id/space3"
                 android:id="@+id/secondLine">
 
                 <Button
@@ -75,6 +85,12 @@
                         android:id="@+id/button5"/>
 
         </LinearLayout>
+        <Space
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_above="@+id/bottomLine"
+                android:id="@+id/space3"
+                />
         <fragment android:layout_width="320dp"
                   android:layout_height="wrap_content"
                   android:name="com.itworks.festapp.menu.MenuBottomFragment"

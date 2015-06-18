@@ -6,6 +6,8 @@ import com.itworks.festapp.ActionBarActivity;
 
 public class MenuActivity extends ActionBarActivity {
 
+    private MenuFragment fragment;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -14,7 +16,8 @@ public class MenuActivity extends ActionBarActivity {
         bundle.putInt("id", intent.getIntExtra("id", -1));
         bundle.putString("text", intent.getStringExtra("text"));
         bundle.putBoolean("isItArtist", intent.getBooleanExtra("isItArtist", true));
-        openFragment(bundle, new MenuFragment());
+        fragment = new MenuFragment();
+        openFragment(bundle, fragment);
     }
 
     @Override
@@ -23,4 +26,9 @@ public class MenuActivity extends ActionBarActivity {
         onTrimMemory(TRIM_MEMORY_RUNNING_LOW);
     }
 
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        fragment.onWindowFocusChanged(hasFocus);
+    }
 }
