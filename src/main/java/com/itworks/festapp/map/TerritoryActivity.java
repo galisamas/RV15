@@ -133,8 +133,7 @@ public class TerritoryActivity extends FragmentActivity implements android.locat
                 }
             }
             imageLoader = ImageLoader.getInstance();
-            Log.d("TERRITORY","laisvos: " + UsageController.getMemoryUsage(this));
-            imageLoader.loadImage("drawable://" + R.drawable.map_v3, new SimpleImageLoadingListener() { // TODO uzdeti geresnes kokybes mapus
+            imageLoader.loadImage("drawable://" + getImageId(), new SimpleImageLoadingListener() {
                 @Override
                 public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
                     LatLngBounds newarkBounds = new LatLngBounds(
@@ -144,10 +143,25 @@ public class TerritoryActivity extends FragmentActivity implements android.locat
                             .image(BitmapDescriptorFactory.fromBitmap(loadedImage))
                             .positionFromBounds(newarkBounds);
                     googleMap.addGroundOverlay(newarkMap);
-                    Log.d("TERRITORY", "laisva po!!!!!!!!!: " + UsageController.getMemoryUsage(TerritoryActivity.this));
                 }
             });
         }
+    }
+
+    private Integer getImageId() {
+        long memoryUsage = UsageController.getMemoryUsage(this);
+        int result = R.drawable.map_v3_1604;
+        if(memoryUsage > 800){
+            result = R.drawable.map_v3_4000;
+        }else if(memoryUsage > 500){
+            result = R.drawable.map_v3_3000;
+        }else if(memoryUsage > 350){
+            result = R.drawable.map_v3_2500;
+        }else if(memoryUsage > 200){
+            result = R.drawable.map_v3_2000;
+        }
+        Log.d("TERRITORY","laisvos: " + UsageController.getMemoryUsage(this));// TODO log
+        return result;
     }
 
     private void initilizeMap() {
@@ -196,7 +210,7 @@ public class TerritoryActivity extends FragmentActivity implements android.locat
 
     @Override
     public void onBackPressed() {
-        if (!expListView.isGroupExpanded(0)) {
+        if (expListView!= null && !expListView.isGroupExpanded(0)) {
             super.onBackPressed();
             FragmentManager fm = getSupportFragmentManager();
             if(fm.getBackStackEntryCount() != 0) {

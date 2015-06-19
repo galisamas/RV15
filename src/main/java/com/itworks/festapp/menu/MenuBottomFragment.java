@@ -126,9 +126,9 @@ public class MenuBottomFragment extends Fragment {
 //            Log.d("MENUUUUU", i.id + " - " + modelsController.getArtistModelById(i.artistId).title);
 //        }
 //        Log.d("indexaaas", index + " !!!!!!!!!!!!!!");
-        Log.d("indexaaas", timetables.get(index).artistId + " !!!!!!!!!!!!!!");
-        Log.d("indexaaas", timetables.get(index+1).artistId + " !!!!!!!!!!!!!!");
-        Log.d("indexaaas", timetables.get(index+2).artistId + " !!!!!!!!!!!!!!");
+//        Log.d("indexaaas", timetables.get(index).artistId + " !!!!!!!!!!!!!!");
+//        Log.d("indexaaas", timetables.get(index+1).artistId + " !!!!!!!!!!!!!!");
+//        Log.d("indexaaas", timetables.get(index+2).artistId + " !!!!!!!!!!!!!!");
         setTimtableByIndex(timetables, index + 1, element3);
         setTimtableByIndex(timetables, index + 2, element4);
     }
