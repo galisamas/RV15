@@ -1,6 +1,8 @@
 package com.itworks.festapp.stages;
 
+import android.app.Activity;
 import android.content.res.Resources;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
@@ -9,7 +11,6 @@ import com.itworks.festapp.R;
 import com.itworks.festapp.artists.ArtistInfoFragment;
 import com.itworks.festapp.games.GameInfoFragment;
 import com.itworks.festapp.helpers.DateController;
-import com.itworks.festapp.helpers.JSONRepository;
 import com.itworks.festapp.helpers.ModelsController;
 import com.itworks.festapp.models.*;
 
@@ -21,7 +22,6 @@ public class StagesListAdapterFragment extends BaseListFragment {
     private int stageNumber;
     private int dayNumber;
     private List<BaseTimetable> timetable;
-    private List<ArtistModel> artists;
     private Resources resources;
     private ModelsController modelsController;
 
@@ -35,32 +35,47 @@ public class StagesListAdapterFragment extends BaseListFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        List<StageListItem> mItems = new ArrayList<>();
-        JSONRepository jsonRepository = new JSONRepository(getActivity());
-        modelsController = new ModelsController(getActivity());
-        timetable = modelsController.getTimetablesByStageIdAndByDay(dayNumber, stageNumber);
-        artists = jsonRepository.getArtistsFromJSON();
         resources = getResources();
-        for (BaseTimetable aTimetable : timetable) {
-            String title, photoIdentif;
-            PlaceModel place;
-            if (aTimetable instanceof TimetableModel) {
-                ArtistModel artist = modelsController.getArtistModelById(((TimetableModel) aTimetable).artistId);
-                title = artist.title;
-                photoIdentif = "m"+artist.id;
-                place = modelsController.getPlaceModelById(((TimetableModel)aTimetable).stageId);
-            } else{
-                GameModel gameModel = modelsController.getGameModelById(((GameTimetableModel) aTimetable).gameId);
-                place = modelsController.getPlaceModelById(gameModel.placeId);
-                photoIdentif = "n"+gameModel.id;
-                title = gameModel.title;
+
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        new AsyncTask<Void, Void, Void>() {
+            List<StageListItem> mItems;
+
+            @Override
+            protected Void doInBackground(Void... params) {
+                mItems = new ArrayList<>();
+                modelsController = new ModelsController(activity);
+                timetable = modelsController.getTimetablesByStageIdAndByDay(dayNumber, stageNumber);
+                for (BaseTimetable aTimetable : timetable) {
+                    String title, photoIdentif;
+                    PlaceModel place;
+                    if (aTimetable instanceof TimetableModel) {
+                        ArtistModel artist = modelsController.getArtistModelById(((TimetableModel) aTimetable).artistId);
+                        title = artist.title;
+                        photoIdentif = "m"+artist.id;
+                        place = modelsController.getPlaceModelById(((TimetableModel)aTimetable).stageId);
+                    } else{
+                        GameModel gameModel = modelsController.getGameModelById(((GameTimetableModel) aTimetable).gameId);
+                        place = modelsController.getPlaceModelById(gameModel.placeId);
+                        photoIdentif = "n"+gameModel.id;
+                        title = gameModel.title;
+                    }
+                    String date = DateController.convertTimeFWD(aTimetable.start_time, aTimetable.end_time);
+                    mItems.add(new StageListItem(getColorByDate(aTimetable), photoIdentif, title, date, place.name));
+                }
+                return null;
             }
-            String date = DateController.convertTimeFWD(aTimetable.start_time, aTimetable.end_time);
-            mItems.add(new StageListItem(getColorByDate(aTimetable),
-                    resources.getIdentifier(photoIdentif, "drawable", getActivity().getPackageName()),
-                    title, date, place.name));
-        }
-        setListAdapter(new StagesListAdapter(getActivity(), mItems));
+
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
+                setListAdapter(new StagesListAdapter(activity, mItems));
+            }
+        }.execute();
     }
 
     @Override

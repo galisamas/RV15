@@ -1,6 +1,7 @@
 package com.itworks.festapp.food;
 
-import android.os.Bundle;
+import android.app.Activity;
+import android.os.AsyncTask;
 import android.view.View;
 import android.widget.ListView;
 import com.itworks.festapp.BaseListFragment;
@@ -16,16 +17,28 @@ public class FoodListAdapterFragment extends BaseListFragment {
     private List<FoodModel> food;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        List<FoodListItem> mItems = new ArrayList<>();
-        JSONRepository jsonRepository = new JSONRepository(getActivity());
-        food = jsonRepository.getFoodFromJSON();
-        for (FoodModel aFood : food) {
-            int photo_id = this.getResources().getIdentifier("g" + aFood.id, "drawable", packageName);
-            mItems.add(new FoodListItem(photo_id, aFood.title));
-        }
-        setListAdapter(new FoodListAdapter(getActivity(), mItems));
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        new AsyncTask<Void, Void, Void>() {
+            List<FoodListItem> mItems;
+            @Override
+            protected Void doInBackground(Void... params) {
+                mItems = new ArrayList<>();
+                JSONRepository jsonRepository = new JSONRepository(getActivity());
+                food = jsonRepository.getFoodFromJSON();
+                for (FoodModel aFood : food) {
+                    int photo_id = activity.getResources().getIdentifier("g" + aFood.id, "drawable", packageName);
+                    mItems.add(new FoodListItem(photo_id, aFood.title));
+                }
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
+                setListAdapter(new FoodListAdapter(activity, mItems));
+            }
+        }.execute();
     }
 
     @Override

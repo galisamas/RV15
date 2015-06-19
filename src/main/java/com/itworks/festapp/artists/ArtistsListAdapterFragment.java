@@ -1,5 +1,7 @@
 package com.itworks.festapp.artists;
 
+import android.app.Activity;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
@@ -16,30 +18,42 @@ import java.util.List;
 
 public class ArtistsListAdapterFragment extends BaseListFragment {
 
-    private List<ArtistListItem> mItems;
     private List<ArtistModel> artists;
     private ModelsController modelHelper;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        mItems = new ArrayList<>();
-        modelHelper = new ModelsController(getActivity());
-        JSONRepository jsonRepository = new JSONRepository(getActivity());
-        artists = jsonRepository.getArtistsFromJSON();
-        Collections.sort(artists, new ArtistListComparator());
-        for (ArtistModel artist : artists) {
-            int photo_id = getResources().getIdentifier("m" + artist.id, "drawable", packageName);
-            mItems.add(new ArtistListItem(photo_id, artist.title));
-        }
-        setListAdapter(new ArtistsListAdapter(getActivity(), mItems));
-        Bundle bundle = this.getArguments();
-        if (bundle != null) {
-            int i = bundle.getInt("id", -1);
-            if(i!=-1){
-                openInfoById(i);
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        new AsyncTask<Void, Void, Void>() {
+            List<ArtistListItem> mItems;
+
+            @Override
+            protected Void doInBackground(Void... params) {
+                mItems = new ArrayList<>();
+                modelHelper = new ModelsController(activity);
+                JSONRepository jsonRepository = new JSONRepository(getActivity());
+                artists = jsonRepository.getArtistsFromJSON();
+                Collections.sort(artists, new ArtistListComparator());
+                for (ArtistModel artist : artists) {
+                    int photo_id = getResources().getIdentifier("m" + artist.id, "drawable", packageName);
+                    mItems.add(new ArtistListItem(photo_id, artist.title));
+                }
+                return null;
             }
-        }
+
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
+                setListAdapter(new ArtistsListAdapter(activity, mItems));
+                Bundle bundle = ArtistsListAdapterFragment.this.getArguments();
+                if (bundle != null) {
+                    int i = bundle.getInt("id", -1);
+                    if(i!=-1){
+                        openInfoById(i);
+                    }
+                }
+            }
+        }.execute();
     }
 
     @Override

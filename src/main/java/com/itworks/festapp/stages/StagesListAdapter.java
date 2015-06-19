@@ -16,7 +16,6 @@ import java.util.List;
 
 public class StagesListAdapter extends ArrayAdapter<StageListItem> {
 
-
     private final Context context;
 
     public StagesListAdapter(Context context, List<StageListItem> items) {
@@ -50,7 +49,8 @@ public class StagesListAdapter extends ArrayAdapter<StageListItem> {
         StageListItem item = getItem(position);
         viewHolder.ivLine.setBackgroundColor(item.colorId);
         ImageLoader imageLoader = ImageLoader.getInstance();
-        imageLoader.displayImage("drawable://" + item.photoId, viewHolder.ivIcon);
+        int id = context.getResources().getIdentifier(item.photoId, "drawable", context.getPackageName());
+        imageLoader.displayImage("drawable://" + id, viewHolder.ivIcon);
         viewHolder.tvTime.setText(item.time + ", " + item.place);
         viewHolder.tvTitle.setText(item.name);
         TypefaceController typefaceController = new TypefaceController(context.getAssets());

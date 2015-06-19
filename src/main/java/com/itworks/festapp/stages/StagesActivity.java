@@ -39,17 +39,14 @@ public class StagesActivity extends ActionBarActivity implements View.OnClickLis
         typefaceController = new TypefaceController(getAssets());
         typefaceController.setFutura(tv1);
         typefaceController.setFutura(tv2);
-
         b1 = (RelativeLayout) findViewById(R.id.button7);
         b2 = (RelativeLayout) findViewById(R.id.button8);
         b1.setOnClickListener(this);
         b2.setOnClickListener(this);
 
         tabTitles = getResources().getStringArray(R.array.tabs_names);
-
-
         mViewPager = (ViewPager) findViewById(R.id.pager);
-        loadCustomPageAdapter(getDay(),1);
+        loadCustomPageAdapter(getDay(),0);
     }
 
     private int getDay(){

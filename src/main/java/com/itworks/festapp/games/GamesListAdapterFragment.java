@@ -1,5 +1,7 @@
 package com.itworks.festapp.games;
 
+import android.app.Activity;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
@@ -18,24 +20,36 @@ public class GamesListAdapterFragment extends BaseListFragment {
     private ModelsController modelsController;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        List<GamesListItem> mItems = new ArrayList<>();
-        JSONRepository jsonRepository = new JSONRepository(getActivity());
-        games = jsonRepository.getGamesFromJSON();
-        modelsController = new ModelsController(getActivity());
-        for (GameModel game : games) {
-            int photo_id = this.getResources().getIdentifier("n" + game.id, "drawable", packageName);
-            mItems.add(new GamesListItem(photo_id, game.title));
-        }
-        setListAdapter(new GamesListAdapter(getActivity(), mItems));
-        Bundle bundle = this.getArguments();
-        if (bundle != null) {
-            int i = bundle.getInt("id", -1);
-            if(i!=-1){
-                openInfoById(i);
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        new AsyncTask<Void, Void, Void>() {
+            List<GamesListItem> mItems;
+            @Override
+            protected Void doInBackground(Void... params) {
+                mItems = new ArrayList<>();
+                JSONRepository jsonRepository = new JSONRepository(getActivity());
+                games = jsonRepository.getGamesFromJSON();
+                modelsController = new ModelsController(getActivity());
+                for (GameModel game : games) {
+                    int photo_id = activity.getResources().getIdentifier("n" + game.id, "drawable", packageName);
+                    mItems.add(new GamesListItem(photo_id, game.title));
+                }
+                return null;
             }
-        }
+
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
+                setListAdapter(new GamesListAdapter(activity, mItems));
+                Bundle bundle = GamesListAdapterFragment.this.getArguments();
+                if (bundle != null) {
+                    int i = bundle.getInt("id", -1);
+                    if(i!=-1){
+                        openInfoById(i);
+                    }
+                }
+            }
+        }.execute();
     }
 
     @Override

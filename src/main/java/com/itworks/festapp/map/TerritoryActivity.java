@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.location.Location;
 import android.location.LocationManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -50,26 +51,43 @@ public class TerritoryActivity extends FragmentActivity implements android.locat
         super.onCreate(savedInstanceState);
         setContentView(R.layout.territory_activity);
         System.gc();
-        markerQueue = new LinkedList<>();
-        Intent intent = getIntent();
-        lat = intent.getDoubleExtra("place_latitude", 0.0);
-        lng = intent.getDoubleExtra("place_longitude", 0.0);
-        name = intent.getStringExtra("name");
-        snippet = intent.getStringExtra("snippet");
-        if(lat != 0.0 && lng != 0.0){
-            cameraStart = new LatLng(lat, lng);
-        }
-        try{
-            initilizeMap();
-            googleMapSetting();
-            configExpandableList();
-            if(lat != 0.0 && lng != 0.0) {
-                createMarker(cameraStart, name, snippet);
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... params) {
+                markerQueue = new LinkedList<>();
+                Intent intent = getIntent();
+                lat = intent.getDoubleExtra("place_latitude", 0.0);
+                lng = intent.getDoubleExtra("place_longitude", 0.0);
+                name = intent.getStringExtra("name");
+                snippet = intent.getStringExtra("snippet");
+                if(lat != 0.0 && lng != 0.0){
+                    cameraStart = new LatLng(lat, lng);
+                }
+                try{
+                    initilizeMap();
+                }
+                catch(Exception e){
+                    e.printStackTrace();
+                }
+
+                return null;
             }
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
+
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
+                try{
+                    googleMapSetting();
+                    configExpandableList();
+                    if(lat != 0.0 && lng != 0.0) {
+                        createMarker(cameraStart, name, snippet);
+                    }
+                }
+                catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }.execute();
     }
 
     private void configExpandableList() {

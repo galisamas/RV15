@@ -51,7 +51,7 @@
 
         <activity android:name=".MyActivity"
                   android:screenOrientation="portrait"
-                  android:theme="@android:style/Theme.NoTitleBar">
+                  android:theme="@android:style/Theme.Holo.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -61,7 +61,6 @@
         <activity android:name=".menu.MenuActivity"
                   android:screenOrientation="portrait"
                   android:theme="@android:style/Theme.Holo.Light.NoActionBar">
-
         </activity>
 
         <activity android:name=".artists.ArtistsActivity"
