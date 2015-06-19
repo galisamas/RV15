@@ -9,7 +9,7 @@ import java.util.Calendar;
 public class DateController {
 
     private static final int DAY_HOURS = 24;
-    private static final int FESTIVAL_DAY_1 = 17;
+    private static final int FESTIVAL_DAY_1 = 18;
     private static final int FESTIVAL_DAY_2 = FESTIVAL_DAY_1+1;
     private static final int FESTIVAL_DAY_3 = FESTIVAL_DAY_2+1;
     public static final int FESTIVAL_MONTH = Calendar.JUNE; // TODO data sutvarkyti JULY - 17,18,19

@@ -8,5 +8,6 @@
     <dimen name="social_icon_bottom_margin">6dp</dimen>
     <dimen name="social_icon_size">35dp</dimen>
     <dimen name="location_icon_size">12dp</dimen>
+    <dimen name="menu_bottom_elements_margin">2dp</dimen>
 
 </resources>

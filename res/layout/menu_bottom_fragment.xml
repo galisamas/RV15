@@ -48,21 +48,18 @@
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:layout_centerHorizontal="true"
                         android:textColor="@color/day_background"
-                        android:text="@string/menu_bottom_name1"
                         android:id="@+id/textView"/>
             </RelativeLayout>
             <FrameLayout android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:id="@+id/now1"/>
+                         android:layout_height="wrap_content"
+                         android:id="@+id/now1"/>
             <FrameLayout android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                         android:layout_marginBottom="2dp"
-                      android:id="@+id/now2"/>
+                         android:layout_height="wrap_content"
+                         android:id="@+id/now2"/>
         </LinearLayout>
         <View
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
-                android:id="@+id/separator"
                 android:background="@color/day_background" />
         <LinearLayout
                 android:orientation="vertical"
@@ -78,16 +75,14 @@
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:layout_centerHorizontal="true"
                         android:textColor="@color/day_background"
-                        android:text="@string/menu_bottom_name2"
                         android:id="@+id/textView4"/>
             </RelativeLayout>
             <FrameLayout android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:id="@+id/after1"/>
+                         android:layout_height="wrap_content"
+                         android:id="@+id/after1"/>
             <FrameLayout android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                         android:layout_marginBottom="2dp"
-                      android:id="@+id/after2"/>
+                         android:layout_height="wrap_content"
+                         android:id="@+id/after2"/>
 
         </LinearLayout>
     </LinearLayout>

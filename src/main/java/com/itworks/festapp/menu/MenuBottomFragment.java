@@ -5,6 +5,7 @@ import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,12 +57,11 @@ public class MenuBottomFragment extends Fragment {
             FrameLayout frameLayout2 = (FrameLayout) v.findViewById(R.id.after2);
             frameLayout2.getLayoutParams().height = 0;
             frameLayout2.requestLayout();
-//            RelativeLayout relativeLayout = (RelativeLayout) v.findViewById(R.id.onscene);
-//            relativeLayout.getLayoutParams().height = 0;
-//            relativeLayout.requestLayout();
+            now.getLayoutParams().height = 0;
+            now.requestLayout();
+            after.getLayoutParams().height = 0;
+            after.requestLayout();
             title.setText("DABAR ANT SCENOS LIPA");
-//            View separator = v.findViewById(R.id.separator);
-//            separator.setVisibility(View.GONE);
         }else{
             now.setText(getString(R.string.menu_bottom_name1));
             after.setText(getString(R.string.menu_bottom_name2));
@@ -126,6 +126,9 @@ public class MenuBottomFragment extends Fragment {
 //            Log.d("MENUUUUU", i.id + " - " + modelsController.getArtistModelById(i.artistId).title);
 //        }
 //        Log.d("indexaaas", index + " !!!!!!!!!!!!!!");
+        Log.d("indexaaas", timetables.get(index).artistId + " !!!!!!!!!!!!!!");
+        Log.d("indexaaas", timetables.get(index+1).artistId + " !!!!!!!!!!!!!!");
+        Log.d("indexaaas", timetables.get(index+2).artistId + " !!!!!!!!!!!!!!");
         setTimtableByIndex(timetables, index + 1, element3);
         setTimtableByIndex(timetables, index + 2, element4);
     }
