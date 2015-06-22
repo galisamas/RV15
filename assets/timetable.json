@@ -86,15 +86,15 @@
 	"stage_id": 3,
 	"day": 1,
 	"start_time": "26/00",
-	"end_time": "27/00"
+	"end_time": "27/30"
 	},
 	{
 	"id": 11,
 	"artist_id": 12,
 	"stage_id": 3,
 	"day": 1,
-	"start_time": "27/00",
-	"end_time": "28/00"
+	"start_time": "27/30",
+	"end_time": "29/00"
 	},
 	{
 	"id": 12,

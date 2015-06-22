@@ -5,21 +5,21 @@
 	"game_id": 0,
 	"day": 2,
 	"start_time": "15/00",
-	"end_time": "16/30"
+	"end_time": "17/00"
 	},
 	{
 	"id": 1,
 	"game_id": 1,
 	"day": 1,
 	"start_time": "19/00",
-	"end_time": "23/00"
+	"end_time": "24/00"
 	},
 	{
 	"id": 2,
 	"game_id": 1,
 	"day": 2,
 	"start_time": "19/00",
-	"end_time": "21/30"
+	"end_time": "22/00"
 	},
 	{
 	"id": 3,

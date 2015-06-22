@@ -5,7 +5,6 @@ import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,14 +68,15 @@ public class MenuBottomFragment extends Fragment {
         return v;
     }
 
-    public int onWindowFocusChanged() {
-        if(PhotoController.isItSmallScreen(getActivity())){
-            parent.setPadding(0,0,0,0);
+    public int onWindowFocusChanged(int width) {
+        Display display = getActivity().getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        int padding = (size.x - width) / 2;
+        if(PhotoController.isItSmallScreen(getActivity())) {
+            parent.setPadding(0, 0, 0, 0);
         }else{
-            Display display = getActivity().getWindowManager().getDefaultDisplay();
-            Point size = new Point();
-            display.getSize(size);
-            parent.setPadding(0,0,0,(size.x - getView().getWidth())/2);
+            parent.setPadding(0, 0, 0, padding);
         }
         return getView().getHeight();
     }

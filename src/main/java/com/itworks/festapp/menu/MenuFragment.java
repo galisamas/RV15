@@ -19,6 +19,7 @@ import com.itworks.festapp.ComingSoonActivity;
 import com.itworks.festapp.R;
 import com.itworks.festapp.artists.ArtistsActivity;
 import com.itworks.festapp.games.GamesActivity;
+import com.itworks.festapp.helpers.PhotoController;
 import com.itworks.festapp.info.InfoActivity;
 import com.itworks.festapp.map.TerritoryActivity;
 import com.itworks.festapp.stages.StagesActivity;
@@ -30,8 +31,9 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
     Button b1,b2,b3,b4,b5,b6;
     ImageView festLogo, logo;
     Space space1, space2, space3;
-    private LinearLayout secondLine;
     private MenuBottomFragment element;
+    private LinearLayout secondLine;
+    private FrameLayout bottomLine;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -87,6 +89,8 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
         space2 = (Space) v.findViewById(R.id.space2);
         space3 = (Space) v.findViewById(R.id.space3);
         secondLine = (LinearLayout) v.findViewById(R.id.secondLine);
+        bottomLine = (FrameLayout) v.findViewById(R.id.bottomLine);
+
         return v;
     }
 
@@ -109,13 +113,14 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
         Point size = new Point();
         display.getSize(size);
         int logoH = logo.getHeight();
-        int festH = festLogo.getHeight();
+        int festH = (int) (festLogo.getHeight()*(PhotoController.isItSmallScreen(getActivity())?-1:1.5));
         int buttonsH = b1.getHeight()*2;
-        RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) secondLine.getLayoutParams();
-        int marginH = lp.topMargin;
-        int fragmentH = element.onWindowFocusChanged();
-//        Log.d("DYDIS", size.y +" "+logoH + " "+festH+" "+buttonsH+" "+fragmentH+" "+marginH+" "+(size.y-logoH-festH-buttonsH-fragmentH-marginH)); // TODO log
-        return (size.y-logoH-festH-buttonsH-fragmentH-marginH)/3;
+        LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) b4.getLayoutParams();
+        bottomLine.getLayoutParams().width = b1.getWidth()*3 + lp.leftMargin*2;
+        bottomLine.requestLayout();
+        int fragmentH = element.onWindowFocusChanged(bottomLine.getLayoutParams().width);
+//        Log.d("DYDIS", size.y + " " + logoH + " " + festH + " " + buttonsH + " " + fragmentH + " " + " " + (size.y - logoH - festH - buttonsH - fragmentH)); // TODO log
+        return (size.y-logoH+festH-buttonsH-fragmentH)/3;
     }
 
     private void setAlertDialog(String text) {

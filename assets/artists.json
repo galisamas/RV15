@@ -14,7 +14,7 @@
   {	
 	"id": 1,
 	"title": "KASTIS B2B DONATELLO",
-	"about": "",  
+	"about": "Legendinis DJ duetas iš Kauno. Klube šie vyrai yra buvę daugiau kartų nei nemažai iš mūsų mokykloje, todėl neabejojame, kad jie žino, ką daro.",  
 	"notification": false, 
 	"link_facebook": "",
 	"link_soundcloud": "",
@@ -25,7 +25,7 @@
   {	
 	"id": 2,
 	"title": "SONO",
-	"about": "",  
+	"about": "Trio iš Vokietijos, grojantys pop elektroniką. Daugybės radio hitų autoriai, kurių darbus remiksavo Marc Romboy, H.U.S.H., Fedde Le Grand bei kiti panašaus lygio atlikėjai. Laukia karštas live pasirodymas!",  
 	"notification": true, 
 	"link_facebook": "",
 	"link_soundcloud": "",
@@ -36,7 +36,7 @@
   {	
 	"id": 3,
 	"title": "IGNAS",
-	"about": "",
+	"about": "EXIT klubo veidas bei vedlys Ignas Vanagas. ",
 	"notification": false, 
 	"link_facebook": "https://www.facebook.com/IgnasOfficial",
 	"link_soundcloud": "https://soundcloud.com/ignas/",
@@ -49,7 +49,6 @@
 	"title": "TOUGH LOVE",
 	"about": "London based duo ‘Tough Love’ have rapidly risen through the ranks of the house scene over the last three years. Their distinct productions together with energetic and bass-heavy DJ sets have created a cult following of hard-core fans across the UK and beyond. Their sound instantly recognisable in their production can be described as bass infused House with plenty of 90s R&B and Garage references and hard-hitting groove.",
 	"notification": true, 
-	"photo_name": "",
 	"link_facebook": "https://www.facebook.com/toughlovemusic",
 	"link_soundcloud": "https://soundcloud.com/toughlovemusic",
 	"link_youtube": "https://youtu.be/QNsPI6V4Iec",
@@ -115,7 +114,7 @@ Tru school lithuanian hip-hop dj/turntablist. With big love to the music, DJ Mam
   {	
 	"id": 10,
 	"title": "KANDY KILLERS",
-	"about": "",  
+	"about": "Papai, šypsenos, +30, maudynės, sikspekai, akiniai nuo saulės, kabrioletai, draugai, festai, šašlyks, muzika, dvirkons.. Kandy Killers - Gediminas ir Blanka festivalyje pasirodys Techno scenoje.",  
 	"notification": false, 
 	"link_facebook": "https://www.facebook.com/kandykillers",
 	"link_soundcloud": "https://soundcloud.com/kandykillers",
@@ -126,7 +125,7 @@ Tru school lithuanian hip-hop dj/turntablist. With big love to the music, DJ Mam
   {	
 	"id": 11,
 	"title": "RECOCO B2B ANNA HANNA",
-	"about": "", 
+	"about": "Techno princesė iš Maskvos bei reivo princas iš pajūrio - duetas rimtas. Praleisti negalima.", 
 	"notification": false, 
 	"link_facebook": "https://www.facebook.com/djannahanna",
 	"link_soundcloud": "https://soundcloud.com/naktiniai-pauksciai/anna-hanna-resolute-at-naktiniai-pauksciai",
@@ -142,8 +141,7 @@ Tru school lithuanian hip-hop dj/turntablist. With big love to the music, DJ Mam
 Among many exciting artistic projects, Linas has been involved in the XYZ Opera performance project (since 2010) where the most talented Lithuanian opera singers together with prominent electronic music composers/artists create a unique show with visuals. Linas also started a slow balearic disco project New Found Land in 2009, played synth in an electronic indie cabaret band Adomas & the Mittens in 2011 and recently co­founded a pop electronic duo Dunes of Gold
 
 With live gigs throughout Lithuania and all across Europe, varied original productions (Boso, Connaisseur, Planet Mu, Silence etc) unexpected co­productions, genre bending remixes, and dynamic work with electronic operas and ballets – the last few years have been an adventurous ride. ‘Clouds’ should be the impetus to catapult Few Nolder onto the global stage.",  
-	"notification": false, 
-	"photo_name": "",
+	"notification": false,
 	"link_facebook": "https://www.facebook.com/fewnolder",
 	"link_soundcloud": "https://soundcloud.com/fewnolder",
 	"link_youtube": "",
@@ -164,7 +162,7 @@ With live gigs throughout Lithuania and all across Europe, varied original produ
   {	
 	"id": 14,
 	"title": "JUSTINAS JARUTIS",
-	"about": "Užimtas…", 
+	"about": "Grupės 'Freaks of Floor' lyderis ir senas Radistų draugas Justinas Jarutis scenoje pasirodys su užvedančiu DJ setu, kurio metu gyvai dainuos kartu su iš grotuvų skambančia muzika.", 
 	"notification": false, 
 	"link_facebook": "", 
 	"link_soundcloud": "", 
@@ -175,9 +173,8 @@ With live gigs throughout Lithuania and all across Europe, varied original produ
   {	
 	"id": 15,
 	"title": "EMBODY",
-	"about": "", 
-	"notification": false, 
-	"photo_name": "",
+	"about": "Buvęs dueto 'The Sneekers' vedlys, dabar Londone savo tarptautinę karjerą puoselėjantis lietuvaitis Karolis Labanauskas. Išskirtinis 'Embody' projekto pasirodymas Lietuvoje.", 
+	"notification": false,
 	"link_facebook": "https://www.facebook.com/iamembody",
 	"link_soundcloud": "https://soundcloud.com/iamembody",
 	"link_youtube": "http://youtu.be/qYdls1keLvU",
@@ -187,9 +184,16 @@ With live gigs throughout Lithuania and all across Europe, varied original produ
   {	
 	"id": 16,
 	"title": "DJ ANNY",
-	"about": "",  
-	"notification": false, 
-	"photo_name": "",
+	"about": "DJ Anny (Hanna Sbrodova) is an international DJ/Producer/Radio host Since storming onto the scene in 2009, the Ukrainian artist has emerged as one of the most widely admired djane in modern dance music.
+
+Annie's touring schedule has led them from Panama to India, from France to Malta, from Italy to Germany and everywhere in between. Summer 2014 was a record breaking season playing for Paradise 507, one of  biggest EDM festival in North America. Anny is always on the road and her House sound makes clubs and festivals go crazy. Stage performance by Anny is a combination of the most mainstream trends in EDM music, as well as technical skill, energy and beauty
+
+Over the last years she have sparked the interest of fellow DJs with her releases.
+Track 'Young' which became a European hit; support by the likes of Hardwell, Markus Schulz, Nicky Romero and many more. Since its success Anny has consistently gained peak positions on the international dance  and Beatport charts. Their most popular release «Eclipse (Original Mix), cracked the top 100 tracks on the beatport General chart.
+
+In 2013 she start her weekly radio show 'Your Solution' which got over a ten of thousand of listening and fans from all over the world.
+Anny took part in the annual premium Geometria Awards in 2012 and 2013 where she got the award twice in a row.",  
+	"notification": false,
 	"link_facebook": "https://www.facebook.com/djannyofficial",
 	"link_soundcloud": "https://soundcloud.com/dj_anny",
 	"link_youtube": "http://youtu.be/CBzT4Xjkwzo",
@@ -226,8 +230,7 @@ With live gigs throughout Lithuania and all across Europe, varied original produ
 Dueto, paskui kurį ilgainiui patraukė šimtai tūkstančių gerbėjų, ‘kelrode žvaigždė’ tapo Ernestas Janušas, paskatinęs susikurti originalų įvaizdį, charakterį ir tapti išskirtinėmis radijo asmenybėmis. Radistai radijui sugrąžino personažus, ir neilgai trukus išaugo savo autorinės laidos rėmus.
 
 Garbė vesti didžiausius šalyje muzikinius apdovanojimus M.A.M.A., motyvacinės paskaitos universitetuose, ‘nuosavas’ muzikos festivalis, minios gerbėjų ir neišsenkančios vidinės baterijos stebinti, džiuginti ir džiaugtis gyvenimu patiems! ‘Užvedėjai’ Radistai nestabdo NIE-KA-DA.",  
-	"notification": true, 
-	"photo_name": "",
+	"notification": true,
 	"link_facebook": "https://www.facebook.com/radistai.zipfm",
 	"link_soundcloud": "",
 	"link_youtube": "http://youtu.be/oLeg2L5PyNY",
@@ -237,7 +240,7 @@ Garbė vesti didžiausius šalyje muzikinius apdovanojimus M.A.M.A., motyvacinė
   {	
 	"id": 20,
 	"title": "GILE",
-	"about": "",  
+	"about": "Rugilė Jautakaitė.",  
 	"notification": false, 
 	"link_facebook": "https://www.facebook.com/gilemusic",
 	"link_soundcloud": "https://soundcloud.com/djqutie",
@@ -290,7 +293,7 @@ He has been playing for more than 10 years now, shared decks with such great art
   {	
 	"id": 24,
 	"title": "METRIKK AVENUE",
-	"about": "", 
+	"about": "Panevežietis Arnoldas Matulis, per 2014-uosius sugrojęs bene visuose geriausiuose Lietuvos klubuose - įdomu, kaip jam seksis ant smėlio.", 
 	"notification": false, 
 	"link_facebook": "https://www.facebook.com/metrikkavenue",
 	"link_soundcloud": "https://soundcloud.com/metrikkavenue",
@@ -302,8 +305,7 @@ He has been playing for more than 10 years now, shared decks with such great art
 	"id": 25,
 	"title": "ANDYSOUL",
 	"about": "Andysoul - jaunas, visada puikios nuotaikos Dj, jau ketvirti metai šokdinantis klubinio gyvenimo pasiilgusius žmones. Kiekvienas grojimas jam, lyg maža šventė. Atsidavimas darbui - pirmoje vietoje. Tai DJ, kuris savo grojama muzika, stengiasi pašokdinti kiekvieną klubo lankytoją. Tai žmogus, kuriam darbo valandos savaitgaliais negalioja Praleidęs vasarą Mojo Lounge Palanga, Andysoul kelia savo DJ karierą laipteliu aukščiau. Bendrauti su žmonėmis mėgstantis klubino gyvenimo atstovas,  pasiruošęs atiduoti save Mojo Lounge Vilniaus publikai.", 
-	"notification": false, 
-	"photo_name": "",
+	"notification": false,
 	"link_facebook": "https://www.facebook.com/Andysoul.Official",
 	"link_soundcloud": "",
 	"link_youtube": "",
@@ -313,7 +315,7 @@ He has been playing for more than 10 years now, shared decks with such great art
   {	
 	"id": 26,
 	"title": "TITAS & JOVANI", 
-	"about": "", 
+	"about": "Jonas Nainys ir Titas Motuzas - du kolegos bei draugai festivalyje pirmą kartą įvykdys seną norą ir sugros b2b. Bus įdomu!", 
 	"notification": false, 
 	"link_facebook": "https://www.facebook.com/jovani.at.club",
 	"link_soundcloud": "https://soundcloud.com/jovani_at_club",
@@ -348,22 +350,7 @@ He has been playing for more than 10 years now, shared decks with such great art
 	"link_youtube": "",
 	"link_spotify": "",
 	"origin": "LT"
-  },
-  {	
-	"id": 29,
-	"title": "MARKAS",
-	"about": "Markas is a new name of House, G- House, Deep House music genres in Lithuania. He began his musical career with his first song 'Love' in 2012. This track was selected to the Berlin group ‘Booka Shade’ music album and also was included on Beatport charts – known as one of the world’s largest online music store specializing in electronic music and culture.
-
-Currently, Markas is resident at popular Lithuanian radio show and music blog – ‘REMBO music’. but also works with ‘MTA records’, ‘Loulou records’, ‘Clouded Vision’ ‘Kumasi Music’ and others. His latest release debuted on well-known electronic music records company ‘MTA Records’ owned by duo Chase & Status. 
-
-Markas Paplauskas", 
-	"notification": false, 
-	"link_facebook": "https://www.facebook.com/MarkasMusic",
-	"link_soundcloud": "",
-	"link_youtube": "",
-	"link_spotify": "",
-	"origin": "LT"
-  },
+  }
   {	
 	"id": 30,
 	"title": "THING",

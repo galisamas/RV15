@@ -46,10 +46,82 @@ Irklentė (SUP – stand up paddeling board) – tai pats paprasčiausias būdas
 	"id": 3,
 	"title": "ZUMBA",
 	"about": "Nemokama zumbos treniruotė visiems norintiems šeštadienio ryte su kvalifikuota trenere Auguste Kropaite!", 
-	"places_id": 1,
+	"places_id": 14, 
 	"notification": true, 
 	"link_facebook": "https://www.facebook.com/SokioHarmonija"
-  }
+  },
+  {	
+	"id": 4,
+	"title": "TENISO TURNYRAS",
+	"about": "Liepos 18 d. bus organizuojamas dvejetų turnyras Radistų Teniso titului laimėti. Jei esi geras žaidėjas – įsimesk savo kedus bei raketę, bus karšta! Jei ne – pasirūpinsime pradedančiųjų įranga ir pasirūpinsime, jog vistiek būtų smagu!", 
+	"places_id": 17, 
+	"notification": false, 
+	"link_facebook": ""
+  },
+  {	
+	"id": 5,
+	"title": "KANŲ LIŪTŲ SPECIALIOJI PROGRAMA",
+	"about": "Nematei kino teatre? Išskirtinė proga Radistai Village 2015 dalyviams!
 
+2014-ųjų metų festivalis sulaukė 37 427 dalyvių, jų darbus vertino 327 žiuri nariai iš 44 šalių, o kūrėjams išdalinti 1 142 liūtai. Geriausios reklamos sugulė 2 valandų trukmės programoje, kurioje šiemet bronzos, sidabro, aukso ir „Grand Prix“ apdovanojimus pelnę darbai. Tarp daugelio prekinių ženklų šiemet labiausiai išsiskyrė „Volvo“, „Honda“, „Coca-Cola“, „Old Spice“, „DirectTV“ ir kitų puikiai žinomų kompanijų reklaminiai klipai.", 
+	"places_id": 3, 
+	"notification": false, 
+	"link_facebook": ""
+  },
+  {	
+	"id": 6,
+	"title": "KALJANŲ BARAS",
+	"about": "Informacija ruošiama.", 
+	"places_id": 14,
+	"notification": false, 
+	"link_facebook": ""
+  },
+  {	
+	"id": 7,
+	"title": "HAPPY365 VESTUVĖS",
+	"about": "Naujas žurnalas HAPPY365 siūlys festivalyje… susituokti! Taip, vietoje, imti ir susižieduoti.", 
+	"places_id": 14, 
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/happy365mag"
+  },
+  {	
+	"id": 8,
+	"title": "BUM BUM FUTBOLAS",
+	"about": "BUM BUM / Burbulinis futbolas – nauja pramoga Lietuvoje! Mačai šeštadienį, Liepos 18 d.",
+	"places_id": 14,
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/gobumbum"
+  },
+  {	
+	"id": 9,
+	"title": "BADMINTONO TURNYRAS",
+	"about": "Kęstutis Navickas Badminton Academy taip pat atvyksta į Radistų festivalį!
+
+Kęstutis Navickas – geriausias visų laikų Lietuvos badmintonininkas atvyksta į “ Radistai Village “ tam, kad pasidalintų savo patirtimi ir supažindintų Jus su badmintonu!
+
+Kęstutis: „Paruošime aikštelę, ištempsime tinklą, papasakosime badmintono subtilybes, ir parodysime pagrindinius smūgius, kad galetumėte pajusti tikrąjį badmintono teikiamą malonumą. Sužaisime dvejetų mini turnyriuką, todėl ieškokite sau poros, ne vien linksmybėms, bet ir pergalėms pasiekti! :) Aišku, prizų irgi bus! Todėl, treniruokitės, ruoškitės, kad linksmybės su Radistais būtų dar malonesnės, po gerų emocijų badmintono aikšteleje „.
+Visą info apie Radistai Village badmintono turnyrą, galite rasti akademijos FB puslapyje.", 
+	"places_id": 14, 
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/KestutisNavickasBadmintonAcademy"
+  },
+  {	
+	"id": 10,
+	"title": "SHMUTKE.EU TINKLINIS",
+	"about": "SHMUTKE.EU tinklinio turnyras
+
+Shmutke jau antrus metus iš eilės organizuoja 4X4 MIX paplūdimio tinklinio turnyrą festivalyje. Šiemet tai bus dar didesnis turnyras su dar daugiau dalyvių. Nugalėtojai bus apdovanoti specialiai Radistų festivaliui kurtais paplūdimio tinklinio marškinėliais ir festivalio atributika. Susitiksime Liepos 18d. Prie tinklinio aikštelės. Komandoje privalės dalyvauti bent viena mergina.", 
+	"places_id": 18,
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/visurimu"
+  },
+  {
+  	"id": 11,
+	"title": "POKERIO TURNYRAS",
+	"about": "Organizuoja sportinio pokerio klubas 'Du karaliai'", 
+	"places_id": 14,
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/dukaraliai"
+  }
 ]
 }

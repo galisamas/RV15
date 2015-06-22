@@ -1,29 +1,88 @@
 ﻿{
 	"food": [
   {
-    "about": "ČILI ženklas jau seniai tapo picos sinonimu Lietuvoje, tačiau nesuklyskite, „Čili pica“ – daugiau nei tik gardus valgis. Mums – tai seniausias picos meno meistrų tinklas šalyje ir galimybė kasdien virtuvėje kurti mažus stebuklus. Daugeliui mūsų ištikimų svečių – tai jauki vieta, kur malonu sugrįžti, apkabinti seniai matytą draugą ar tiesiog atsipūsti po dienos darbų, kur padavėjas žino Jūsų mėgstamus patiekalus ir visada Jus pasitinka su šypsena.",
-    "title": "Čili",
-    "link_facebook": "http://www.cili.lt/",
+    "about": "",
+    "title": "Dešrainiai24",
+    "link_facebook": "",
     "id": 0
   }, 
   {
-    "about": "„CanCan pizza“ išsiskiria maisto patiekalų įvairove, aptarnavimo sparta ir kokybe bei lanksčia kainų politika. Restoranų tinklas „CanCan pizza“ savo svečiams siūlo greitai patiekiamas kokybiškas picas bei tradicinius lietuviškus patiekalus. Restoranuose  „CanCan pizza“ siūloma skanauti beveik 40 rūšių picų ir daugiau kaip 70 kitų patiekalų: ragauti įvairių užkandžių ir salotų, užsisakyti karštųjų žuvų, vištienos, mėsos ar miltinių patiekalų ir mėgautis gardžiais desertais. Asortimentas atnaujinamas sezono naujienomis, skubantiems siūlomi dienos pietūs iš „Meniu greitai“ valgiaraščio, o mažųjų svečių visada laukia „Vaikų valgiaraštis“  specialūs patiekalai,  žaidimai ir prizai.",
-    "title": "Cancan",
-    "link_facebook": "http://www.cancan.lt/",
+    "about": "",
+    "title": "Pasta & WOK",
+    "link_facebook": "",
     "id": 1
   }, 
   {
-    "about": "Susipažinkite: lėtas, virtuoziškas, ypatingas juodos kavos gaminimo būdas – Šilkinė Juoda (ang. Pour Over) kava. Šis būdas ypatingas tuo, kad juodą kavą leidžia paruošti itin kruopščiai: naudojame tikslų kiekį kavos pupelių, lėtai užpilame tam tikros temperatūros vandeniu, kava teka per specialų filtrinį indą. Naudojama technika yra Made in Japan, kaip senais gerais “magnetofonų” laikais!. Mes šią kavą iškart pakrikštijome”šilkine juoda” – dėl jos “lygaus”, tobulo skonio.
-    Geriausiai šis būdas tinka konkrečios vietovės kavai ruošti – atskleisti tik joms būdingą skonį. Tad kaskart klauskite baristos, ką šiuo metu siūlome ragauti.",
-    "title": "Coffee inn",
-    "link_facebook": "http://www.coffee-inn.lt/",
+    "about": "",
+    "title": "Mėsainiai",
+    "link_facebook": "",
     "id": 2
   }, 
   {
-    "about": "Bebro Blyninė – tai linksma bei draugiška blyninė, kurios tikslas yra pradžiuginti visus ‘blyninius’ ir ‘neblyninius’ vartotojus stebinančiai skaniais blynais.",
-    "title": "Bebro blyninė",
-    "link_facebook": "http://www.bebroblynine.lt/",
+    "about": "",
+    "title": "Kebabai",
+    "link_facebook": "",
     "id": 3
+  }, 
+  {
+    "about": "",
+    "title": "Lietuviška tradicinė virtuvė",
+    "link_facebook": "",
+    "id": 4
+  }, 
+  {
+    "about": "",
+    "title": "Pizza",
+    "link_facebook": "",
+    "id": 5
+  }, 
+  {
+    "about": "",
+    "title": "Vokiška virtuvė",
+    "link_facebook": "",
+    "id": 6
+  }, 
+  {
+    "about": "",
+    "title": "Sushi (Soya)",
+    "link_facebook": "",
+    "id": 7
+  }, 
+  {
+    "about": "",
+    "title": "Indiška virtuvė",
+    "link_facebook": "",
+    "id": 8
+  }, 
+  {
+    "about": "",
+    "title": "Sumuštiniai",
+    "link_facebook": "",
+    "id": 9
+  }, 
+  {
+    "about": "",
+    "title": "La Bulvė",
+    "link_facebook": "",
+    "id": 10
+  }, 
+  {
+    "about": "",
+    "title": "Spūrgos (Donut Lab)",
+    "link_facebook": "",
+    "id": 11
+  }, 
+  {
+    "about": "",
+    "title": "Kukurūzai",
+    "link_facebook": "",
+    "id": 12
+  }, 
+  {
+    "about": "",
+    "title": "Blynai",
+    "link_facebook": "",
+    "id": 13
   }
 ]
 }

@@ -89,7 +89,7 @@
                 android:layout_above="@+id/bottomLine"
                 android:id="@+id/space3"
                 />
-        <FrameLayout android:layout_width="320dp"
+        <FrameLayout android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:layout_marginLeft="@dimen/menu_button_margins"
                   android:layout_marginRight="@dimen/menu_button_margins"
