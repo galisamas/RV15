@@ -25,7 +25,7 @@ public class MenuActivity extends ActionBarActivity {
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         if(index == 0)
-            fragment.onWindowFocusChanged();
+            fragment.onWindowFocusChanged(this);
         index++;
     }
 }

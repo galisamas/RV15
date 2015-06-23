@@ -16,8 +16,8 @@
 	"title": "KASTIS B2B DONATELLO",
 	"about": "Legendinis DJ duetas iš Kauno. Klube šie vyrai yra buvę daugiau kartų nei nemažai iš mūsų mokykloje, todėl neabejojame, kad jie žino, ką daro.",  
 	"notification": false, 
-	"link_facebook": "",
-	"link_soundcloud": "",
+	"link_facebook": "https://www.facebook.com/lightsoutradioshow",
+	"link_soundcloud": "https://soundcloud.com/lights-out-radio-show",
 	"link_youtube": "",
 	"link_spotify": "",
 	"origin": "LT"
@@ -91,7 +91,8 @@
   {	
 	"id": 8,
 	"title": "MAMANIA",
-	"about": "DJ Mamania is a hip hop DJ in the Baltic region and he is a member of Lithuanian hip hop band, called G&G Sindikatas, which received numerous music awards and went on an international concert tour in 2003, giving concerts in Latvia, Estonia and Poland.
+	"about": "(Artist of Silent Disco)
+DJ Mamania is a hip hop DJ in the Baltic region and he is a member of Lithuanian hip hop band, called G&G Sindikatas, which received numerous music awards and went on an international concert tour in 2003, giving concerts in Latvia, Estonia and Poland.
 Tru school lithuanian hip-hop dj/turntablist. With big love to the music, DJ Mamania started Dj’ing already in 1992. The first breath of freedom for our country Lithuania brought us a big variety of music and great amount of music styles and influences to choose from. ",
 	"notification": false, 
 	"link_facebook": "https://www.facebook.com/djmamania",
@@ -350,13 +351,13 @@ He has been playing for more than 10 years now, shared decks with such great art
 	"link_youtube": "",
 	"link_spotify": "",
 	"origin": "LT"
-  }
+  },
   {	
 	"id": 30,
 	"title": "THING",
-	"about": "Half German, half Lithuanian - Thing (born Alex Krell, 1991.06.09) is a DJ/Producer now based in Lithuania, Vilnius. 
+	"about": "Half German, half Lithuanian - Thing (born Alex Krell, 1991.06.09) is a DJ/Producer now based in Lithuania, Vilnius.
 
-After being in a couple different music projects with different music genres in late 2011 Thing came up as a solo project. CRUX records describes him like that: ‘He is a non stop musical genius and his productions and musical choices are evidence!’. 
+After being in a couple different music projects with different music genres in late 2011 Thing came up as a solo project. CRUX records describes him like that: ‘He is a non stop musical genius and his productions and musical choices are evidence!’.
 
 His first EP ‘Cream’ was released on Silver Wave records which was perfect place where to start. He recently gained support from bigger names. EP also included a remix by a Belgian DJ/Producer - Ntology.", 
 	"notification": false, 
@@ -396,6 +397,17 @@ Now he’s running his own record label, Svogue Muziq, working as A&R and manage
 	"link_youtube": "",
 	"link_spotify": "",
 	"origin": "ES"
+  },
+  {	
+	"id": 33,
+	"title": "LEON SOMOV & NERI JASS",
+	"about": "Leonas Somovas & Neri Jass from UK",
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/leonsomovmusic",
+	"link_soundcloud": "https://soundcloud.com/neri-jass",
+	"link_youtube": "",
+	"link_spotify": "",
+	"origin": "LT"
   }
 ]
 }

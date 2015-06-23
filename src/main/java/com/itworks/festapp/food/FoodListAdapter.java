@@ -24,6 +24,11 @@ public class FoodListAdapter extends ArrayAdapter<FoodListItem> {
     }
 
     @Override
+    public boolean isEnabled(int position) {
+        return false;
+    }
+
+    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
 

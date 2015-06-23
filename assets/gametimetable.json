@@ -34,6 +34,62 @@
 	"day": 2,
 	"start_time": "10/00",
 	"end_time": "11/00"
+	},
+	{
+	"id": 5,
+	"game_id": 4,
+	"day": 2,
+	"start_time": "11/00",
+	"end_time": "17/00"
+	},
+	{
+	"id": 6,
+	"game_id": 5,
+	"day": 2,
+	"start_time": "12/00",
+	"end_time": "15/00"
+	},
+	{
+	"id": 7,
+	"game_id": 6,
+	"day": 2,
+	"start_time": "11/00",
+	"end_time": "17/00"
+	},
+	{
+	"id": 8,
+	"game_id": 7,
+	"day": 2,
+	"start_time": "11/00",
+	"end_time": "17/00"
+	},
+	{
+	"id": 9,
+	"game_id": 8,
+	"day": 2,
+	"start_time": "11/00",
+	"end_time": "17/00"
+	},
+	{
+	"id": 10,
+	"game_id": 9,
+	"day": 2,
+	"start_time": "11/00",
+	"end_time": "17/00"
+	},
+	{
+	"id": 11,
+	"game_id": 10,
+	"day": 2,
+	"start_time": "11/00",
+	"end_time": "17/00"
+	},
+	{
+	"id": 12,
+	"game_id": 11,
+	"day": 2,
+	"start_time": "11/00",
+	"end_time": "17/00"
 	}
 	]
 }

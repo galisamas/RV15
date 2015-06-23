@@ -9,7 +9,7 @@ import java.util.Calendar;
 public class DateController {
 
     private static final int DAY_HOURS = 24;
-    private static final int FESTIVAL_DAY_1 = 20;
+    private static final int FESTIVAL_DAY_1 = 22;
     private static final int FESTIVAL_DAY_2 = FESTIVAL_DAY_1+1;
     private static final int FESTIVAL_DAY_3 = FESTIVAL_DAY_2+1;
     public static final int FESTIVAL_MONTH = Calendar.JUNE; // TODO data sutvarkyti JULY - 17,18,19
@@ -123,7 +123,10 @@ public class DateController {
                 day = 1;
                 break;
             case FESTIVAL_DAY_2:
-                day = 2;
+                if(today.get(Calendar.HOUR_OF_DAY) < 7)
+                    day = 1;
+                else
+                    day = 2;
                 break;
             case FESTIVAL_DAY_3:
                 if(today.get(Calendar.HOUR_OF_DAY) < 7)
@@ -138,7 +141,7 @@ public class DateController {
         Calendar today = Calendar.getInstance();
         if(today.get(Calendar.MONTH) == DateController.FESTIVAL_MONTH){
             if((today.get(Calendar.DAY_OF_MONTH) == DateController.defaultCalendar(2).get(Calendar.DAY_OF_MONTH) &&
-                    today.get(Calendar.HOUR_OF_DAY) > 10 )||
+                    today.get(Calendar.HOUR_OF_DAY) > 7 )||
                     today.get(Calendar.DAY_OF_MONTH)-1 == DateController.defaultCalendar(2).get(Calendar.DAY_OF_MONTH)){
                 day = 2;
             }

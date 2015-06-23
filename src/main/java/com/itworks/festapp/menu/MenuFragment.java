@@ -9,15 +9,16 @@ import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
-import com.itworks.festapp.ComingSoonActivity;
 import com.itworks.festapp.R;
 import com.itworks.festapp.artists.ArtistsActivity;
+import com.itworks.festapp.food.FoodActivity;
 import com.itworks.festapp.games.GamesActivity;
 import com.itworks.festapp.helpers.PhotoController;
 import com.itworks.festapp.info.InfoActivity;
@@ -94,12 +95,12 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
         return v;
     }
 
-    public void onWindowFocusChanged() {
-        identifySpaceHeight();
+    public void onWindowFocusChanged(FragmentActivity context) {
+        identifySpaceHeight(context);
     }
 
-    private void identifySpaceHeight() {
-        int height = calculateSpaceHeight();
+    private void identifySpaceHeight(FragmentActivity context) {
+        int height = calculateSpaceHeight(context);
         space1.getLayoutParams().height = height;
         space2.getLayoutParams().height = height;
         space3.getLayoutParams().height = height;
@@ -108,8 +109,8 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
         space3.requestLayout();
     }
 
-    private int calculateSpaceHeight() {
-        Display display = getActivity().getWindowManager().getDefaultDisplay();
+    private int calculateSpaceHeight(FragmentActivity context) {
+        Display display = context.getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
         int logoH = logo.getHeight();
@@ -153,7 +154,7 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
             intent = new Intent(getActivity(),StagesActivity.class);
         }
         else if (view.getId() == R.id.button3){
-            intent = new Intent(getActivity(),ComingSoonActivity.class); // TODO FoodActivity, ComingSoonActivity
+            intent = new Intent(getActivity(),FoodActivity.class);
         }
         else if (view.getId() == R.id.button4){
             intent = new Intent(getActivity(),TerritoryActivity.class);

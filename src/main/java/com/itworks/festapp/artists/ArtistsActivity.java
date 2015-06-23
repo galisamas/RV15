@@ -14,6 +14,5 @@ public class ArtistsActivity extends ActionBarActivity {
         Bundle bundle = new Bundle();
         bundle.putInt("id", intent.getIntExtra("id", -1));
         openFragment(bundle, new ArtistsListAdapterFragment());
-
     }
 }
