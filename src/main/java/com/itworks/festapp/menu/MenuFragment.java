@@ -33,8 +33,8 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
     ImageView festLogo, logo;
     Space space1, space2, space3;
     private MenuBottomFragment element;
-    private LinearLayout secondLine;
     private FrameLayout bottomLine;
+    private boolean onCreateViewDone = false;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -89,9 +89,7 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
         space1 = (Space) v.findViewById(R.id.space1);
         space2 = (Space) v.findViewById(R.id.space2);
         space3 = (Space) v.findViewById(R.id.space3);
-        secondLine = (LinearLayout) v.findViewById(R.id.secondLine);
         bottomLine = (FrameLayout) v.findViewById(R.id.bottomLine);
-
         return v;
     }
 
@@ -114,7 +112,7 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
         Point size = new Point();
         display.getSize(size);
         int logoH = logo.getHeight();
-        int festH = (int) (festLogo.getHeight()*(PhotoController.isItSmallScreen(getActivity())?-1:1.5));
+        int festH = (int) (festLogo.getHeight()*(PhotoController.isItSmallScreen(context)?-1:1.5));
         int buttonsH = b1.getHeight()*2;
         LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) b4.getLayoutParams();
         bottomLine.getLayoutParams().width = b1.getWidth()*3 + lp.leftMargin*2;
@@ -141,7 +139,6 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
     public void onResume() {
         super.onResume();
         b4.setEnabled(true);
-        System.gc();
     }
 
     @Override

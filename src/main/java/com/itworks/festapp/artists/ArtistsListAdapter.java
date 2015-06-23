@@ -1,6 +1,7 @@
 package com.itworks.festapp.artists;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,8 @@ import java.util.*;
 public class ArtistsListAdapter extends ArrayAdapter<ArtistListItem> implements SectionIndexer {
 
     private final Context context;
+        private final SharedPreferences sharedpreferences;
+    private final String artistAdapterPref = "artistAdapterPref";
     HashMap<String, Integer> azIndexer;
     String[] sections;
 
@@ -46,6 +49,14 @@ public class ArtistsListAdapter extends ArrayAdapter<ArtistListItem> implements 
         Collections.sort(keyList);//sort the keylist
         sections = new String[keyList.size()]; // simple conversion to array
         keyList.toArray(sections);
+        sharedpreferences = context.getSharedPreferences(artistAdapterPref, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        for(ArtistListItem item :items){
+            if(item.photoId != 0)
+                editor.putInt(item.name, item.photoId);
+        }
+        editor.apply();
+
     }
 
     @Override
@@ -54,24 +65,27 @@ public class ArtistsListAdapter extends ArrayAdapter<ArtistListItem> implements 
 
         if(convertView == null) {
             // inflate the GridView item layout
-            LayoutInflater inflater = LayoutInflater.from(getContext());
+            LayoutInflater inflater = LayoutInflater.from(context);
             convertView = inflater.inflate(R.layout.artists_list_item, parent, false);
 
             // initialize the view holder
             viewHolder = new ViewHolder();
             viewHolder.ivIcon = (ImageView) convertView.findViewById(R.id.item_image);
             viewHolder.tvTitle = (TextView) convertView.findViewById(R.id.item_title);
-
             convertView.setTag(viewHolder);
         } else {
             // recycle the already inflated view
             viewHolder = (ViewHolder) convertView.getTag();
+
         }
 
         // update the item view
         ArtistListItem item = getItem(position);
         ImageLoader imageLoader = ImageLoader.getInstance();
-        imageLoader.displayImage("drawable://" + item.photoId, viewHolder.ivIcon);
+        int photoId = item.photoId;
+        if(item.photoId == 0)
+            photoId = sharedpreferences.getInt(item.name,-1);
+        imageLoader.displayImage("drawable://" + photoId, viewHolder.ivIcon);
         viewHolder.tvTitle.setText(item.name);
         TypefaceController typefaceController = new TypefaceController(context.getAssets());
         typefaceController.setFutura(viewHolder.tvTitle);

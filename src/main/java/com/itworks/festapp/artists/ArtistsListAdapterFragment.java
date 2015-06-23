@@ -24,9 +24,25 @@ public class ArtistsListAdapterFragment extends BaseListFragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
+        asyncTask(activity);
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        openInfoByPosition(position);
+    }
+
+    private void openInfoByPosition(int position) {
+        openInfo(artists.get(position), new ArtistInfoFragment());
+    }
+
+    private void openInfoById(int id) {
+        openInfo(modelHelper.getArtistModelById(id), new ArtistInfoFragment());
+    }
+
+    private void asyncTask (Activity activity){
         new AsyncTask<Void, Void, Void>() {
             List<ArtistListItem> mItems;
-
             @Override
             protected Void doInBackground(Void... params) {
                 mItems = new ArrayList<>();
@@ -55,18 +71,4 @@ public class ArtistsListAdapterFragment extends BaseListFragment {
             }
         }.execute();
     }
-
-    @Override
-    public void onListItemClick(ListView l, View v, int position, long id) {
-        openInfoByPosition(position);
-    }
-
-    private void openInfoByPosition(int position) {
-        openInfo(artists.get(position), new ArtistInfoFragment());
-    }
-
-    private void openInfoById(int id) {
-        openInfo(modelHelper.getArtistModelById(id), new ArtistInfoFragment());
-    }
-
 }

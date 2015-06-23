@@ -1,6 +1,7 @@
 package com.itworks.festapp.games;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,10 +18,19 @@ import java.util.List;
 public class GamesListAdapter extends ArrayAdapter<GamesListItem> {
 
     private final Context context;
+    private final SharedPreferences sharedpreferences;
+    private final String gameAdapterPref = "gameAdapterPref";
 
     public GamesListAdapter(Context context, List<GamesListItem> items) {
         super(context, R.layout.games_list_item, items);
         this.context = context;
+        sharedpreferences = context.getSharedPreferences(gameAdapterPref, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        for(GamesListItem item :items){
+            if(item.photoId != 0)
+                editor.putInt(item.name, item.photoId);
+        }
+        editor.apply();
     }
 
     @Override
@@ -46,7 +56,10 @@ public class GamesListAdapter extends ArrayAdapter<GamesListItem> {
         // update the item view
         GamesListItem item = getItem(position);
         ImageLoader imageLoader = ImageLoader.getInstance();
-        imageLoader.displayImage("drawable://" + item.photoId, viewHolder.ivIcon);
+        int photoId = item.photoId;
+        if(item.photoId == 0)
+            photoId = sharedpreferences.getInt(item.name,-1);
+        imageLoader.displayImage("drawable://" + photoId, viewHolder.ivIcon);
         viewHolder.tvTitle.setText(item.name);
         TypefaceController typefaceController = new TypefaceController(context.getAssets());
         typefaceController.setFutura(viewHolder.tvTitle);
