@@ -69,13 +69,13 @@ public class MenuBottomFragment extends Fragment {
     }
 
     public int onWindowFocusChanged(int width) {
-        Display display = getActivity().getWindowManager().getDefaultDisplay();
-        Point size = new Point();
-        display.getSize(size);
-        int padding = (size.x - width) / 2;
         if(PhotoController.isItSmallScreen(getActivity())) {
             parent.setPadding(0, 0, 0, 0);
         }else{
+            Display display = getActivity().getWindowManager().getDefaultDisplay();
+            Point size = new Point();
+            display.getSize(size);
+            int padding = (size.x - width) / 2;
             parent.setPadding(0, 0, 0, padding);
         }
         return getView().getHeight();

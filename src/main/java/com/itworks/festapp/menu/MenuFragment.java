@@ -34,7 +34,6 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
     Space space1, space2, space3;
     private MenuBottomFragment element;
     private FrameLayout bottomLine;
-    private boolean onCreateViewDone = false;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -94,11 +93,12 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
     }
 
     public void onWindowFocusChanged(FragmentActivity context) {
-        identifySpaceHeight(context);
+        if(logo!=null)
+            identifySpaceHeight(calculateSpaceHeight(context));
+
     }
 
-    private void identifySpaceHeight(FragmentActivity context) {
-        int height = calculateSpaceHeight(context);
+    private void identifySpaceHeight(int height) {
         space1.getLayoutParams().height = height;
         space2.getLayoutParams().height = height;
         space3.getLayoutParams().height = height;
