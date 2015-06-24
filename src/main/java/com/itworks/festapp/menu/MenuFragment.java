@@ -117,7 +117,6 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
         bottomLine.getLayoutParams().width = (int) (getResources().getDimension(R.dimen.button_width)*3 + getResources().getDimension(R.dimen.menu_button_margins)*2);
         bottomLine.requestLayout();
         int fragmentH = (int) getResources().getDimension(R.dimen.button_width);
-//        Log.d("DYDIS", size.y + " " + logoH + " " + festH + " " + buttonsH + " " + fragmentH + " - " + (size.y - logoH - festH - buttonsH - fragmentH)); // TODO log
         return (size.y-logoH-festH-buttonsH-fragmentH)/3;
     }
 

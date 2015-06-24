@@ -56,9 +56,7 @@ public class GamesListAdapter extends ArrayAdapter<GamesListItem> {
         // update the item view
         GamesListItem item = getItem(position);
         ImageLoader imageLoader = ImageLoader.getInstance();
-        int photoId = item.photoId;
-        if(item.photoId == 0)
-            photoId = sharedpreferences.getInt(item.name,-1);
+        int photoId = sharedpreferences.getInt(item.name,-1);
         imageLoader.displayImage("drawable://" + photoId, viewHolder.ivIcon);
         viewHolder.tvTitle.setText(item.name);
         TypefaceController typefaceController = new TypefaceController(context.getAssets());

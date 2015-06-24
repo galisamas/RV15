@@ -82,7 +82,7 @@ public class ArtistsListAdapter extends ArrayAdapter<ArtistListItem> implements 
         // update the item view
         ArtistListItem item = getItem(position);
         ImageLoader imageLoader = ImageLoader.getInstance();
-        int photoId = sharedpreferences.getInt(item.name,-1); // TODO sutvakyti ifus
+        int photoId = sharedpreferences.getInt(item.name,-1);
         imageLoader.displayImage("drawable://" + photoId, viewHolder.ivIcon);
         viewHolder.tvTitle.setText(item.name);
         TypefaceController typefaceController = new TypefaceController(context.getAssets());
