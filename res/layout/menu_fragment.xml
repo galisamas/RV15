@@ -26,7 +26,7 @@
                 android:id="@+id/festLogo"/>
         <Space
                 android:layout_width="match_parent"
-                android:layout_height="10dp"
+                android:layout_height="0dp"
                 android:layout_above="@+id/firstLine"
                 android:id="@+id/space2"
                 />
@@ -39,20 +39,20 @@
                 android:layout_above="@+id/secondLine"
                 android:id="@+id/firstLine">
                 <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/button_width"
+                        android:layout_height="@dimen/button_width"
                         android:id="@+id/button2"
                         android:background="@drawable/stages_background"/>
                 <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/button_width"
+                        android:layout_height="@dimen/button_width"
                         android:layout_marginLeft="@dimen/menu_button_margins"
                         android:layout_marginRight="@dimen/menu_button_margins"
                         android:background="@drawable/map_background"
                         android:id="@+id/button4"/>
                 <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/button_width"
+                        android:layout_height="@dimen/button_width"
                         android:background="@drawable/sport_background"
                         android:id="@+id/button6"/>
 
@@ -66,33 +66,31 @@
                 android:id="@+id/secondLine">
 
                 <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/button_width"
+                        android:layout_height="@dimen/button_width"
                         android:background="@drawable/artists_background"
                         android:id="@+id/button"/>
                 <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/button_width"
+                        android:layout_height="@dimen/button_width"
                         android:layout_marginLeft="@dimen/menu_button_margins"
                         android:layout_marginRight="@dimen/menu_button_margins"
                         android:background="@drawable/food_background"
                         android:id="@+id/button3"/>
                 <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/button_width"
+                        android:layout_height="@dimen/button_width"
                         android:background="@drawable/info_background"
                         android:id="@+id/button5"/>
         </LinearLayout>
         <Space
                 android:layout_width="match_parent"
-                android:layout_height="10dp"
+                android:layout_height="0dp"
                 android:layout_above="@+id/bottomLine"
                 android:id="@+id/space3"
                 />
         <FrameLayout android:layout_width="320dp"
                   android:layout_height="wrap_content"
-                  android:layout_marginLeft="@dimen/menu_button_margins"
-                  android:layout_marginRight="@dimen/menu_button_margins"
                   android:layout_centerHorizontal="true"
                   android:layout_alignParentBottom="true"
                   android:id="@+id/bottomLine"/>

@@ -68,17 +68,22 @@ public class MenuBottomFragment extends Fragment {
         return v;
     }
 
-    public int onWindowFocusChanged(int width) {
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        onWindowFocusChanged(getResources().getDimension(R.dimen.bottom_width));
+    }
+
+    public void onWindowFocusChanged(float width) {
         if(PhotoController.isItSmallScreen(getActivity())) {
             parent.setPadding(0, 0, 0, 0);
         }else{
             Display display = getActivity().getWindowManager().getDefaultDisplay();
             Point size = new Point();
             display.getSize(size);
-            int padding = (size.x - width) / 2;
+            int padding = (int) ((size.x - width) / 2);
             parent.setPadding(0, 0, 0, padding);
         }
-        return getView().getHeight();
     }
 
     @Override

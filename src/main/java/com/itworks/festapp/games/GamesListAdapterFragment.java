@@ -8,10 +8,12 @@ import android.widget.ListView;
 import com.itworks.festapp.BaseListFragment;
 import com.itworks.festapp.helpers.JSONRepository;
 import com.itworks.festapp.helpers.ModelsController;
+import com.itworks.festapp.helpers.comparators.GameListComparator;
 import com.itworks.festapp.models.GameModel;
 import com.itworks.festapp.models.GamesListItem;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class GamesListAdapterFragment extends BaseListFragment {
@@ -30,6 +32,7 @@ public class GamesListAdapterFragment extends BaseListFragment {
                 JSONRepository jsonRepository = new JSONRepository(getActivity());
                 games = jsonRepository.getGamesFromJSON();
                 modelsController = new ModelsController(getActivity());
+                Collections.sort(games, new GameListComparator());
                 for (GameModel game : games) {
                     int photo_id = activity.getResources().getIdentifier("n" + game.id, "drawable", packageName);
                     mItems.add(new GamesListItem(photo_id, game.title));

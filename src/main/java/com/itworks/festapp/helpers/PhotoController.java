@@ -70,13 +70,11 @@ public class PhotoController {
         return (height < 790);
     }
 
-    public static int getSpaceHeight(FragmentActivity context) {
+    public static boolean isItMeddiumScreen(FragmentActivity context){
         Display display = context.getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
-        int height =0;
-        if(size.y > 790)
-            height = 20;
-        return height;
+        int height = size.y;
+        return (height < 900);
     }
 }

@@ -192,7 +192,7 @@ public class ArtistInfoFragment extends BaseFragment implements View.OnClickList
     }
 
     private void paintSocialIcon(String link, int photoId, ImageView view){
-        if(!link.isEmpty())
+        if(link != null && !link.isEmpty())
             imageLoader.displayImage(drawableString + photoId, view);
     }
 

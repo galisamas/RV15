@@ -10,7 +10,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.util.Log;
 import android.view.View;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
@@ -169,16 +168,15 @@ public class TerritoryActivity extends FragmentActivity implements android.locat
     private Integer getImageId() {
         long memoryUsage = UsageController.getMemoryUsage(this);
         int result = R.drawable.map_v3_1604;
-        if(memoryUsage > 800){
+        if(memoryUsage > 900){
             result = R.drawable.map_v3_4000;
-        }else if(memoryUsage > 500){
+        }else if(memoryUsage > 600){
             result = R.drawable.map_v3_3000;
-        }else if(memoryUsage > 350){
+        }else if(memoryUsage > 450){
             result = R.drawable.map_v3_2500;
-        }else if(memoryUsage > 200){
+        }else if(memoryUsage > 250){
             result = R.drawable.map_v3_2000;
         }
-        Log.d("TERRITORY","laisvos: " + UsageController.getMemoryUsage(this));// TODO log
         return result;
     }
 
@@ -187,9 +185,7 @@ public class TerritoryActivity extends FragmentActivity implements android.locat
             googleMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
 
             if (googleMap == null) {
-                Toast.makeText(this.getApplicationContext(),
-                        "Sorry! unable to create maps", Toast.LENGTH_SHORT)
-                        .show();
+                Toast.makeText(this.getApplicationContext(), "Sorry! unable to create maps", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -228,15 +224,25 @@ public class TerritoryActivity extends FragmentActivity implements android.locat
 
     @Override
     public void onBackPressed() {
-        if (expListView!= null && !expListView.isGroupExpanded(0)) {
+        if (expListView!= null) {
+            if (!expListView.isGroupExpanded(0)) {
+                super.onBackPressed();
+                FragmentManager fm = getSupportFragmentManager();
+                if(fm.getBackStackEntryCount() != 0) {
+                    fm.popBackStack();
+                }
+                finish();
+            }else{
+                expListView.collapseGroup(0);
+            }
+        }
+        else{
             super.onBackPressed();
             FragmentManager fm = getSupportFragmentManager();
             if(fm.getBackStackEntryCount() != 0) {
                 fm.popBackStack();
             }
             finish();
-        }else{
-            expListView.collapseGroup(0);
         }
     }
 

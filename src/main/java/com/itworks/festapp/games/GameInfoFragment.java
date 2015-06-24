@@ -58,7 +58,7 @@ public class GameInfoFragment extends BaseFragment implements View.OnClickListen
             gameModel = modelsController.getGameModelById(id);
         }
         PlaceModel placeModel = modelsController.getPlaceModelById(gameModel.placeId);
-        if(!gameModel.link_facebook.isEmpty()) {
+        if( gameModel.link_facebook != null && !gameModel.link_facebook.isEmpty()) {
             linkF = (ImageView) v.findViewById(R.id.imageFb);
             imageLoader.displayImage("drawable://" + R.drawable.social_fb, linkF);
             linkF.setOnClickListener(this);

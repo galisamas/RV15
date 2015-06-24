@@ -34,10 +34,15 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
     Space space1, space2, space3;
     private MenuBottomFragment element;
     private FrameLayout bottomLine;
+    boolean i = false;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.menu_fragment, container, false);
+        element = new MenuBottomFragment();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.add(R.id.bottomLine, element);
+        transaction.commit();
         RelativeLayout img = (RelativeLayout) v.findViewById(R.id.menu_background);
         ImageLoader imageLoader = ImageLoader.getInstance();
         imageLoader.loadImage("drawable://" + R.drawable.trp_bg, new SimpleImageLoadingListener() {
@@ -80,11 +85,6 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
                 setAlertDialog(text);
             }
         }
-        element = new MenuBottomFragment();
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        transaction.add(R.id.bottomLine, element);
-        transaction.commit();
-
         space1 = (Space) v.findViewById(R.id.space1);
         space2 = (Space) v.findViewById(R.id.space2);
         space3 = (Space) v.findViewById(R.id.space3);
@@ -92,10 +92,10 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
         return v;
     }
 
-    public void onWindowFocusChanged(FragmentActivity context) {
-        if(logo!=null)
-            identifySpaceHeight(calculateSpaceHeight(context));
-
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        identifySpaceHeight(calculateSpaceHeight(getActivity()));
     }
 
     private void identifySpaceHeight(int height) {
@@ -111,15 +111,14 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
         Display display = context.getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
-        int logoH = logo.getHeight();
-        int festH = (int) (festLogo.getHeight()*(PhotoController.isItSmallScreen(context)?-1:1.5));
-        int buttonsH = b1.getHeight()*2;
-        LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) b4.getLayoutParams();
-        bottomLine.getLayoutParams().width = b1.getWidth()*3 + lp.leftMargin*2;
+        int logoH = (int) getResources().getDimension(R.dimen.logo_height);
+        int festH = (int) (getResources().getDimension(R.dimen.fest_height)*(PhotoController.isItSmallScreen(context)?1.5:(PhotoController.isItMeddiumScreen(context)?4:7)));
+        int buttonsH = (int) (getResources().getDimension(R.dimen.button_width)*2);
+        bottomLine.getLayoutParams().width = (int) (getResources().getDimension(R.dimen.button_width)*3 + getResources().getDimension(R.dimen.menu_button_margins)*2);
         bottomLine.requestLayout();
-        int fragmentH = element.onWindowFocusChanged(bottomLine.getLayoutParams().width);
-//        Log.d("DYDIS", size.y + " " + logoH + " " + festH + " " + buttonsH + " " + fragmentH + " " + " " + (size.y - logoH - festH - buttonsH - fragmentH)); // TODO log
-        return (size.y-logoH+festH-buttonsH-fragmentH)/3;
+        int fragmentH = (int) getResources().getDimension(R.dimen.button_width);
+//        Log.d("DYDIS", size.y + " " + logoH + " " + festH + " " + buttonsH + " " + fragmentH + " - " + (size.y - logoH - festH - buttonsH - fragmentH)); // TODO log
+        return (size.y-logoH-festH-buttonsH-fragmentH)/3;
     }
 
     private void setAlertDialog(String text) {

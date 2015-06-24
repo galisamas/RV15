@@ -6,9 +6,6 @@ import com.itworks.festapp.ActionBarActivity;
 
 public class MenuActivity extends ActionBarActivity {
 
-    private MenuFragment fragment;
-    private int index = 0;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,15 +14,7 @@ public class MenuActivity extends ActionBarActivity {
         bundle.putInt("id", intent.getIntExtra("id", -1));
         bundle.putString("text", intent.getStringExtra("text"));
         bundle.putBoolean("isItArtist", intent.getBooleanExtra("isItArtist", true));
-        fragment = new MenuFragment();
+        MenuFragment fragment = new MenuFragment();
         openFragment(bundle, fragment);
-    }
-
-    @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-        if(index == 0)
-            fragment.onWindowFocusChanged(this);
-        index++;
     }
 }
