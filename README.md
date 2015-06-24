@@ -1,3 +1,3 @@
 # RV
 <b>Radistai Village 2015</b> <br />
-![alt tag](https://github.com/galisamas/RV/blob/master/res/drawable-xhdpi/ic_stat.png)
+![alt tag](https://github.com/galisamas/RV/blob/master/res/drawable-xxxhdpi/ic_stat.png)
