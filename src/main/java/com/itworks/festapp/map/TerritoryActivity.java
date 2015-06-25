@@ -35,8 +35,7 @@ import java.util.Queue;
 public class TerritoryActivity extends FragmentActivity implements android.location.LocationListener{
 
     GoogleMap googleMap;
-    Location location;
-    double latitude, longitude, lat, lng;
+    double lat, lng;
     LatLng cameraStart = new LatLng(55.160313, 25.309264);
     private FloatingGroupExpandableListView expListView;
     ExpandableListAdapter listAdapter;
@@ -129,26 +128,6 @@ public class TerritoryActivity extends FragmentActivity implements android.locat
             googleMap.moveCamera(CameraUpdateFactory.newLatLng(cameraStart));
             googleMap.animateCamera(CameraUpdateFactory.zoomTo(16));
 
-            if (locationManager != null) {
-                location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-
-                if (location != null) {
-                    latitude = location.getLatitude();
-                    longitude = location.getLongitude();
-                }
-                if (location == null) {
-                    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 60000, 10, this);
-
-                    if (locationManager != null) {
-                        location = locationManager
-                                .getLastKnownLocation(LocationManager.GPS_PROVIDER);
-                        if (location != null) {
-                            latitude = location.getLatitude();
-                            longitude = location.getLongitude();
-                        }
-                    }
-                }
-            }
             imageLoader = ImageLoader.getInstance();
             imageLoader.loadImage("drawable://" + getImageId(), new SimpleImageLoadingListener() {
                 @Override

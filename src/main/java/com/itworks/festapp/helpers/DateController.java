@@ -149,14 +149,6 @@ public class DateController {
         return day;
     }
 
-    public static boolean isItNowByMinutes(String now){
-        Calendar today = Calendar.getInstance();
-        boolean result = false;
-        if(today.get(Calendar.MINUTE) >= getMinutesFWD(now))
-            result = true;
-        return result;
-    }
-
     public static boolean calculateIsItNow(int dayNumber, String startTime, String endTime){
         Calendar today = Calendar.getInstance();
         Calendar shownDate = defaultCalendar(dayNumber);
