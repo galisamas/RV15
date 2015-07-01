@@ -7,6 +7,7 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.parse.Parse;
+import com.parse.ParseCrashReporting;
 import com.parse.ParseInstallation;
 
 
@@ -28,6 +29,7 @@ public class MyApplication extends com.activeandroid.app.Application {
                 .build();
         ImageLoader.getInstance().init(config);
 
+        ParseCrashReporting.enable(this);
         Parse.initialize(this, "82oOrqqYacCPkNSBhBy4cwTJ5NNbMkpPghYNvltZ", "vpgRI8ZHKK3T2p1jecM3wWpF0TKdyzjMmwapWdMr");
         ParseInstallation.getCurrentInstallation().saveInBackground();
     }
