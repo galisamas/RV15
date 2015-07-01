@@ -2,26 +2,18 @@ package com.itworks.festapp.helpers;
 
 public class OriginRepository {
     public static String getOriginDrawableTitle(String origin){
-        String name;
-        switch (origin){
-            case "LT":
-                name = "squere_lithuania";
-                break;
-            case "UK":
+        String name = "squere_lithuania";
+        if(origin !=null){
+            if(origin.equals("UK"))
                 name = "squere_united_kingdom";
-                break;
-            case "UA":
+            else if(origin.equals("UA"))
                 name = "squere_ukraine";
-                break;
-            case "ES":
+            else if(origin.equals("ES"))
                 name = "squere_spain";
-                break;
-            case "DE":
+            else if(origin.equals("DE"))
                 name = "squere_germany";
-                break;
-            default:
+            else
                 name = "squere_lithuania";
-                break;
         }
         return name;
     }

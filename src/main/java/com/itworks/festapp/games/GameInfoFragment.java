@@ -14,7 +14,6 @@ import com.itworks.festapp.BaseFragment;
 import com.itworks.festapp.R;
 import com.itworks.festapp.helpers.*;
 import com.itworks.festapp.map.TerritoryActivity;
-import com.itworks.festapp.models.BaseModel;
 import com.itworks.festapp.models.GameModel;
 import com.itworks.festapp.models.GameTimetableModel;
 import com.itworks.festapp.models.PlaceModel;
@@ -33,13 +32,14 @@ public class GameInfoFragment extends BaseFragment implements View.OnClickListen
     private SharedPreferences sharedpreferences;
     private BrowserController browserController;
 
-    public void setBaseModel(BaseModel gameModel) {
-        this.gameModel = (GameModel) gameModel;
-    }
+//    public void setBaseModel(BaseModel gameModel) {
+//        this.gameModel = (GameModel) gameModel;
+//    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.game_info_fragment, container, false);
+        gameModel = (GameModel)baseModel;
         location = (TextView) v.findViewById(R.id.location);
         place = (RelativeLayout) v.findViewById(R.id.place);
         place.setEnabled(true);

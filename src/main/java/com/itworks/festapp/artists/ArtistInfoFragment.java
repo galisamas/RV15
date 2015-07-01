@@ -18,7 +18,6 @@ import com.itworks.festapp.helpers.*;
 import com.itworks.festapp.map.TerritoryActivity;
 import com.itworks.festapp.models.ArtistModel;
 import com.itworks.festapp.models.ArtistNotificationModel;
-import com.itworks.festapp.models.BaseModel;
 import com.itworks.festapp.models.TimetableModel;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -39,13 +38,14 @@ public class ArtistInfoFragment extends BaseFragment implements View.OnClickList
     private BrowserController browserController;
     private ModelsController modelsController;
 
-    public void setBaseModel(BaseModel artistModel) {
-        this.artistModel = (ArtistModel) artistModel;
-    }
+//    public void setBaseModel(BaseModel artistModel) {
+//        this.artistModel = (ArtistModel) artistModel;
+//    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.artist_info_fragment, container, false);
+        artistModel = (ArtistModel) baseModel;
         about = (TextView) v.findViewById(R.id.about);
         second = (RelativeLayout) v.findViewById(R.id.second);
         background = (RelativeLayout) v.findViewById(R.id.background);
@@ -119,10 +119,12 @@ public class ArtistInfoFragment extends BaseFragment implements View.OnClickList
 
         background.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {}
+            public void onClick(View v) {
+            }
         });
         title.setText(artistModel.title);
-        int flag_id = getResources().getIdentifier(OriginRepository.getOriginDrawableTitle(artistModel.origin),
+        String flagName = OriginRepository.getOriginDrawableTitle(artistModel.origin);
+        int flag_id = getResources().getIdentifier(flagName,
                 "drawable", getActivity().getPackageName());
         imageLoader.displayImage(drawableString + flag_id, flag);
         setTypefaces();

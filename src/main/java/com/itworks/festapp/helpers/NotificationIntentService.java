@@ -34,12 +34,12 @@ public class NotificationIntentService extends IntentService {
             notificationList = jsonRepository.getNotificationsFromJSON();
             modelsController = new ModelsController(getApplicationContext());
             if(getCount() == 0){
+                setDefaultNotifications();
                 setDefaultAlarms();
                 setDefaultAlarmsToGames();
-                setDefaultNotifications();
             }else if(onBoot){
-                setDefaultAlarmsToGames();
                 setDefaultNotifications();
+                setDefaultAlarmsToGames();
                 setAlarmsOnBoot();
             }
         }

@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.media.RingtoneManager;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
+import android.util.Log;
 import com.itworks.festapp.R;
 import com.itworks.festapp.menu.MenuActivity;
 
@@ -58,7 +59,6 @@ public class NotificationReceiver extends BroadcastReceiver {
         mBuilder.setContentIntent(resultPendingIntent);
 
         NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-
       /* notificationID allows you to delete the notification later on. */
         int notificationId = -2;
         if(isItArtist)

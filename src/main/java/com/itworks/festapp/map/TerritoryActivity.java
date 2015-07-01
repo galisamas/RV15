@@ -123,10 +123,10 @@ public class TerritoryActivity extends FragmentActivity implements android.locat
             googleMap.getUiSettings().setRotateGesturesEnabled(false);
             googleMap.getUiSettings().setTiltGesturesEnabled(false);
             googleMap.getUiSettings().setCompassEnabled(false);
-            LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
-            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 60000, 10, this);
             googleMap.moveCamera(CameraUpdateFactory.newLatLng(cameraStart));
             googleMap.animateCamera(CameraUpdateFactory.zoomTo(16));
+            LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 60000, 10, this);
 
             imageLoader = ImageLoader.getInstance();
             imageLoader.loadImage("drawable://" + getImageId(), new SimpleImageLoadingListener() {
