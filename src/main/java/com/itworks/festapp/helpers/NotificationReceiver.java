@@ -8,9 +8,9 @@ import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.media.RingtoneManager;
+import android.os.PowerManager;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.TaskStackBuilder;
-import android.util.Log;
 import com.itworks.festapp.R;
 import com.itworks.festapp.menu.MenuActivity;
 
@@ -29,22 +29,22 @@ public class NotificationReceiver extends BroadcastReceiver {
         String where = intent.getStringExtra("where");
         String after10 = context.getString(R.string.after10) + " ";
         Boolean isItArtist = intent.getBooleanExtra("isItArtist", true);
-        if(!intent.getBooleanExtra("isItGeneral", false)){
+        if (!intent.getBooleanExtra("isItGeneral", false)) {
             mBuilder.setContentTitle(name);
             mBuilder.setTicker(after10 + where);
             mBuilder.setContentText(after10 + where);
-        }else{
+        } else {
             mBuilder.setContentTitle("Radistai Village 2015");
             mBuilder.setTicker(name);
             mBuilder.setContentText(name);
         }
-        int id = intent.getIntExtra("id",-1);
+        int id = intent.getIntExtra("id", -1);
         /* Creates an explicit intent for an Activity in your app */
         Intent resultIntent = new Intent(context, MenuActivity.class);
         resultIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         resultIntent.putExtra("isItArtist", isItArtist);
         resultIntent.putExtra("id", id);
-        if(intent.getBooleanExtra("isItGeneral", false)){
+        if (intent.getBooleanExtra("isItGeneral", false)) {
             resultIntent.putExtra("text", name);
         }
 
@@ -61,12 +61,12 @@ public class NotificationReceiver extends BroadcastReceiver {
         NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
       /* notificationID allows you to delete the notification later on. */
         int notificationId = -2;
-        if(isItArtist)
+        if (isItArtist)
             notificationId = id;
 
-        if(null != name)
+        if (null != name){
             mNotificationManager.notify(notificationId, mBuilder.build());
-        else{
+        }else{
             Intent serviceIntent = new Intent(Intent.ACTION_SYNC, null, context, NotificationIntentService.class);
             serviceIntent.putExtra("BOOT",true);
             context.startService(serviceIntent);

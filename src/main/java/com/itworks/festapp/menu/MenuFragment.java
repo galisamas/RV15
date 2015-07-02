@@ -112,7 +112,7 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
         Point size = new Point();
         display.getSize(size);
         int logoH = (int) getResources().getDimension(R.dimen.logo_height);
-        int festH = (int) (getResources().getDimension(R.dimen.fest_height)*(PhotoController.isItSmallScreen(context)?1.5:(PhotoController.isItMeddiumScreen(context)?4:7)));
+        int festH = (int) (getResources().getDimension(R.dimen.fest_height)*(PhotoController.isItSmallScreen(context)?1.5:(PhotoController.isItMediumScreen(context)?4:7)));
         int buttonsH = (int) (getResources().getDimension(R.dimen.button_width)*2);
         bottomLine.getLayoutParams().width = (int) (getResources().getDimension(R.dimen.button_width)*3 + getResources().getDimension(R.dimen.menu_button_margins)*2);
         bottomLine.requestLayout();
