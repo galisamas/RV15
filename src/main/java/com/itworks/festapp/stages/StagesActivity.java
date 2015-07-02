@@ -9,6 +9,7 @@ import android.support.v4.view.ViewPager;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
+import android.text.style.RelativeSizeSpan;
 import android.text.style.TypefaceSpan;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -115,6 +116,7 @@ public class StagesActivity extends ActionBarActivity implements View.OnClickLis
             TypefaceSpan futuraSpan = new CustomTypefaceSpan(typefaceController.getFutura());
             ForegroundColorSpan colorSpan = new ForegroundColorSpan(getResources().getColor(R.color.list_separator));
 
+            sb.setSpan(new RelativeSizeSpan(1.5f), 0, sb.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             sb.setSpan(futuraSpan, 0, sb.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
             sb.setSpan(colorSpan, 0, sb.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
             return sb;
