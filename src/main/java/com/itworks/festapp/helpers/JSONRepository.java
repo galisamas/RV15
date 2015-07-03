@@ -286,9 +286,6 @@ public class JSONRepository {
                 result = "tickets";
                 break;
             case 7:
-                result = "howtouse";
-                break;
-            case 8:
                 result = "itworks";
                 break;
             case 9:

@@ -124,6 +124,66 @@ Shmutke jau antrus metus iš eilės organizuoja 4X4 MIX paplūdimio tinklinio tu
 	"places_id": 14,
 	"notification": false, 
 	"link_facebook": "https://www.facebook.com/dukaraliai"
+  },
+  {
+  	"id": 12,
+	"title": "BEER PONG TURNYRAS",
+	"about": "Šeštadienio dieną bendroje festivalio pramogų programoje.", 
+	"places_id": 14,
+	"notification": false, 
+	"link_facebook": ""
+  },
+  {
+  	"id": 13,
+	"title": "DONATAS MOTIEJŪNAS IR LA BOTTEGA",
+	"about": "Festivalyje galėsi įsigyti Houston Rockets atributikos – kepurių, marškinėlių ir naktį šviečiančių Radistų apyrankių, kurias pristato La Bottega. Ant jų galės pasirašyti pats D-Mo, greičiausiai ir nusifotografuos kartu!", 
+	"places_id": 14,
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/labottega.lt"
+  },
+  {
+  	"id": 14,
+	"title": "FLYBOARD – ŽMOGUS RAKETA",
+	"about": "Du žmogaus raketos pasirodymai ežere penktadienio vakare bei šeštadienio dieną. Festivalio dalyviams sporto turnyruose taip pat bus suteikta galimybė laimėti „pasiskraidymą“ virš vandens, o dar labiau susidomėję galės tai išbandyti už simbolinį mokestį.", 
+	"places_id": 16,
+	"notification": false, 
+	"link_facebook": ""
+  },
+  {
+  	"id": 15,
+	"title": "SIMONOS BANDITOS POPIETĖ",
+	"about": "Šeštadienį nuo 11 iki 14 valandos Beach stage pramogoms vadovaus Simona Bandita! Laukia daug banditiškų pramogų ir muilo burbulų – nepatingėk atsikelti :)", 
+	"places_id": 2,
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/SimonaBandita"
+  },
+  {
+  	"id": 16,
+	"title": "SUPERFLY.LT DĖJIMŲ TURNYRAS",
+	"about": "Šeštadienį organizuojamas SuperFly dėjimų konkursas!", 
+	"places_id": 14,
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/SuperFly.lt"
+  },
+  {
+  	"id": 17,
+	"title": "UGNIES ŠOU",
+	"about": "Tomo Slepinio ugnies šou penktadienio bei šeštadienio naktimis Beach stage prie vandens.", 
+	"places_id": 2,
+	"notification": false, 
+	"link_facebook": ""
+  },
+  {
+  	"id": 18,
+	"title": "V.Y.T.A. TAPYBA ANT VANDENS",
+	"about": "AR KADA TEKO PIEŠTI ANT VANDENS?
+
+Pasirodo tai įmanoma! Ir kas smagiausia – tam nereikia jokių meninių sugebėjimų. Nepakartojamą piešinį galima sukurti vos per 2-3 minutes!
+
+Piešimas atliekamas specialiame inde ant sutirštinto vandens dažų teptuku ištaškant foną, o vėliau specialiomis lazdelėmis formuojami patys įvairiausi ir spalvingiausi ornamentai. Maža to, visas vaizdas nuo vandens paviršiaus perkeliamas ant popieriaus. Piešimui naudojami  visiškai natūralūs VYTA dažai.", 
+	"places_id": 14,
+	"notification": false, 
+	"link_facebook": "https://www.facebook.com/vyta.art"
   }
 ]
 }

@@ -22,8 +22,7 @@ public class InfoListAdapterFragment extends BaseListFragment {
     private final int BRING = 4;
     private final int PARKING = 5;
     private final int TICKETS = 6;
-    private final int HOWTOUSE = 7;
-    private final int ITWORKS = 8;
+    private final int ITWORKS = 7;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -67,10 +66,6 @@ public class InfoListAdapterFragment extends BaseListFragment {
             fragment = new InfoTicketsFragment();
             bundle.putInt(photoId, R.drawable.bilietai);
             bundle.putInt(jsonId, TICKETS);
-        } else if(position == HOWTOUSE){
-            fragment = new InfoBaseFragment();
-            bundle.putInt(photoId, R.drawable.kas_per_festapp);
-            bundle.putInt(jsonId, HOWTOUSE);
         } else if(position == ITWORKS){
             fragment = new InfoItWorksFragment();
             bundle.putInt(photoId, R.drawable.itworks);

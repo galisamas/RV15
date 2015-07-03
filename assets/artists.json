@@ -70,7 +70,7 @@
 	"id": 6,
 	"title": "SILENT MELODY",
 	"about": "Gytis Judys & Ignas Klėjus", 
-	"notification": false,
+	"notification": false, 
 	"link_facebook": "https://www.facebook.com/SilentMelodyMusic",
 	"link_soundcloud": "https://soundcloud.com/silentmelodymusic",
 	"link_youtube": "",
@@ -402,7 +402,8 @@ Now he’s running his own record label, Svogue Muziq, working as A&R and manage
   {	
 	"id": 33,
 	"title": "LEON SOMOV & NERI JASS",
-	"about": "Leonas Somovas & Nerijus Grigaliūnas",
+	"about": "Leonas Somovas & Nerijus Grigaliūnas
+Šie elektroninės muzikos kūrėjai turi ilgą darbo patirtį tiek Lietuvos, tiek užsienio  scenoje. Kaip duetas, pirmąjį bendrą darbą įrašė prieš 7-8 metus Londone. Po muzikinės pauzės vėl suvieniję jėgas sukūrė naują projektą – No Laptop Set. Tai mišinys tarp house ir techno muzikos žanrų, kuriame naudojami tik elektroniniai (hardware) instrumentai.",
 	"notification": false, 
 	"link_facebook": "https://www.facebook.com/leonsomovmusic",
 	"link_soundcloud": "https://soundcloud.com/neri-jass",
