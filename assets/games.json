@@ -39,7 +39,8 @@ SUP virvės traukimas;
 SUP lentų nuoma pasiplaukiojimams Grabuosto ežere.
 
 Suping.lt rekomenduoja:
-Irklentė (SUP – stand up paddeling board) – tai pats paprasčiausias būdas pavirsti tiek sportinkais, tiek aktyvistais – aktyvų laisvalaikį mėgstantiems žmonėms. Irklentę paprasta valdyti, lengva transportuoti, tai saugus ir naujas būdas mėgautis vandens sportu, bet kur, kur tik yra vandens telkinis. Mes Jums padėsime išbandyti ir susipažinti, išsirnkti tinkamą irklentę, nes atstovaujame viena garsiausių pasaulyje Amerikiečių kompaniją RIVIERA, kuri ne tik kūria, bet ir skina pergalės daugelyje lenktynių su savo gaminiais.", 
+Irklentė (SUP – stand up paddeling board) – tai pats paprasčiausias būdas pavirsti tiek sportinkais, tiek aktyvistais – aktyvų laisvalaikį mėgstantiems žmonėms. Irklentę paprasta valdyti, lengva transportuoti, tai saugus ir naujas būdas mėgautis vandens sportu, bet kur, kur tik yra vandens telkinis. Mes Jums padėsime išbandyti ir susipažinti, išsirnkti tinkamą irklentę, nes atstovaujame viena garsiausių pasaulyje Amerikiečių kompaniją RIVIERA, kuri ne tik kūria, bet ir skina pergalės daugelyje lenktynių su savo gaminiais.
+Registracija į pramogą nuo 10 val. vyks šeštadienį informacijos štabe (saloj prie kūdros).", 
 	"places_id": 16, 
 	"notification": true, 
 	"link_facebook": "https://www.facebook.com/suping.lt"
@@ -55,7 +56,8 @@ Irklentė (SUP – stand up paddeling board) – tai pats paprasčiausias būdas
   {	
 	"id": 4,
 	"title": "TENISO TURNYRAS",
-	"about": "Liepos 18 d. bus organizuojamas dvejetų turnyras Radistų Teniso titului laimėti. Jei esi geras žaidėjas – įsimesk savo kedus bei raketę, bus karšta! Jei ne – pasirūpinsime pradedančiųjų įranga ir pasirūpinsime, jog vistiek būtų smagu!", 
+	"about": "Liepos 18 d. bus organizuojamas dvejetų turnyras Radistų Teniso titului laimėti. Jei esi geras žaidėjas – įsimesk savo kedus bei raketę, bus karšta! Jei ne – pasirūpinsime pradedančiųjų įranga ir pasirūpinsime, jog vistiek būtų smagu!
+Registracija į turnyrą nuo 10 val. vyks šeštadienį informacijos štabe (saloj prie kūdros).", 
 	"places_id": 17, 
 	"notification": false, 
 	"link_facebook": ""
@@ -73,7 +75,7 @@ Irklentė (SUP – stand up paddeling board) – tai pats paprasčiausias būdas
   {	
 	"id": 6,
 	"title": "KALJANŲ BARAS",
-	"about": "Informacija ruošiama.", 
+	"about": "Ryškūs įspūdžiai, teigiamos emocijos, neįprastas veiksmas, atsiribojimas nuo rutinos – tokius potyrius išgyvename, išbandę kai ką naujo ir nekasdieniško. Pasinerti į subtilų rytietiško pasaulio žavesį ir patirti šimtmečiais puoselėtų tradicijų dvelksmą turite galimybę, pajutę saldų kaljano dūmą.", 
 	"places_id": 14,
 	"notification": false, 
 	"link_facebook": ""
@@ -89,7 +91,8 @@ Irklentė (SUP – stand up paddeling board) – tai pats paprasčiausias būdas
   {	
 	"id": 8,
 	"title": "BUM BUM FUTBOLAS",
-	"about": "BUM BUM / Burbulinis futbolas – nauja pramoga Lietuvoje! Mačai šeštadienį, Liepos 18 d.",
+	"about": "BUM BUM / Burbulinis futbolas – nauja pramoga Lietuvoje! Mačai šeštadienį, Liepos 18 d.
+Registracija į turnyrą nuo 10 val. vyks šeštadienį informacijos štabe (saloj prie kūdros).",
 	"places_id": 14,
 	"notification": false, 
 	"link_facebook": "https://www.facebook.com/gobumbum"
@@ -102,7 +105,8 @@ Irklentė (SUP – stand up paddeling board) – tai pats paprasčiausias būdas
 Kęstutis Navickas – geriausias visų laikų Lietuvos badmintonininkas atvyksta į “ Radistai Village “ tam, kad pasidalintų savo patirtimi ir supažindintų Jus su badmintonu!
 
 Kęstutis: „Paruošime aikštelę, ištempsime tinklą, papasakosime badmintono subtilybes, ir parodysime pagrindinius smūgius, kad galetumėte pajusti tikrąjį badmintono teikiamą malonumą. Sužaisime dvejetų mini turnyriuką, todėl ieškokite sau poros, ne vien linksmybėms, bet ir pergalėms pasiekti! :) Aišku, prizų irgi bus! Todėl, treniruokitės, ruoškitės, kad linksmybės su Radistais būtų dar malonesnės, po gerų emocijų badmintono aikšteleje „.
-Visą info apie Radistai Village badmintono turnyrą, galite rasti akademijos FB puslapyje.", 
+Visą info apie Radistai Village badmintono turnyrą, galite rasti akademijos FB puslapyje.
+Registracija į turnyrą nuo 10 val. vyks šeštadienį informacijos štabe (saloj prie kūdros).", 
 	"places_id": 14, 
 	"notification": false, 
 	"link_facebook": "https://www.facebook.com/KestutisNavickasBadmintonAcademy"
@@ -112,7 +116,8 @@ Visą info apie Radistai Village badmintono turnyrą, galite rasti akademijos FB
 	"title": "SHMUTKE.EU TINKLINIS",
 	"about": "SHMUTKE.EU tinklinio turnyras
 
-Shmutke jau antrus metus iš eilės organizuoja 4X4 MIX paplūdimio tinklinio turnyrą festivalyje. Šiemet tai bus dar didesnis turnyras su dar daugiau dalyvių. Nugalėtojai bus apdovanoti specialiai Radistų festivaliui kurtais paplūdimio tinklinio marškinėliais ir festivalio atributika. Susitiksime Liepos 18d. Prie tinklinio aikštelės. Komandoje privalės dalyvauti bent viena mergina.", 
+Shmutke jau antrus metus iš eilės organizuoja 4X4 MIX paplūdimio tinklinio turnyrą festivalyje. Šiemet tai bus dar didesnis turnyras su dar daugiau dalyvių. Nugalėtojai bus apdovanoti specialiai Radistų festivaliui kurtais paplūdimio tinklinio marškinėliais ir festivalio atributika. Susitiksime Liepos 18d. Prie tinklinio aikštelės. Komandoje privalės dalyvauti bent viena mergina.
+Registracija į turnyrą nuo 10 val. vyks šeštadienį informacijos štabe (saloj prie kūdros).", 
 	"places_id": 18,
 	"notification": false, 
 	"link_facebook": "https://www.facebook.com/visurimu"
@@ -120,7 +125,8 @@ Shmutke jau antrus metus iš eilės organizuoja 4X4 MIX paplūdimio tinklinio tu
   {
   	"id": 11,
 	"title": "POKERIO TURNYRAS",
-	"about": "Organizuoja sportinio pokerio klubas 'Du karaliai'", 
+	"about": "Organizuoja sportinio pokerio klubas 'Du karaliai'
+Registracija į turnyrą nuo 10 val. vyks šeštadienį informacijos štabe (saloj prie kūdros).", 
 	"places_id": 14,
 	"notification": false, 
 	"link_facebook": "https://www.facebook.com/dukaraliai"
@@ -128,7 +134,8 @@ Shmutke jau antrus metus iš eilės organizuoja 4X4 MIX paplūdimio tinklinio tu
   {
   	"id": 12,
 	"title": "BEER PONG TURNYRAS",
-	"about": "Šeštadienio dieną bendroje festivalio pramogų programoje.", 
+	"about": "Šeštadienio dieną bendroje festivalio pramogų programoje.
+Registracija į turnyrą nuo 10 val. vyks šeštadienį informacijos štabe (saloj prie kūdros).", 
 	"places_id": 14,
 	"notification": false, 
 	"link_facebook": ""
@@ -153,14 +160,15 @@ Shmutke jau antrus metus iš eilės organizuoja 4X4 MIX paplūdimio tinklinio tu
   	"id": 15,
 	"title": "SIMONOS BANDITOS POPIETĖ",
 	"about": "Šeštadienį nuo 11 iki 14 valandos Beach stage pramogoms vadovaus Simona Bandita! Laukia daug banditiškų pramogų ir muilo burbulų – nepatingėk atsikelti :)", 
-	"places_id": 2,
+	"places_id": 16,
 	"notification": false, 
 	"link_facebook": "https://www.facebook.com/SimonaBandita"
   },
   {
   	"id": 16,
 	"title": "SUPERFLY.LT DĖJIMŲ TURNYRAS",
-	"about": "Šeštadienį organizuojamas SuperFly dėjimų konkursas!", 
+	"about": "Šeštadienį organizuojamas SuperFly dėjimų konkursas!
+Registracija į turnyrą nuo 10 val. vyks šeštadienį informacijos štabe (saloj prie kūdros).", 
 	"places_id": 14,
 	"notification": false, 
 	"link_facebook": "https://www.facebook.com/SuperFly.lt"
@@ -169,7 +177,7 @@ Shmutke jau antrus metus iš eilės organizuoja 4X4 MIX paplūdimio tinklinio tu
   	"id": 17,
 	"title": "UGNIES ŠOU",
 	"about": "Tomo Slepinio ugnies šou penktadienio bei šeštadienio naktimis Beach stage prie vandens.", 
-	"places_id": 2,
+	"places_id": 16,
 	"notification": false, 
 	"link_facebook": ""
   },
