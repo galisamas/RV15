@@ -19,7 +19,7 @@ import java.util.*;
 public class ArtistsListAdapter extends ArrayAdapter<ArtistListItem> implements SectionIndexer {
 
     private final Context context;
-        private final SharedPreferences sharedpreferences;
+    private final SharedPreferences sharedpreferences;
     private final String artistAdapterPref = "artistAdapterPref";
     HashMap<String, Integer> azIndexer;
     String[] sections;
