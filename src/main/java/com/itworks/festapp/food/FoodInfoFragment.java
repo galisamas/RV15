@@ -12,16 +12,17 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.itworks.festapp.BaseFragment;
 import com.itworks.festapp.R;
-import com.itworks.festapp.helpers.*;
+import com.itworks.festapp.helpers.JSONRepository;
+import com.itworks.festapp.helpers.ModelsController;
+import com.itworks.festapp.helpers.TypefaceController;
 import com.itworks.festapp.map.TerritoryActivity;
-import com.itworks.festapp.models.BaseModel;
 import com.itworks.festapp.models.FoodModel;
 import com.itworks.festapp.models.PlaceModel;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
 
-public class FoodInfoFragment extends BaseFragment implements View.OnClickListener {
+public class FoodInfoFragment extends BaseFragment{
 
     private final String foodInfoPref = "FoodInfoPref";
     private final String key = "id";
@@ -29,22 +30,15 @@ public class FoodInfoFragment extends BaseFragment implements View.OnClickListen
     private FoodModel foodModel;
     TextView title, about, location;
     RelativeLayout place;
-    ImageView iw, linkF;
+    ImageView iw;
     private SharedPreferences sharedpreferences;
-    private BrowserController browserController;
-
-    public void setBaseModel(BaseModel foodModel) {
-        this.foodModel = (FoodModel) foodModel;
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.food_info_fragment, container, false);
+        foodModel = (FoodModel) baseModel;
         place = (RelativeLayout) v.findViewById(R.id.place);
         place.setEnabled(true);
-        linkF = (ImageView) v.findViewById(R.id.imageFb);
-        linkF.setOnClickListener(this);
-        browserController = new BrowserController(getActivity());
         JSONRepository jsonRepository = new JSONRepository(getActivity());
         ModelsController modelsController = new ModelsController(getActivity());
         sharedpreferences = getActivity().getSharedPreferences(foodInfoPref, Context.MODE_PRIVATE);
@@ -73,10 +67,7 @@ public class FoodInfoFragment extends BaseFragment implements View.OnClickListen
         location = (TextView) v.findViewById(R.id.location);
         iw = (ImageView) v.findViewById(R.id.imageView3);
 
-        if(!foodModel.link_facebook.isEmpty()) {
-            imageLoader.displayImage("drawable://" + R.drawable.social_fb, linkF);
-        }
-        int photo_id = getResources().getIdentifier("f" + foodModel.id, "drawable", getActivity().getPackageName());
+        int photo_id = getResources().getIdentifier("caif", "drawable", getActivity().getPackageName());
         imageLoader.displayImage("drawable://" + photo_id, iw);
         title.setText(foodModel.title);
         location.setText(coordinate.name);
@@ -90,11 +81,6 @@ public class FoodInfoFragment extends BaseFragment implements View.OnClickListen
         typefaceController.setFutura(title);
         typefaceController.setFutura(location);
         typefaceController.setArial(about);
-    }
-
-    @Override
-    public void onClick(View v) {
-        browserController.openBrowser(foodModel.link_facebook);
     }
 
     @Override

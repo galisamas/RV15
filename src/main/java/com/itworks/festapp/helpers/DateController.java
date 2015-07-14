@@ -12,7 +12,7 @@ public class DateController {
     private static final int FESTIVAL_DAY_1 = 17;
     private static final int FESTIVAL_DAY_2 = FESTIVAL_DAY_1+1;
     private static final int FESTIVAL_DAY_3 = FESTIVAL_DAY_2+1;
-    public static final int FESTIVAL_MONTH = Calendar.JULY; // TODO JULY - 17,18,19
+    public static final int FESTIVAL_MONTH = Calendar.JULY;
 
     public static String convertDate(BaseTimetable timetableModel){
         String start = timetableModel.day + "/" + timetableModel.start_time;

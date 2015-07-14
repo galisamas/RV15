@@ -1,11 +1,11 @@
 ﻿{
 	"food": [
   {
-    "about": "",
-    "title": "Dešrainiai24",
+    "about": "Parodyk baristai RADISTAI VILLAGE'15 aplikaciją savo išmaniajame telefone ir festivalio kavą įsigyk su 30% nuolaida.",
+    "title": "Caif Cafe",
     "link_facebook": "",
     "id": 0
-  }, 
+  },
   {
     "about": "",
     "title": "Pasta & WOK",
@@ -83,6 +83,12 @@
     "title": "Blynai",
     "link_facebook": "",
     "id": 13
+  },
+  {
+    "about": "",
+    "title": "Dešrainiai24",
+    "link_facebook": "",
+    "id": 14
   }
 ]
 }

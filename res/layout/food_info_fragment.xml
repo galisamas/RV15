@@ -18,15 +18,6 @@
             android:id="@+id/line1"
             android:layout_marginBottom="@dimen/left_text_margin"
             android:background="@color/list_separator" />
-    <ImageView
-            android:layout_width="@dimen/social_icon_size"
-            android:layout_height="@dimen/social_icon_size"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/line1"
-            android:layout_above="@+id/line2"
-            android:layout_marginRight="@dimen/artists_alarm_margin"
-            android:src="@null"
-            android:id="@+id/imageFb"/>
 
     <RelativeLayout
             android:id="@+id/header"
@@ -36,15 +27,13 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pavadinimas"
+                android:text="Caif Cafe"
                 android:id="@+id/textView3"
                 android:layout_marginLeft="@dimen/left_text_margin"
-                android:layout_alignParentLeft="true"
                 android:textColor="@color/actionbar_second"
                 android:textSize="30dp"/>
 
     </RelativeLayout>
-
     <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -85,22 +74,17 @@
             android:layout_below="@+id/line2"
             android:id="@+id/scrollView">
 
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Aprasas"
+                android:textColor="@color/actionbar_second"
+                android:id="@+id/about"
+                android:layout_marginLeft="@dimen/left_text_margin"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_centerHorizontal="true"/>
 
-        <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-            <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Aprasas"
-                    android:textColor="@color/actionbar_second"
-                    android:id="@+id/about"
-                    android:layout_marginLeft="@dimen/left_text_margin"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:layout_centerHorizontal="true"/>
 
-        </LinearLayout>
     </ScrollView>
 
 </RelativeLayout>

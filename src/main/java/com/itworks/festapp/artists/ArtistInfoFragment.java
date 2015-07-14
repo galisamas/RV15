@@ -38,10 +38,6 @@ public class ArtistInfoFragment extends BaseFragment implements View.OnClickList
     private BrowserController browserController;
     private ModelsController modelsController;
 
-//    public void setBaseModel(BaseModel artistModel) {
-//        this.artistModel = (ArtistModel) artistModel;
-//    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.artist_info_fragment, container, false);

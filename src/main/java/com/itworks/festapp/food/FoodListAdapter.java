@@ -25,13 +25,13 @@ public class FoodListAdapter extends ArrayAdapter<FoodListItem> {
 
     @Override
     public boolean isEnabled(int position) {
-        return false;
+        return position == 0;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder viewHolder;
-
+        ViewHolder viewHolder ;
+        FoodListItem item = getItem(position);
         if(convertView == null) {
             // inflate the GridView item layout
             LayoutInflater inflater = LayoutInflater.from(getContext());
@@ -41,6 +41,7 @@ public class FoodListAdapter extends ArrayAdapter<FoodListItem> {
             viewHolder = new ViewHolder();
             viewHolder.ivIcon = (ImageView) convertView.findViewById(R.id.item_image);
             viewHolder.tvTitle = (TextView) convertView.findViewById(R.id.item_title);
+            viewHolder.arrow = (ImageView) convertView.findViewById(R.id.forward_arrow);
 
             convertView.setTag(viewHolder);
         } else {
@@ -48,8 +49,13 @@ public class FoodListAdapter extends ArrayAdapter<FoodListItem> {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
+        if (position != 0 ) {
+            viewHolder.arrow.setVisibility(View.GONE);
+        }else{
+            viewHolder.arrow.setVisibility(View.VISIBLE);
+        }
+
         // update the item view
-        FoodListItem item = getItem(position);
         ImageLoader imageLoader = ImageLoader.getInstance();
         imageLoader.displayImage("drawable://" + item.photoId ,viewHolder.ivIcon);
         viewHolder.tvTitle.setText(item.name);
@@ -62,6 +68,7 @@ public class FoodListAdapter extends ArrayAdapter<FoodListItem> {
     private static class ViewHolder {
         ImageView ivIcon;
         TextView tvTitle;
+        ImageView arrow;
     }
 }
 
