@@ -410,6 +410,17 @@ Now he’s running his own record label, Svogue Muziq, working as A&R and manage
 	"link_youtube": "",
 	"link_spotify": "",
 	"origin": "LT"
+  },
+  {
+	"id": 34,
+	"title": "ROXTR",
+	"about": "Rokas Gestautas",
+	"notification": false,
+	"link_facebook": "https://www.facebook.com/roxtrdj",
+	"link_soundcloud": "https://soundcloud.com/roxtr",
+	"link_youtube": "",
+	"link_spotify": "",
+	"origin": "LT"
   }
 ]
 }
