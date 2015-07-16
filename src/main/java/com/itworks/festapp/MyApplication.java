@@ -1,6 +1,5 @@
 package com.itworks.festapp;
 
-import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -17,15 +16,12 @@ public class MyApplication extends com.activeandroid.app.Application {
     public void onCreate() {
         super.onCreate();
         DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
-                .cacheOnDisc(true).cacheInMemory(true)
                 .imageScaleType(ImageScaleType.EXACTLY)
                 .displayer(new FadeInBitmapDisplayer(300)).build();
 
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
                 getApplicationContext())
-                .defaultDisplayImageOptions(defaultOptions)
-                .memoryCache(new WeakMemoryCache())
-                .discCacheSize(100 * 1024 * 1024).threadPoolSize(5)
+                .defaultDisplayImageOptions(defaultOptions).threadPoolSize(5)
                 .build();
         ImageLoader.getInstance().init(config);
 
