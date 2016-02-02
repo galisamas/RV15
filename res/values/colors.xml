@@ -20,6 +20,9 @@
     <item name="actionbar_second" type="color">#FF5D7698</item>
     <item name="list_separator" type="color">#FFfbd583</item>
     <item name="list_item_onclick" type="color">#FFe5f2d2</item>
+    <item name="menu_text_color" type="color">#FF30283D</item>
+    <item name="menu_button_color" type="color">#9DE0E0E0</item>
+    <item name="menu_button_color_presssed" type="color">#9DA5A5A5</item>
 
     <item name="basic_stage_indicator" type="color">#FF5D7698</item>
     <item name="now_stage_indicator" type="color">#FFfbd583</item>

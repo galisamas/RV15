@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/white"
                 android:id="@+id/menu_background">
 
         <Space
@@ -11,19 +12,19 @@
                 android:id="@+id/space1"
                 />
         <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_below="@+id/space1"
-                android:layout_above="@+id/festLogo"
-                android:id="@+id/logo"/>
+                android:layout_alignParentBottom="true"
+                android:id="@+id/menu_background_logo"/>
 
         <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
+                android:layout_below="@+id/space1"
                 android:layout_above="@+id/space2"
-                android:id="@+id/festLogo"/>
+                android:id="@+id/logo"/>
+
         <Space
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -31,65 +32,106 @@
                 android:id="@+id/space2"
                 />
         <LinearLayout
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_width="wrap_content"
                 android:layout_marginBottom="@dimen/menu_button_margins"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_above="@+id/secondLine"
-                android:id="@+id/firstLine">
-                <Button
-                        android:layout_width="@dimen/button_width"
-                        android:layout_height="@dimen/button_width"
-                        android:id="@+id/button2"
-                        android:background="@drawable/stages_background"/>
-                <Button
-                        android:layout_width="@dimen/button_width"
-                        android:layout_height="@dimen/button_width"
-                        android:layout_marginLeft="@dimen/menu_button_margins"
-                        android:layout_marginRight="@dimen/menu_button_margins"
-                        android:background="@drawable/map_background"
-                        android:id="@+id/button4"/>
-                <Button
-                        android:layout_width="@dimen/button_width"
-                        android:layout_height="@dimen/button_width"
-                        android:background="@drawable/sport_background"
-                        android:id="@+id/button6"/>
-
-        </LinearLayout>
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
                 android:layout_above="@+id/space3"
-                android:id="@+id/secondLine">
-
-                <Button
+                android:id="@+id/firstLine">
+                <RelativeLayout
                         android:layout_width="@dimen/button_width"
-                        android:layout_height="@dimen/button_width"
+                        android:layout_height="@dimen/button_height"
+                        android:background="@drawable/map_background"
+                        android:id="@+id/button4">
+                        <TextView android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:textStyle="bold"
+                                  android:textColor="@color/menu_text_color"
+                                  android:textSize="@dimen/menu_text_size"
+                                  android:layout_centerInParent="true"
+                                android:text="@string/mk_map"/>
+                </RelativeLayout>
+                <RelativeLayout
+                        android:layout_width="@dimen/button_width"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_marginTop="@dimen/menu_button_margins"
+                        android:layout_marginBottom="@dimen/menu_button_margins"
+                        android:background="@drawable/stages_background"
+                        android:id="@+id/button2">
+                        <TextView android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:textStyle="bold"
+                                  android:textColor="@color/menu_text_color"
+                                  android:textSize="@dimen/menu_text_size"
+                                  android:layout_centerInParent="true"
+                                  android:text="@string/mk_stages"/>
+                </RelativeLayout>
+                <RelativeLayout
+                        android:layout_width="@dimen/button_width"
+                        android:layout_height="@dimen/button_height"
                         android:background="@drawable/artists_background"
-                        android:id="@+id/button"/>
-                <Button
+                        android:id="@+id/button">
+                        <TextView android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:textStyle="bold"
+                                  android:textColor="@color/menu_text_color"
+                                  android:textSize="@dimen/menu_text_size"
+                                  android:layout_centerInParent="true"
+                                  android:text="@string/mk_artists"/>
+                </RelativeLayout>
+                <RelativeLayout
                         android:layout_width="@dimen/button_width"
-                        android:layout_height="@dimen/button_width"
-                        android:layout_marginLeft="@dimen/menu_button_margins"
-                        android:layout_marginRight="@dimen/menu_button_margins"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_marginTop="@dimen/menu_button_margins"
+                        android:layout_marginBottom="@dimen/menu_button_margins"
+                        android:background="@drawable/sport_background"
+                        android:id="@+id/button6">
+                        <TextView android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:textStyle="bold"
+                                  android:textColor="@color/menu_text_color"
+                                  android:textSize="@dimen/menu_text_size"
+                                  android:layout_centerInParent="true"
+                                  android:text="@string/mk_games"/>
+                </RelativeLayout>
+                <RelativeLayout
+                        android:layout_width="@dimen/button_width"
+                        android:layout_height="@dimen/button_height"
                         android:background="@drawable/food_background"
-                        android:id="@+id/button3"/>
-                <Button
+                        android:id="@+id/button3">
+                        <TextView android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:textStyle="bold"
+                                  android:textColor="@color/menu_text_color"
+                                  android:textSize="@dimen/menu_text_size"
+                                  android:layout_centerInParent="true"
+                                  android:text="@string/mk_food"/>
+                </RelativeLayout>
+                <RelativeLayout
                         android:layout_width="@dimen/button_width"
-                        android:layout_height="@dimen/button_width"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_marginTop="@dimen/menu_button_margins"
                         android:background="@drawable/info_background"
-                        android:id="@+id/button5"/>
+                        android:id="@+id/button5">
+                        <TextView android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:textStyle="bold"
+                                  android:textColor="@color/menu_text_color"
+                                  android:textSize="@dimen/menu_text_size"
+                                  android:layout_centerInParent="true"
+                                  android:text="@string/mk_info"/>
+                </RelativeLayout>
+
         </LinearLayout>
+
         <Space
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_above="@+id/bottomLine"
                 android:id="@+id/space3"
                 />
-        <FrameLayout android:layout_width="320dp"
+        <FrameLayout android:layout_width="@dimen/button_width"
                   android:layout_height="wrap_content"
                   android:layout_centerHorizontal="true"
                   android:layout_alignParentBottom="true"

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">RadistaiVillage</string>
+    <string name="app_name">EventApp</string>
 
-    <string name="mk_stages">Scenos</string>
-    <string name="mk_food">Maistas</string>
-    <string name="mk_info">Informacija</string>
-    <string name="mk_map">Žemėlapis</string>
-    <string name="mk_artists">Atlikėjai</string>
-    <string name="mk_games">Pramogos</string>
+    <string name="mk_stages">STAGES</string>
+    <string name="mk_food">FOOD &amp; BEVERAGES</string>
+    <string name="mk_info">INFO</string>
+    <string name="mk_map">MAP</string>
+    <string name="mk_artists">ARTISTS</string>
+    <string name="mk_games">ACTIVITIES</string>
 
-    <string name="menu_bottom_name1">DABAR</string>
-    <string name="menu_bottom_name2">TOLIAU</string>
-    <string name="menu_bottom_title">ANT SCENOS LIPA</string>
+    <string name="menu_bottom_name1">NOW</string>
+    <string name="menu_bottom_name2">NEXT</string>
+    <string name="menu_bottom_title">NEXT ON STAGE</string>
 
     <string name="toast_start">Užstatytas priminimas 10 minučių prieš atlikėjo pasirodymą</string>
     <string name="toast_cancel">Priminimas atšauktas</string>

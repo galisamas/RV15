@@ -29,8 +29,8 @@ import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListene
 
 public class MenuFragment extends Fragment implements View.OnClickListener {
 
-    Button b1,b2,b3,b4,b5,b6;
-    ImageView festLogo, logo;
+    RelativeLayout b1,b2,b3,b4,b5,b6;
+    ImageView logo;
     Space space1, space2, space3;
     private MenuBottomFragment element;
     private FrameLayout bottomLine;
@@ -43,26 +43,23 @@ public class MenuFragment extends Fragment implements View.OnClickListener {
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.add(R.id.bottomLine, element);
         transaction.commit();
-        RelativeLayout img = (RelativeLayout) v.findViewById(R.id.menu_background);
+        ImageView img = (ImageView) v.findViewById(R.id.menu_background_logo);
         ImageLoader imageLoader = ImageLoader.getInstance();
-        imageLoader.loadImage("drawable://" + R.drawable.trp_bg, new SimpleImageLoadingListener() {
+        imageLoader.loadImage("drawable://" + R.drawable.bg, new SimpleImageLoadingListener() {
             @Override
             public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
                 img.setBackgroundDrawable(new BitmapDrawable(loadedImage));
             }
         });
-
-        festLogo = (ImageView) v.findViewById(R.id.festLogo);
         logo = (ImageView) v.findViewById(R.id.logo);
-        imageLoader.displayImage("drawable://"+ R.drawable.fest_app, festLogo);
         imageLoader.displayImage("drawable://"+ R.drawable.logo, logo);
-        b1 = (Button) v.findViewById(R.id.button);
-        b2 = (Button) v.findViewById(R.id.button2);
-        b3 = (Button) v.findViewById(R.id.button3);
-        b4 = (Button) v.findViewById(R.id.button4);
+        b1 = (RelativeLayout) v.findViewById(R.id.button);
+        b2 = (RelativeLayout) v.findViewById(R.id.button2);
+        b3 = (RelativeLayout) v.findViewById(R.id.button3);
+        b4 = (RelativeLayout) v.findViewById(R.id.button4);
         b4.setEnabled(true);
-        b5 = (Button) v.findViewById(R.id.button5);
-        b6 = (Button) v.findViewById(R.id.button6);
+        b5 = (RelativeLayout) v.findViewById(R.id.button5);
+        b6 = (RelativeLayout) v.findViewById(R.id.button6);
         b1.setOnClickListener(this);
         b2.setOnClickListener(this);
         b3.setOnClickListener(this);
