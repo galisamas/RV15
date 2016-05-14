@@ -9,10 +9,10 @@
 
     <!-- Permissions -->
     <permission
-            android:name="info.androidhive.googlemapsv2.permission.MAPS_RECEIVE"
+            android:name="com.itworks.festapp.permission.MAPS_RECEIVE"
             android:protectionLevel="signature" />
 
-    <uses-permission android:name="info.androidhive.googlemapsv2.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="com.itworks.festapp.permission.MAPS_RECEIVE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
@@ -85,6 +85,8 @@
         <meta-data
                 android:name="com.google.android.maps.v2.API_KEY"
                 android:value="AIzaSyDHh24H4LKxoygXxcdvFyRcauNxkU3b_Ek" />
+        <!--release AIzaSyDHh24H4LKxoygXxcdvFyRcauNxkU3b_Ek-->
+        <!--debug AIzaSyA7MR2r9jKsMfJnsfC6gZnJAQAoiURHB3I-->
 
         <receiver android:name=".helpers.NotificationReceiver">
             <intent-filter>

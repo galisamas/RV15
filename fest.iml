@@ -20,10 +20,9 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
-    <orderEntry type="jdk" jdkName="Android SDK" jdkType="Android SDK" />
+    <orderEntry type="jdk" jdkName="Android API 22 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="Parse-1.8.2" level="project" />
-    <orderEntry type="library" name="google-play-services" level="project" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
@@ -97,6 +96,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="google-play-services1" level="project" />
   </component>
   <component name="org.twodividedbyzero.idea.findbugs">
     <option name="_basePreferences">

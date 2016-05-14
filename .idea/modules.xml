@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/fest.iml" filepath="$PROJECT_DIR$/fest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../google-play-services_lib/google-play-services_lib.iml" filepath="$PROJECT_DIR$/../google-play-services_lib/google-play-services_lib.iml" />
+      <module fileurl="file://E:/ItWorks/EventProt/google-play-services_lib/google-play-services_lib.iml" filepath="E:/ItWorks/EventProt/google-play-services_lib/google-play-services_lib.iml" />
     </modules>
   </component>
 </project>
